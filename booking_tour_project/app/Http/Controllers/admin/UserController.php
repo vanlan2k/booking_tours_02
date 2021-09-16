@@ -62,8 +62,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        getNotFound($user);
+        $user = $this->findUser($id);
         $roles = Role::all();
         $data['roles'] = $roles;
         $data['user'] = $user;
@@ -81,8 +80,7 @@ class UserController extends Controller
     {
         $input = $request->all();
         try {
-            $user = User::find($id);
-            getNotFound($user);
+            $user = $this->findUser($id);
             if (!$input['password']) {
                 $input['password'] = bcrypt($input['password']);
             }
@@ -102,19 +100,28 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        DB::beginTransaction();
         try {
-            $user = User::find($id);
-            getNotFound($user);
+            $user = $this->findUser($id);
             $user->delete();
+            DB::commit();
             return response()->json([
                 'error' => false,
                 'message' => __('admin_user.delete_cc')
             ]);
         } catch (\Exception $e) {
+            DB::rollBack();
             return response()->json([
                 'error' => true,
                 'message' => __('admin_user.delete_fail')
             ]);
         }
+    }
+    private function findUser($id){
+        $user = User::find($id);
+        if(!$user){
+            return abort(404);
+        }
+        return $user;
     }
 }

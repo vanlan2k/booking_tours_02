@@ -1,4 +1,4 @@
-function deleteUser(id, token, i) {
+function deleteCategory(id, token, i) {
     swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this imaginary file!",
@@ -8,7 +8,7 @@ function deleteUser(id, token, i) {
     }).then((willDelete) => {
         if (willDelete){
             $.ajax({
-                url: '/admin/user/' + id,
+                url: '/admin/category/' + id,
                 method: 'DELETE',
                 data: {
                     _token: token

@@ -23,8 +23,8 @@
                                 $count = 0;
                             @endphp
                             @foreach ($bookings as $key => $booking)
-                                <tr>
-                                    <td>{{++$count}}</td>
+                                <tr class="row-item{{$loop->iteration}}">
+                                    <td class="stt">{{$loop->iteration}}</td>
                                     <td>{{ $booking->user->name }}</td>
                                     <td>{{ $booking->booking_no }}</td>
                                     <td>{{ getDateBooking($booking->booking_date) }}</td>

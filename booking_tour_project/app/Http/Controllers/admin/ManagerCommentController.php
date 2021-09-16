@@ -16,8 +16,15 @@ class ManagerCommentController extends Controller
     }
     public function show($id)
     {
-        $comment = Review::find($id);
+        $comment = $this->findComment($id);
         $data['comment'] = $comment;
         return view('admin.pages.comments.detail')->with($data);
+    }
+    private function findComment($id){
+        $cmt = Review::find($id);
+        if (!$cmt){
+            return abort(404);
+        }
+        return cmt;
     }
 }

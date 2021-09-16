@@ -1,13 +1,18 @@
 <?php
+
 namespace App\Services;
 
+use App\Models\Category;
 use App\Models\Image;
 use App\Models\Tour;
 use App\Models\TourDetail;
 use App\Models\TourRoute;
+use Illuminate\Support\Facades\DB;
 
-class AdminService{
-    public function createTour($input){
+class AdminService
+{
+    public function createTour($input)
+    {
         $tour = Tour::create($input);
         //  create list image
         for ($i = 0; $i < count($input['image']); $i++) {
@@ -41,9 +46,9 @@ class AdminService{
         ];
         TourDetail::insert($prices);
     }
-    public function updateTour($input, $id){
-        $tour = Tour::find($id);
-        getNotFound($input);
+
+    public function updateTour($input, Tour $tour, $id)
+    {
         $tour->fill($input);
         $tour->save();
         //  update list image
@@ -81,11 +86,50 @@ class AdminService{
         ];
         TourDetail::insert($prices);
     }
-    public function deleteTour($id){
-        $tour = Tour::find($id);
-        getNotFound($tour);
-        $tour->delete();
-        TourDetail::where('tour_id', $id)->delete();
-        TourRoute::where('tour_id', $id)->delete();
+
+    public function deleteTour(Tour $tour, $id)
+    {
+        DB::beginTransaction();
+        try {
+            $tour->tour_detail()->delete();
+            $tour->tour_route()->delete();
+            $tour->delete();
+            DB::commit();
+            return response()->json([
+                'error' => false,
+                'message' => __('admin_tour.delete_ss')
+            ]);
+        } catch (Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with([
+                'error' => true,
+                'message' => __("admin_tour.delete_fail")
+            ]);
+        }
+    }
+
+    public function deleteCate(Category $cate, $id)
+    {
+        DB::beginTransaction();
+        try {
+            $tours = $cate->tour;
+            foreach ($tours as $tour) {
+                $tour->tour_detail()->delete();
+                $tour->tour_route()->delete();
+            }
+            $cate->tour()->delete();
+            $cate->delete();
+            DB::commit();
+            return response()->json([
+                'error' => false,
+                'message' => __('admin_cate.delete_ss')
+            ]);
+        } catch (Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with([
+                'error' => true,
+                'message' => __("admin_cate.delete_fail")
+            ]);
+        }
     }
 }
