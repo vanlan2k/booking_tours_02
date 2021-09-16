@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\web\HomeController::class, 'index'])->name('home');
 Route::get('/admin/login', function () {
     return view('admin.auth.login');
 })->name('login');
