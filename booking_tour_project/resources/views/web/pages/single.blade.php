@@ -282,9 +282,9 @@
                             </table>
                             <div class="form-group">
                                 @if(\Illuminate\Support\Facades\Auth::user() != null)
-                                    <button class="btn_full">{{__('single.booking')}}</button>
+                                    <button class="btn_full">{{__('single.bookings')}}</button>
                                 @else
-                                    <a href="/login" class="btn_full">{{__('single.booking')}}</a>
+                                    <a href="/login" class="btn_full">{{__('single.bookings')}}</a>
                                 @endif
                             </div>
                         </form>

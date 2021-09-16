@@ -15,7 +15,7 @@ return [
     'child' => 'Child',
     'adult' => 'Adult',
     'total' => 'Total',
-    'booking' => 'Booking',
+    'bookings' => 'Booking',
     'submit' => 'Submit',
     'related_tours' => 'Related tours',
     'leava_review' => 'Leave a Review',

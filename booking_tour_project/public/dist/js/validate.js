@@ -1,16 +1,16 @@
 /* <![CDATA[ */
 
-// Jquery validate form booking form inner page
+// Jquery validate form bookings form inner page
 jQuery(document).ready(function(){
 
 	$('#check_avail').submit(function(){
 	'use strict';
 		var action = $(this).attr('action');
 
-		$("#message-booking").slideUp(750,function() {
-		$('#message-booking').hide();
+		$("#message-bookings").slideUp(750,function() {
+		$('#message-bookings').hide();
 
- 		$('#submit-booking')
+ 		$('#submit-bookings')
 			.after('<i class="icon-spin4 animate-spin loader"></i>')
 			.attr('disabled','disabled');
 
@@ -27,10 +27,10 @@ jQuery(document).ready(function(){
 			tour_name: $('#tour_name').val()
 		},
 			function(data){
-				document.getElementById('message-booking').innerHTML = data;
-				$('#message-booking').slideDown('slow');
+				document.getElementById('message-bookings').innerHTML = data;
+				$('#message-bookings').slideDown('slow');
 				$('#check_avail .loader').fadeOut('slow',function(){$(this).remove()});
-				$('#submit-booking').removeAttr('disabled');
+				$('#submit-bookings').removeAttr('disabled');
 				if(data.match('success') != null) $('#check_avail').slideUp('slow');
 
 			}

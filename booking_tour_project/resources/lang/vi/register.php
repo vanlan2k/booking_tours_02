@@ -15,12 +15,13 @@ return [
     'female' => 'Nữ',
     'submit' => 'Đăng ký',
     'regis_fail' => 'Tạo tài khoản không thành công!',
-    'regis_succsess'=> 'Tạo tài khoản thành công!',
+    'regis_succsess' => 'Tạo tài khoản thành công!',
     'email_phone' => 'Email hoặc số điện thoại đã được đăng ký',
     'address' => 'Địa Chỉ',
     'address_note' => 'Nhập địa chỉ',
     'update_ss' => 'Cập nhật hồ sơ thành công!',
     'update_f' => 'Cập nhật hồ sơ không thành công!',
-    'title_user' => 'Tạo Mới Người Dùng'
+    'title_user' => 'Tạo Mới Người Dùng',
+    'title_tour' => 'Tạo Mới Tour'
 ];
 ?>
