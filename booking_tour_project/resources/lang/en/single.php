@@ -20,5 +20,6 @@ return [
     'related_tours' => 'Related tours',
     'leava_review' => 'Leave a Review',
     'your_review' => 'Your Review',
+    'no_value' => 'No tour currently available'
 ];
 ?>

@@ -33,3 +33,4 @@
 <![endif]-->
 <link rel="stylesheet" href="{{asset('dist/css/toastr.min.css')}}">
 <link rel="stylesheet" href="{{asset('dist/css/jquery-ui.css')}}">
+<link href="{{asset('dist/css/select2.min.css')}}" rel="stylesheet" />

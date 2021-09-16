@@ -300,7 +300,7 @@
 
     <div class="container margin_30">
         <h3 class="second_title">{{__('single.related_tours')}}</h3>
-        <div class="carousel add_bottom_30 d-flex">
+        <div class="carousel add_bottom_30">
             @foreach($tours as $tourItem)
                 <div class=" wow fadeIn animated" data-wow-delay="0.2s">
                     <div class="img_wrapper">

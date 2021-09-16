@@ -24,10 +24,11 @@ Route::post('/payment', [\App\Http\Controllers\web\CheckoutController::class, 'p
 Route::get('/payment', [\App\Http\Controllers\web\CheckoutController::class, 'payment'])->name('payment');
 Route::post('/comment/{id}', [\App\Http\Controllers\web\RatingCommentController::class, 'comment']);
 Route::post('/loadmore', [\App\Http\Controllers\web\LoadMoreController::class, 'review']);
+Route::resource('/search', \App\Http\Controllers\web\SearchController::class);
 
-Route::get('/login', [LoginController::class, 'index'])->name('loginUser');
-Route::post('/login', [LoginController::class, 'login']);
-Route::get('/logout', [LoginController::class, 'logout']);
+Route::get('/login', [\App\Http\Controllers\web\auth\LoginController::class, 'index'])->name('loginUser');
+Route::post('/login', [\App\Http\Controllers\web\auth\LoginController::class, 'login']);
+Route::get('/logout', [\App\Http\Controllers\web\auth\LoginController::class, 'logout']);
 Route::resource('/register', \App\Http\Controllers\web\RegisterController::class);
 
 Route::get('/language/{lang}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage']);

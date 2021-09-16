@@ -8,5 +8,9 @@ return [
     'best_price' => 'Best price guarantee',
     'professional' => 'Professional local guides',
     'certifcate' => 'Certifcate of Excellence',
-    'all_tour' => 'Explore all tours'
+    'all_tour' => 'Explore all tours',
+    'select_address' => 'Select Adsress',
+    'address' => 'Address',
+    'date_start' => 'Date Start',
+    'search' => 'Search'
 ];
