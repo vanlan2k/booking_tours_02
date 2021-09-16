@@ -8,9 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function index(){
+        return view('admin.auth.login');
+    }
     public function login(Request $request)
     {
-        $credentials = $request->validate([
+        $credentials = $this->validate(request(),[
             'email' => 'required|email',
             'password' => 'required'
         ]);

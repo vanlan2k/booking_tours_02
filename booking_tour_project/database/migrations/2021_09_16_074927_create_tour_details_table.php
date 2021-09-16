@@ -17,6 +17,7 @@ class CreateTourDetailsTable extends Migration
             $table->id();
             $table->integer('tour_id')->unsigned();
             $table->decimal('price', 20, 2);
+            $table->string('destination');
             $table->boolean('age');
             $table->timestamps();
         });
