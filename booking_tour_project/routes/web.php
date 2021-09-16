@@ -26,6 +26,7 @@ Route::get('/payment', [\App\Http\Controllers\web\CheckoutController::class, 'pa
 Route::get('/login', [LoginController::class, 'index'])->name('loginUser');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
+Route::resource('/register', \App\Http\Controllers\web\RegisterController::class);
 
 Route::get('/language/{lang}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage']);
 /*admin*/

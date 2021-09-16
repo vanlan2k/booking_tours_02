@@ -8,6 +8,8 @@ return [
     'language' => 'Ngôn Ngữ',
     'email_phone' => 'Email hoặc Sô Điện Thoại',
     'password' => 'Mật Khẩu',
-    'forgot_pass' => 'Quên Mật Khẩu ?'
+    'forgot_pass' => 'Quên Mật Khẩu ?',
+    'profile' => 'Hồ Sơ',
+    'logout' => 'Đăng xuất'
 ];
 ?>
