@@ -23,7 +23,7 @@ class CreateToursTable extends Migration
             $table->integer('number_date');
             $table->date('date_start');
             $table->date('date_end');
-            $table->double('rate');
+            $table->double('rate')->default(5);
             $table->timestamps();
         });
     }
