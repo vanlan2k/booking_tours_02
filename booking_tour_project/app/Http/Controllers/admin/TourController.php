@@ -21,10 +21,17 @@ class TourController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $tours = Tour::orderBy('id')->paginate(10);
+        $categories = Category::all();
+        if ($request->search) {
+            $tours = Tour::searchTourAdmin($request->search);
+        } else {
+            $tours = Tour::indexTour($request->category);
+        }
         $data['tours'] = $tours;
+        $data['cate'] = $request->category;
+        $data['categories'] = $categories;
         return view('admin.pages.tours.list')->with($data);
     }
 
@@ -51,10 +58,9 @@ class TourController extends Controller
         $input = $request->all();
         $create = new AdminService();
         $check = $create->createTour($input);
-        if ($check){
+        if ($check) {
             return redirect()->back()->with(['success' => __('admin_tour.add_cc')]);
-        }
-        else{
+        } else {
             return redirect()->back()->with(['error' => __('admin_tour.add_fail')]);
         }
     }
@@ -73,6 +79,7 @@ class TourController extends Controller
         $data['categories'] = $categories;
         return view('admin.pages.tours.detail')->with($data);
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -86,10 +93,9 @@ class TourController extends Controller
         $tour = $this->findTour($id);
         $update = new AdminService();
         $check = $update->updateTour($input, $tour, $id);
-        if ($check){
+        if ($check) {
             return redirect()->back()->with(['success' => __('admin_tour.ud_cc')]);
-        }
-        else{
+        } else {
             return redirect()->back()->with(['error' => __('admin_tour.ud_fail')]);
         }
     }
@@ -105,13 +111,12 @@ class TourController extends Controller
         $tour = $this->findTour($id);
         $delete = new AdminService();
         $check = $delete->deleteTour($tour, $id);
-        if ($check){
+        if ($check) {
             return response()->json([
                 'error' => false,
                 'message' => __('admin_tour.delete_ss')
             ]);
-        }
-        else{
+        } else {
             return redirect()->back()->with([
                 'error' => true,
                 'message' => __("admin_tour.delete_fail")

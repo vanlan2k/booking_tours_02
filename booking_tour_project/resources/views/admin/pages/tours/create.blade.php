@@ -44,7 +44,7 @@
                                     </span>
                                     <input id="thumbnail_avata"
                                            class="form-control {{$errors->has('avata') ? 'is-invalid' :''}}"
-                                           type="text" name="avata">
+                                           type="text" name="avata" value="{{ old('avata') }}">
                                 </div>
                                 <img id="avata" style="margin-top:15px;max-height:100px;">
                                 <div style="color: red">
@@ -58,9 +58,20 @@
                                 <textarea id="my-editor" name="description"
                                           class="form-control {{$errors->has('description') ? 'is-invalid' : ''}}"
                                           placeholder="Enter title description"
-                                          value="{{ old('number_date') }}"></textarea>
+                                          value="{{ old('description') }}"></textarea>
                                 <div style="color: red">
                                     @error('description')
+                                    {{$message}}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">{{__('admin_tour.number')}}</label>
+                                <input type="number"
+                                       class="form-control {{$errors->has('number_date') ? 'is-invalid' : ''}}"
+                                       name="number_date" value="{{ old('number_date') }}"/>
+                                <div style="color: red">
+                                    @error('number_date')
                                     {{$message}}
                                     @enderror
                                 </div>
@@ -78,7 +89,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">{{__('admin_tour.end')}}</label>
-                                <input type="date" class="form-control {{$errors->has('date_end') ? 'is-invalid' : ''}}"
+                                <input type="date"
+                                       class="form-control {{$errors->has('date_end') ? 'is-invalid' : ''}}"
                                        name="date_end" value="{{ old('date_end') }}"/>
                                 <div style="color: red">
                                     @error('date_end')

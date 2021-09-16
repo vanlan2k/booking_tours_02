@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
         $tours = Tour::topTour();
         $tour_news = Tour::limit(4)->orderby('id', 'DESC')->get();
-        $tours_highly = Tour::limit(4)->orderby('rate', 'DESC')->get();
+        $tours_highly = Tour::topRate();
         $cates = Category::all();
         $data['tours'] = $tours;
         $data['tours_new'] = $tour_news;

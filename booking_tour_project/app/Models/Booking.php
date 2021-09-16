@@ -56,6 +56,5 @@ class Booking extends Model
             ->whereBetween('booking_date', [$dateStart, $now])
             ->groupBy(DB::raw('MONTH(booking_date)'))
             ->first();
-
     }
 }

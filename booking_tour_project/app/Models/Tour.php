@@ -14,6 +14,7 @@ class Tour extends Model
     protected $table = 'tours';
     protected $fillable = [
         'cate_id',
+        'number_date',
         'name',
         'avata',
         'description',
@@ -22,7 +23,9 @@ class Tour extends Model
         'date_start',
         'date_end'
     ];
-    public function image(){
+
+    public function image()
+    {
         return $this->hasMany(Image::class, 'tour_id', 'id');
     }
 
@@ -46,19 +49,15 @@ class Tour extends Model
         return $this->belongsTo(Category::class, 'cate_id', 'id');
     }
 
-    public function getRate()
-    {
-        return $this->rate * 10;
-    }
-
     public function scopeSearchTour($query, $cate_id, $date)
     {
         return $query->when($cate_id != null, function ($qr) use ($cate_id, $date) {
-                    $qr->where('cate_id', $cate_id)->where('date_start', '>' , $date);
-                }, function ($qr) use ($date) {
-                    $qr->where('date_start', '>', $date);
-                });
+            $qr->where('cate_id', $cate_id)->where('date_start', '<', $date);
+        }, function ($qr) use ($date) {
+            $qr->where('date_start', '<', $date);
+        });
     }
+
     public function scopeTopTour()
     {
         $values = BookingDetail::select(DB::raw('COUNT(tour_id)'), 'tour_id')
@@ -83,16 +82,20 @@ class Tour extends Model
             ->paginate(12);
     }
 
-    public function scopePrice($query){
+    public function scopePrice($query)
+    {
         return $query->orderBy('priceAdult')->paginate(12);
     }
-    public function scopePriceDESC($query){
+
+    public function scopePriceDESC($query)
+    {
         return $query->orderBy('priceAdult', 'DESC')->paginate(12);
     }
+
     public function scopeTopRate()
     {
         $values = AssessRate::select(DB::raw('AVG(number_rate)'), 'tour_id')
-            ->orderBy(DB::raw('AGV(number_rate)', 'DESC'))
+            ->orderBy(DB::raw('AVG(number_rate)', 'DESC'))
             ->limit(4)
             ->get();
         $tours = [];
@@ -106,14 +109,14 @@ class Tour extends Model
     public function scopeIndexTour($query, $input)
     {
         return $query->when($input != null, function ($qr) use ($input) {
-            $qr->whereHas('category', function ($qr) use ($input) {
-                $qr->where('cate_id', $input);
-            });
+            $qr->where('cate_id', $input);
         })->orderBy('updated_at', 'DESC')
             ->orderBy('created_at', 'DESC')
             ->paginate(12);
     }
-    public function scopeSearchTour1($query, $input){
-        return $query->where('name', 'like', '%'. $input. '%')->get();
+
+    public function scopeSearchTourAdmin($query, $input)
+    {
+        return $query->where('name', 'like', '%' . $input . '%')->paginate(12);
     }
 }

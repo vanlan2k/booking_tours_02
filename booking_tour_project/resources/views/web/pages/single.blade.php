@@ -35,7 +35,8 @@
                             <p>{!! $tour->description !!}</p>
                             <hr>
 
-                            <h3>Program <span>({{count($tour->tour_route)}} days)</span></h3>
+                            <h3>{{__('single.program')}}
+                                <span>({{$tour->number_date}} {{__('single.day')}})</span></h3>
                             <div class="row pl-4 mt-4   ">
                                 @foreach($tour->tour_route as $route)
                                     <h6 class=""><u>{{$route->name}}</u></h6>
@@ -54,17 +55,15 @@
                                     <span>{{\App\Models\AssessRate::getRating($tour->id)!= null ? number_format(\App\Models\AssessRate::getRating($tour->id), 1) : '5.0'}}</span>
                                 </div>
                                 <div class="review_score_2">
-                                    <h4>Fabulous <span>(Based on {{\App\Models\Review::countReview()}} reviews)</span>
+                                    <h4>
+                                        <span>({{__('single.based_on')}} {{\App\Models\Review::countReview()}} {{__('single.reviews')}})</span>
                                     </h4>
-                                    <p>
-                                        Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu. Ius
-                                        diam vivendo ne.
-                                    </p>
                                 </div>
                             </div>
                             <!-- End review summary -->
                             <div class="reviews-container" id="review_data">
                                 @csrf
+                                <input type="hidden" id="tour_id" data-tour="{{$tour->id}}">
                             </div>
                             <!-- End review-container -->
                             <hr>
@@ -76,26 +75,13 @@
                                     @csrf
                                     <div class="form-group col-md-12">
                                         <label>Rating </label>
-                                        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                                        <div class="rating"><input type="radio" name="rating" value="5" id="5"><label
+                                                for="5">☆</label> <input type="radio" name="rating" value="4"
+                                                                         id="4"><label for="4">☆</label> <input
+                                                type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                                            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                                         </div>
-                                    </div>
-                                    <div style="color: red" class="form-group">
-                                        @error('rating')
-                                        {{$message}}
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label>Your Review</label>
-                                        <textarea name="comment" class="form-control"
-                                                  style="height:130px;"></textarea>
-                                    </div>
-                                    <div style="color: red" class="form-group">
-                                        @error('comment')
-                                        {{$message}}
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        {!! getBTNSB() !!}
                                     </div>
                                     <div style="color: red" class="form-group">
                                         @error('rating')
@@ -175,11 +161,12 @@
                                             <input type="number" value="0" name="adult"
                                                    class="qty_adult {{$errors->has('adult') ? 'is-invalid' : ''}}"
                                                    onchange="getTotalFunction()"
-                                                   data-adult="{{$tour->tour_detail[0]->price}}">
+                                                   data-adult="{{$tour->priceAdult}}">
                                         </div>
                                     </td>
                                     <td class="text-center total_adult"><span class="subtotal">₫0</span>
                                     </td>
+                                </tr>
                                 <tr>
                                     <td colspan="3" style="border-top: none; padding: 0 10px">
                                         <div style="color: red">
@@ -188,16 +175,6 @@
                                             @enderror
                                         </div>
                                     </td>
-                                <tr>
-                                    <td colspan="3" style="border-top: none; padding: 0 10px">
-                                        <div style="color: red">
-                                            @error('adult')
-                                            {{$message}}
-                                            @enderror
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tr>
                                 </tr>
                                 <tr>
                                     <td><strong>{{__('single.child')}}</strong>
@@ -207,7 +184,7 @@
                                             <input type="number" name="child"
                                                    class="qty_child {{$errors->has('child') ? 'is-invalid' : ''}}"
                                                    value="0"
-                                                   data-child="{{$tour->tour_detail[1]->price}}"
+                                                   data-child="{{$tour->priceChild}}"
                                                    onchange="getTotalFunction()">
                                         </div>
                                     </td>
@@ -218,6 +195,26 @@
                                     <td colspan="3" style="border-top: none; padding: 0 10px">
                                         <div style="color: red">
                                             @error('child')
+                                            {{$message}}
+                                            @enderror
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tbody>
+                                <tr>
+                                    <td class="col-5">
+                                        <strong>
+                                            {{__('single.date_start')}}
+                                        </strong>
+                                    </td>
+                                    <td colspan="2" class="m-2" >
+                                        <input type="date" name="date_start" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="border-top: none; padding: 0 10px">
+                                        <div style="color: red">
+                                            @error('date_start')
                                             {{$message}}
                                             @enderror
                                         </div>
@@ -250,7 +247,7 @@
                 <div class=" wow fadeIn animated" data-wow-delay="0.2s">
                     <div class="img_wrapper">
                         <div class="price_grid">
-                            {{getPrice($tour->tour_detail[1]->price)}}
+                            {{getPrice($tour->priceAdult)}}
                         </div>
                         <div class="img_container">
                             <a href="/single/{{$tour->id}}">
@@ -258,7 +255,7 @@
                                 <div class="short_info">
                                     <h3 class="text_description">{{$tour->name}}</h3>
                                     <div class="score_wp">
-                                        <div class="score">{{getRate($tour->id)}}</div>
+                                        <div class="score">{{\App\Models\AssessRate::getRate($tour->id)}}</div>
                                     </div>
                                 </div>
                             </a>

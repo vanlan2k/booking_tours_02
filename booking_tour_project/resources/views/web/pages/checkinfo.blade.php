@@ -21,11 +21,11 @@
                                         <div class="col-8">{{$tour->name}}</div>
                                     </div>
                                     <div class="col-12 tour-name d-flex">
-                                        <div class="col-4">{{__('checkout.date_st')}}:</div>
+                                        <div class="col-4">{{__('checkout.st_sale')}}:</div>
                                         <div class="col-8">{{$tour->date_start}}</div>
                                     </div>
                                     <div class="col-12 tour-name d-flex">
-                                        <div class="col-4">{{__('checkout.date_end')}}:</div>
+                                        <div class="col-4">{{__('checkout.end_sale')}}:</div>
                                         <div class="col-8">{{$tour->date_end}}</div>
                                     </div>
                                     <div class="col-12 tour-name d-flex">
@@ -89,6 +89,14 @@
                                         </div>
                                         <div class="col-10">
                                             {{\Carbon\Carbon::parse($booking->booking_date)->format('d-m-Y')}}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex tour-name">
+                                        <div class="col-2">
+                                            {{__('checkout.date_st')}}:
+                                        </div>
+                                        <div class="col-10">
+                                            {{\Carbon\Carbon::parse($booking->date_start)->format('d-m-Y')}}
                                         </div>
                                     </div>
                                     <div class="d-flex tour-name">

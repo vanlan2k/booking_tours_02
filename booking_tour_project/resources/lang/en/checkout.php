@@ -38,6 +38,8 @@ return [
     'note_stt2' => 'Paid',
     'note_term' => 'If you have not paid by the above time limit. BestTours will cancel this bookings',
     'make_pay' => 'Make Payment',
-    'error' => 'An error occurred!'
+    'error' => 'An error occurred!',
+    'st_sale' => 'Sale Date',
+    'end_sale' => 'Sale Closing Date'
 ];
 ?>

@@ -20,6 +20,10 @@ return [
     'related_tours' => 'Related tours',
     'leava_review' => 'Leave a Review',
     'your_review' => 'Your Review',
-    'no_value' => 'No tour currently available'
+    'no_value' => 'No tour currently available',
+    'program' => 'Program',
+    'day' => 'days',
+    'based_on' => 'Based on',
+    'date_start' => 'Choose Date Start'
 ];
 ?>

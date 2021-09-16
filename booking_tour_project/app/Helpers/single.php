@@ -7,3 +7,4 @@ function getBTNSB()
         return '<a href = "/login" class="btn btn-danger" >'.__('single.submit').'</a >';
     }
 }
+

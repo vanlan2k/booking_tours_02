@@ -41,14 +41,12 @@
                                             </div>
                                             <div class="col-6 d-flex">
                                                 <i class="far fa-calendar-alt"></i>
-                                                <div class="pl-1"><h6>{{__('checkout.date_st')}}:
-                                                        &nbsp;{{$tour->date_start}}</h6>
+                                                <div class="pl-1"><h6>{{__('checkout.date_st')}}: &nbsp;{{getDateBooking($cart->cart['date_start'])}}</h6>
                                                 </div>
                                             </div>
                                             <div class="col-6 d-flex">
                                                 <i class="far fa-calendar-alt"></i>
-                                                <div class="pl-1"><h6>{{__('checkout.date_end')}}:
-                                                        &nbsp;{{$tour->date_end}}</h6>
+                                                <div class="pl-1"><h6>{{__('checkout.date_end')}}: &nbsp;{{(new \Carbon\Carbon($cart->cart['date_start']))->addDays($tour->number_date)->format('d-m-Y')}}</h6>
                                                 </div>
                                             </div>
                                         </div>

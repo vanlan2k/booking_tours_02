@@ -1,4 +1,4 @@
-ư@extends('web.layouts.main', ['title' => 'HomePage'])
+@extends('web.layouts.main', ['title' => 'HomePage'])
 @section('content')
     <div id="full-slider-wrapper">
         <div id="layerslider" style="width:100%;height:600px;">
@@ -54,8 +54,10 @@
                 <div class="col-5">
                     <div class="form-group">
                         <label>{{__('home.address')}}:</label>
-                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;"tabindex="-1" aria-hidden="true" name="cate_id">
-                            <option selected="selected" value="">----------{{__('home.select_address')}}----------</option>
+                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;"
+                                tabindex="-1" aria-hidden="true" name="cate_id">
+                            <option selected="selected" value="">----------{{__('home.select_address')}}----------
+                            </option>
                             @foreach($cates as $cate)
                                 <option value="{{$cate->id}}">{{$cate->name}}</option>
                             @endforeach
@@ -69,9 +71,10 @@
                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                     </div>
                 </div>
-                <div class="col-2 mt-3">
+                <div class="col-2 mt-2">
                     <label> </label>
-                    <button class="btn btn-outline-success my-2 p-2 my-sm-0 col-12"type="submit">{{__('home.search')}}</button>
+                    <button class="btn btn-outline-success my-2 p-2 my-sm-0 col-12"
+                            type="submit">{{__('home.search')}}</button>
                 </div>
             </form>
             <hr>
@@ -89,19 +92,23 @@
                                 <a href="/single/{{$tour->id}}">
                                     <img src="{{$tour->avata}}" width="350" height="200" class="img-responsive" alt="">
                                     <div class="short_info">
-                                        <h3>{{$tour->name}}</h3>
-                                        <em>{{$tour->name}}</em>
-                                        <p>{{$tour->description}}</p>
-                                        <div class="score_wp">Superb<div class="score">7.5</div>
+                                        <h3 class="text_description">{{$tour->name}}</h3>
+                                        <div class="score_wp">Superb
+                                            <div class="score">{{\App\Models\AssessRate::getRate($tour->id)}}</div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
+                    <!-- End img_wrapper -->
                 @endforeach
             </div>
-            <hr>
+
+        </div>
+        <!-- End row -->
+        <hr>
+        <div class="wrapper pl-5 pr-5">
             <div class="main_title_2">
                 <h3>{{__('home.our_popular')}}</h3>
             </div>
@@ -113,7 +120,8 @@
                             <li>
                                 <div>
                                     <a href="/single/{{$tour_new->id}}">
-                                        <figure><img src="{{$tour_new->avata}}" alt="thumb" class="img-rounded" width="60" height="60"></figure>
+                                        <figure><img src="{{$tour_new->avata}}" alt="thumb" class="img-rounded"
+                                                     width="60" height="60"></figure>
                                         <h4>{{$tour_new->name}}</h4>
                                         <small>Point rate &nbsp; </small>
                                         <small class="score-1">{{$tour_new->rate}}</small>
@@ -127,11 +135,13 @@
                 <div class="col-sm-6">
                     <h3>{{__('home.highly_tour')}}</h3>
                     <ul>
+                        @if($tours_highly[0]){
                         @foreach($tours_highly as $tour_highly)
                             <li>
                                 <div>
                                     <a href="/single/{{$tour_highly->id}}">
-                                        <figure><img src="{{$tour_highly->avata}}" alt="thumb" class="img-rounded" width="60" height="60"></figure>
+                                        <figure><img src="{{$tour_highly->avata}}" alt="thumb" class="img-rounded"
+                                                     width="60" height="60"></figure>
                                         <h4>{{$tour_highly->name}}</h4>
                                         <small>Point rate &nbsp; </small>
                                         <small class="score-1">{{$tour_highly->rate}}</small>
@@ -140,6 +150,7 @@
                                 </div>
                             </li>
                         @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -191,7 +202,8 @@
                                 <div>
                                     <div class="box_overlay">
                                         <div class="pic">
-                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt="" class="img-circle"></figure>
+                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt=""
+                                                         class="img-circle"></figure>
                                             <h4>Roberta<small>12 October 2015</small></h4>
                                         </div>
                                         <div class="comment">
@@ -203,7 +215,8 @@
                                 <div>
                                     <div class="box_overlay">
                                         <div class="pic">
-                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt="" class="img-circle"></figure>
+                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt=""
+                                                         class="img-circle"></figure>
                                             <h4>Roberta<small>12 October 2015</small></h4>
                                         </div>
                                         <div class="comment">
@@ -215,7 +228,8 @@
                                 <div>
                                     <div class="box_overlay">
                                         <div class="pic">
-                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt="" class="img-circle"></figure>
+                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt=""
+                                                         class="img-circle"></figure>
                                             <h4>Roberta<small>12 October 2015</small></h4>
                                         </div>
                                         <div class="comment">

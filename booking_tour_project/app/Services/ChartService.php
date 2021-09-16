@@ -12,16 +12,14 @@ class ChartService
 {
     public function indexHome()
     {
-
-
         $dateStart = Carbon::now()->startOfMonth();
         $now = Carbon::now();
         $bookings = Booking::selectNumberBooking($dateStart, $now);
         $revenue = Booking::sumRevenue($dateStart, $now);
         $register = User::sumRegister($dateStart, $now);
         $data['number_booking'] = $bookings->number_booking;
-        $data['revenue'] = $revenue ? $revenue->revenue : 0;
-        $data['register'] = $register ? $register->register : 0;
+        $data['revenue'] = $revenue->first() ? $revenue->revenue : 0;
+        $data['register'] = $register->first() ? $register->register : 0;
         return $data;
     }
 

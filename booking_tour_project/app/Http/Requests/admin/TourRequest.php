@@ -24,6 +24,7 @@ class TourRequest extends FormRequest
     public function rules()
     {
         return [
+            'number_date' => 'required|numeric',
             'name' => 'required',
             'avata' => 'required',
             'description' => 'required',
