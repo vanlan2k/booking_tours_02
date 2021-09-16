@@ -4,6 +4,16 @@
         @csrf
         <div id="signin">
             <div class="form-title"><h3>{{__('menu.singin')}}</h3></div>
+            <div class="form-group text-center">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-xs-12 col-sm-4"> <a href="/redirect/facebook" class="btn btn-primary facebook"> <span>Facebook</span> <i class="fab fa-facebook-square"></i></a> </div>
+                    <div class="col-lg-4 col-md-4 col-xs-12 col-sm-4"> <a href="/redirect/google" class="btn btn-danger google-plus">Google <i class="fab fa-google-plus-g"></i> </a> </div>
+                    <div class="col-lg-4 col-md-4 col-xs-12 col-sm-4"> <a href="#" class="btn btn-primary google-plus">Twitter <i class="fab fa-twitter"></i> </a> </div>
+                </div>
+                <hr>
+                <h5 class="mb-4">or</h5>
+                <hr>
+            </div>
             <div class="form-group">
                 <label for="lastname" style="color: #ffffff">{{__('menu.email_phone')}}</label>
                 <input type="email"

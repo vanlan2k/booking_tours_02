@@ -232,4 +232,3 @@
         </div>
     </section>
 @endsection
-

@@ -117,7 +117,6 @@ class TourController extends Controller
                 'message' => __("admin_tour.delete_fail")
             ]);
         }
-
     }
 
     private function findTour($id)

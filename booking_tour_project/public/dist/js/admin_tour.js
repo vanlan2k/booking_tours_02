@@ -78,9 +78,7 @@ for(var i = 1; i <= x ; i++) {
     })
 }
 var z = $('.tour_route').length;
-console.log(z)
 for (var i = 2; i <= z; i++){
-    console.log(i)
     CKEDITOR.replace('my-editor'+i, options);
 }
 
