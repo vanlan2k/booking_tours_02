@@ -184,6 +184,6 @@
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
     <script type="text/javascript" src="{{asset('dist/js/admin_tour.js')}}"></script>
-    <script type="text/javascript" src="{{asset('dist/js/file_manager.js')}}">
-    </script>
+    <script type="text/javascript" src="{{asset('dist/js/file_manager.js')}}"></script>
+    <script type="text/javascript" src="{{asset('dist/js/CKEditer_view.js')}}"></script>
 @endpush

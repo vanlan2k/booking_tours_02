@@ -4,6 +4,34 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Tour List</h3>
+                    </div>
+                    <div class="col-12 d-flex">
+                        <div class="form-group card-body col-3">
+                            <label>{{__('admin_home.filter_the')}}</label>
+                            <select class="form-control select2 select2-hidden-accessible" style="width: 100%;"
+                                    id="selectbox"
+                                    tabindex="-1" aria-hidden="true" name="address">
+                                <option selected="selected" value="">----------{{__('admin_tour.select_category')}}----------
+                                </option>
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-5 form-group card-body">
+                            <label>{{__('admin_tour.search')}}:</label>
+                            <form action="{{route('tour.index')}}" method="GET" class="form-group d-flex col-12">
+                                <div class="form-outline col-9">
+                                    <input type="search" name="search" class="form-control" placeholder="{{__('admin_tour.search_note')}}"/>
+                                </div>
+                                <button type="submit" class="btn btn-primary ml-2">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                     <div class="card-body">
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>

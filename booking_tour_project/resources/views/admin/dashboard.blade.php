@@ -90,3 +90,6 @@
         </div>
     </section>
 @endsection
+@push('script')
+    <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
+@endpush

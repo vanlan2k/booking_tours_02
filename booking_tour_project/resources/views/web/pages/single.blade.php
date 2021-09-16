@@ -75,11 +75,9 @@
                                 <form method="post" action="/comment/{{$tour->id}}" class="row">
                                     @csrf
                                     <div class="form-group col-md-12">
-                                        <label>{{__('single.rating')}}</label>
-                                        <select name="rating" class="form-control">
-                                            <option value="">Select</option>
-                                            {!! forRate() !!}
-                                        </select>
+                                        <label>Rating </label>
+                                        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                                        </div>
                                     </div>
                                     <div style="color: red" class="form-group">
                                         @error('rating')
@@ -87,7 +85,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label>{{__('single.your_review')}}</label>
+                                        <label>Your Review</label>
                                         <textarea name="comment" class="form-control"
                                                   style="height:130px;"></textarea>
                                     </div>
@@ -258,13 +256,9 @@
                             <a href="/single/{{$tour->id}}">
                                 <img src="{{$tour->avata}}" width="350" height="200" class="img-responsive" alt="">
                                 <div class="short_info">
-                                    <h3>{{$tour->name}}</h3>
-                                    <em>{{$tour->name}}</em>
-                                    <p>
-                                        {{$tour->description}}
-                                    </p>
-                                    <div class="score_wp">Superb
-                                        <div class="score">7.5</div>
+                                    <h3 class="text_description">{{$tour->name}}</h3>
+                                    <div class="score_wp">
+                                        <div class="score">{{getRate($tour->id)}}</div>
                                     </div>
                                 </div>
                             </a>

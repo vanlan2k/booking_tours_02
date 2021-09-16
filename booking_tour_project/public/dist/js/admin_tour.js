@@ -40,11 +40,9 @@ var options = {
     filebrowserUploadUrl: 'laravel-filemanager/upload?type=Files&_token='
 };
 
-CKEDITOR.replace('my-editor', options);
-CKEDITOR.replace('my-editor1', options);
 
 
-var x = $('.program').length, y = $('.list_img').length;
+var x = $('.list_img').length, y = $('.program').length;
 function clickAddElementFunction() {
     x++;
     $('#add_item').append('<div class="ml-3 program"><label>Program #' + x + '</label><input type="text" name="title[]" class="form-control mb-3" placeholder="Enter title program"><textarea id="my-editor' + x + '" name="program[]" class="form-control"></textarea><div class="form-group col-md-5 mt-3 d-flex align-items-end add-button"><div class="form-group col-12 d-flex align-items-end" ><div class="btn_delete btn btn-danger btn-outline js-addSize">Remove Collumn</div ></div ></div></div>')
@@ -67,6 +65,13 @@ $(document).ready(function () {
             $(this).closest('.list_img').remove();
         }
     });
+    $('.select2').select2({
+        closeOnSelect: false
+    });
+    $('#selectbox').on('change', function () {
+        var filter = $(this).val();
+        window.location.href = '/admin/tour?category='+ filter;
+    })
 });
 
 
