@@ -16,7 +16,7 @@
                                 <label for="name">{{__('admin_tour.name')}}</label>
                                 <input type="text" class="form-control {{$errors->has('name') ? 'is-invalid' : ''}}"
                                        name="name"
-                                       placeholder="{{__('admin_tour.name_note')}} value="{{ old('name') }}"/>
+                                       placeholder="{{__('admin_tour.name_note')}}" value="{{ old('name') }}"/>
                                 <div style="color: red">
                                     @error('name')
                                     {{$message}}
@@ -32,17 +32,6 @@
                                         </option>
                                     @endforeach
                                 </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">{{__('admin_tour.address_tour')}}</label>
-                                <input type="text" class="form-control {{$errors->has('address') ? 'is-invalid' : ''}}"
-                                       name="address"
-                                       placeholder="{{__('admin_tour.address_note')}}" value="{{ old('address') }}"/>
-                                <div style="color: red">
-                                    @error('address')
-                                    {{$message}}
-                                    @enderror
-                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="name">{{__('admin_tour.avata')}}</label>
@@ -77,18 +66,6 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="name">{{__('admin_tour.number')}}</label>
-                                <input type="number"
-                                       class="form-control {{$errors->has('number_date') ? 'is-invalid' : ''}}"
-                                       name="number_date"
-                                       placeholder="{{__('admin_tour.date_note')}}" value="{{ old('number_date') }}"/>
-                                <div style="color: red">
-                                    @error('number_date')
-                                    {{$message}}
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="name">{{__('admin_tour.start')}}</label>
                                 <input type="date"
                                        class="form-control {{$errors->has('date_start') ? 'is-invalid' : ''}}"
@@ -114,7 +91,7 @@
                                 <div class="ml-3">
                                     <div class="">
                                         <label>{{__('admin_tour.adult')}}</label>
-                                        <input type="number" name="adult" placeholder="{{__('admin_tour.adult_note')}}"
+                                        <input type="number" name="priceAdult" placeholder="{{__('admin_tour.adult_note')}}"
                                                class="form-control {{$errors->has('adult') ? 'is-invalid' :''}}">
                                         <div style="color: red">
                                             @error('ault')
@@ -124,7 +101,7 @@
                                     </div>
                                     <div class="">
                                         <label>{{__('admin_tour.child')}}</label>
-                                        <input type="number" name="child" placeholder="{{__('admin_tour.child_note')}}"
+                                        <input type="number" name="priceChild" placeholder="{{__('admin_tour.child_note')}}"
                                                class="form-control {{$errors->has('child') ? 'is-invalid' :''}}">
                                         <div style="color: red">
                                             @error('child')

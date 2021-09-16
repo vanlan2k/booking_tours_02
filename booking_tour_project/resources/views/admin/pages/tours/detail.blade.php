@@ -9,7 +9,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form method="POST" action="{{ route('tour.update', $tour->id) }}">
+                    <form method="POST" action="{{ route('tour.update', [$tour->id]) }}">
                         @csrf
                         @method('PUT')
                         <div class="card-body">
@@ -33,17 +33,6 @@
                                         </option>
                                     @endforeach
                                 </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">{{__('admin_tour.address_tour')}}</label>
-                                <input type="text" class="form-control {{$errors->has('address') ? 'is-invalid' : ''}}"
-                                       name="address"
-                                       placeholder="{{__('admin_tour.address_note')}}" value="{{ $tour->address }}"/>
-                                <div style="color: red">
-                                    @error('address')
-                                    {{$message}}
-                                    @enderror
-                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="name">{{__('admin_tour.avata')}}</label>
@@ -76,18 +65,6 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="name">{{__('admin_tour.number')}}</label>
-                                <input type="number"
-                                       class="form-control {{$errors->has('number_date') ? 'is-invalid' : ''}}"
-                                       name="number_date"
-                                       placeholder="{{__('admin_tour.date_note')}}" value="{{ $tour->number_date }}"/>
-                                <div style="color: red">
-                                    @error('number_date')
-                                    {{$message}}
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="name">{{__('admin_tour.start')}}</label>
                                 <input type="date"
                                        class="form-control {{$errors->has('date_start') ? 'is-invalid' : ''}}"
@@ -115,22 +92,22 @@
                                 <div class="ml-3">
                                     <div class="">
                                         <label>{{__('admin_tour.adult')}}</label>
-                                        <input type="number" name="adult" placeholder="{{__('admin_tour.adult_note')}}"
-                                               value="{{getPriceAdmin($tour->tour_detail[1]->price)}}"
+                                        <input type="text" name="priceAdult" placeholder="{{__('admin_tour.adult_note')}}"
+                                               value="{{$tour->priceAdult}}"
                                                class="form-control {{$errors->has('adult') ? 'is-invalid' :''}}">
                                         <div style="color: red">
-                                            @error('ault')
+                                            @error('priceAdult')
                                             {{$message}}
                                             @enderror
                                         </div>
                                     </div>
                                     <div class="">
                                         <label>{{__('admin_tour.child')}}</label>
-                                        <input type="number" name="child" placeholder="{{__('admin_tour.child_note')}}"
-                                               value="{{getPriceAdmin($tour->tour_detail[0]->price)}}"
+                                        <input type="number" name="priceChild" placeholder="{{__('admin_tour.child_note')}}"
+                                               value="{{$tour->priceChild}}"
                                                class="form-control {{$errors->has('child') ? 'is-invalid' :''}}">
                                         <div style="color: red">
-                                            @error('child')
+                                            @error('priceChild')
                                             {{$message}}
                                             @enderror
                                         </div>
@@ -195,7 +172,7 @@
                                             @enderror
                                         </div>
                                         <textarea id="my-editor{{$key}}" name="program[]"
-                                                  class="form-control {{$errors->has('program.*') ? 'is-invalid' :''}}"
+                                                  class="form-control tour_route {{$errors->has('program.*') ? 'is-invalid' :''}}"
                                                   placeholder="Enter title program">{{$route->description}}</textarea>
                                         <div style="color: red">
                                             @error('program.*')

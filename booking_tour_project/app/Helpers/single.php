@@ -1,7 +1,7 @@
 <?php
 function getBTNSB()
 {
-    if (\Illuminate\Support\Facades\Auth::user() != null) {
+    if (Auth::user() != null) {
         return '<button class="btn btn-danger" >'.__('single.submit').'</button >';
     } else {
         return '<a href = "/login" class="btn btn-danger" >'.__('single.submit').'</a >';

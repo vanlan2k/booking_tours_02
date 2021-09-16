@@ -25,6 +25,6 @@ class ManagerCommentController extends Controller
         if (!$cmt){
             return abort(404);
         }
-        return cmt;
+        return $cmt;
     }
 }

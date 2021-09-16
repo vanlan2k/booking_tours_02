@@ -25,14 +25,12 @@ class TourRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'address' => 'required',
             'avata' => 'required',
             'description' => 'required',
-            'number_date' => 'required|numeric',
             'date_start' => 'required|date',
             'date_end' => 'required|date',
-            'adult' => 'required|numeric',
-            'child' => 'required|numeric',
+            'priceAdult' => 'required|numeric',
+            'priceChild' => 'required|numeric',
             'image.*' => 'required',
             'title.*' => 'required',
             'program.*' => 'required'

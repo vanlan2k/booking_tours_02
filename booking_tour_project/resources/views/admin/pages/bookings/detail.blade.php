@@ -50,16 +50,16 @@
                                 <tr>
                                     <td>1.</td>
                                     <td>{{__('admin_booking.adult')}}</td>
-                                    <td>{{getPriceAdmin($booking->booking_detail[0]->tour->tour_detail[0]->price)}}</td>
+                                    <td>{{getPriceAdmin($booking->booking_detail[0]->tour->priceAdult)}}</td>
                                     <td>{{$booking->booking_detail[0]->adult}}</td>
-                                    <td>{{getPriceAdmin($booking->booking_detail[0]->adult * $booking->booking_detail[0]->tour->tour_detail[0]->price)}}</td>
+                                    <td>{{getPriceAdmin($booking->booking_detail[0]->adult * $booking->booking_detail[0]->tourtour->priceAdult)}}</td>
                                 </tr>
                                 <tr>
                                     <td>2.</td>
                                     <td>{{__('admin_booking.child')}}</td>
-                                    <td>{{getPriceAdmin($booking->booking_detail[0]->tour->tour_detail[1]->price)}}</td>
+                                    <td>{{getPriceAdmin($booking->booking_detail[0]->tour->priceChild)}}</td>
                                     <td>{{$booking->booking_detail[0]->child}}</td>
-                                    <td>{{getPriceAdmin($booking->booking_detail[0]->child * $booking->booking_detail[0]->tour->tour_detail[1]->price)}}</td>
+                                    <td>{{getPriceAdmin($booking->booking_detail[0]->child * $booking->booking_detail[0]->tour->priceChild)}}</td>
                                 </tr>
                                 </tbody>
                                 <tr>

@@ -3,8 +3,7 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('dist/js/jquery-ui.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-</script>
+<script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->

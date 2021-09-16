@@ -17,12 +17,12 @@ class CreateToursTable extends Migration
             $table->id();
             $table->integer('cate_id')->unsigned();
             $table->string('name');
-            $table->string('address');
             $table->string('avata');
             $table->text('description');
-            $table->integer('number_date');
             $table->date('date_start');
             $table->date('date_end');
+            $table->decimal('priceChild', 20, 2);
+            $table->decimal('priceAdult', 20, 2);
             $table->double('rate')->default(5);
             $table->timestamps();
         });

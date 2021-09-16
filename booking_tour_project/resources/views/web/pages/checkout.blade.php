@@ -28,23 +28,27 @@
                                             <div class="col-6 d-flex">
                                                 <i class="fas fa-user-friends"></i>
                                                 <div class="pl-1"><h6>
-                                                        {{__('checkout.price')}}: {{getPrice($tour->tour_detail[1]->price)}}
-                                                        /{{__('single.per_adult')}}</h6></div>
+                                                        {{__('checkout.price')}}: {{getPrice($tour->priceAdult)}}
+                                                        /{{__('single.per_adult')}}
+                                                </h6></div>
                                             </div>
                                             <div class="col-6 d-flex">
                                                 <i class="fas fa-child"></i>
                                                 <div class="pl-1"><h6>
-                                                        {{__('checkout.price')}}: {{getPrice($tour->tour_detail[0]->price)}}
-                                                        /{{__('single.per_child')}}</h6></div>
+                                                        {{__('checkout.price')}}: {{getPrice($tour->priceChild)}}
+                                                        /{{__('single.per_child')}}
+                                                </h6></div>
                                             </div>
                                             <div class="col-6 d-flex">
                                                 <i class="far fa-calendar-alt"></i>
-                                                <div class="pl-1"><h6>{{__('checkout.date_st')}}: &nbsp;{{$tour->date_start}}</h6>
+                                                <div class="pl-1"><h6>{{__('checkout.date_st')}}:
+                                                        &nbsp;{{$tour->date_start}}</h6>
                                                 </div>
                                             </div>
                                             <div class="col-6 d-flex">
                                                 <i class="far fa-calendar-alt"></i>
-                                                <div class="pl-1"><h6>{{__('checkout.date_end')}}: &nbsp;{{$tour->date_end}}</h6>
+                                                <div class="pl-1"><h6>{{__('checkout.date_end')}}:
+                                                        &nbsp;{{$tour->date_end}}</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -69,7 +73,8 @@
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <div class="cus-num col-12">{{__('checkout.adult')}} ({{__('checkout.12_years')}})</div>
+                                    <div class="cus-num col-12">{{__('checkout.adult')}} ({{__('checkout.12_years')}})
+                                    </div>
                                     <div class="farm-cus">
                                         <label class="form-control">{{$cart->cart['qty_adult']}}</label>
                                     </div>
@@ -83,7 +88,8 @@
                                     </div>
                                 </div>
                                 <div class="col-12 mt-4 text-right">
-                                    <label>{{__('checkout.total_bill')}}<span class="price-total"> &nbsp;{{getPrice($cart->gettotal())}}</span></label>
+                                    <label>{{__('checkout.total_bill')}}<span
+                                            class="price-total"> &nbsp;{{getPrice($cart->gettotal())}}</span></label>
                                 </div>
                             </div>
                             <hr>
@@ -95,7 +101,8 @@
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="customRadio1" value="0" name="payment"
                                                    class="custom-control-input" checked>
-                                            <label class="custom-control-label" for="customRadio1">{{__('checkout.cash')}}</label>
+                                            <label class="custom-control-label"
+                                                   for="customRadio1">{{__('checkout.cash')}}</label>
                                             <label class="detail">
                                                 {{__('checkout.cash_note')}}
                                             </label>
@@ -103,7 +110,8 @@
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="customRadio2" name="payment" value="1"
                                                    class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio2">{{__('checkout.ATM')}}
+                                            <label class="custom-control-label"
+                                                   for="customRadio2">{{__('checkout.ATM')}}
                                                 Banking</label>
                                             <label class="detail">
                                                 {{__('checkout.ATM_note')}}
