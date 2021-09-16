@@ -10,6 +10,7 @@ return [
     'password' => 'Password',
     'forgot_pass' => 'Forgot Password ?',
     'profile' => 'Profile',
-    'logout' => 'Logout'
+    'logout' => 'Logout',
+    'your_review' => 'Your Review'
 ];
 ?>

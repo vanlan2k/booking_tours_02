@@ -56,7 +56,8 @@
                                     <div class="col-12 tour-name d-flex">
                                         <div class="col-4">{{__('checkout.qty')}}:</div>
                                         <div class="col-8">
-                                            {{$cart->cart['qty_adult'] + $cart->cart['qty_child']}}&nbsp;({{__('checkout.adult')}}:
+                                            {{$cart->cart['qty_adult'] + $cart->cart['qty_child']}}
+                                            &nbsp;({{__('checkout.adult')}}:
                                             &nbsp;{{$cart->cart['qty_adult']}} &nbsp;{{__('checkout.child')}}:
                                             &nbsp;{{$cart->cart['qty_child']}})
                                         </div>
@@ -130,3 +131,7 @@
         </div>
     </section>
 @endsection
+@push('script')
+    <script src="{{asset('dist/js/checkout_paypal.js')}}"></script>
+    <script src="{{asset('dist/js/paypal.js')}}"></script>
+@endpush

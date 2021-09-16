@@ -10,6 +10,7 @@ return [
     'password' => 'Mật Khẩu',
     'forgot_pass' => 'Quên Mật Khẩu ?',
     'profile' => 'Hồ Sơ',
-    'logout' => 'Đăng xuất'
+    'logout' => 'Đăng xuất',
+    'your_review' => 'Đánh giá của bạn'
 ];
 ?>
