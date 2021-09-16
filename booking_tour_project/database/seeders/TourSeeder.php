@@ -39,8 +39,7 @@ class TourSeeder extends Seeder
                 DB::table('tour_details')->insert([
                     'tour_id' => $i,
                     'price' => rand(1000000, 100000000),
-                    'age' => $j,
-                    'destination' => $province[rand(0,33)]
+                    'age' => $j
                 ]);
             }
         }

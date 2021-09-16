@@ -9,6 +9,16 @@ class Tour extends Model
 {
     use HasFactory;
     protected $table = 'tours';
+    protected $fillable = [
+        'cate_id',
+        'name',
+        'address',
+        'avata',
+        'description',
+        'number_date',
+        'date_start',
+        'date_end'
+    ];
     public function image(){
         return $this->hasMany(Image::class, 'tour_id', 'id');
     }

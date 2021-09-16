@@ -17,6 +17,7 @@ return [
     'total' => 'Tổng Cộng',
     'booking' => 'Đặt Vé',
     'submit' => 'Gửi',
-    'related_tours' => 'Các Chuyến Du Lịch Liên Quan'
+    'related_tours' => 'Các Chuyến Du Lịch Liên Quan',
+    'no_value' => 'Không có tour hiện hành'
 ];
 ?>

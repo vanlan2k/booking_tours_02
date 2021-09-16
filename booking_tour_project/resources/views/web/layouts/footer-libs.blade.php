@@ -6,7 +6,7 @@
 <script src="{{asset('dist/js/jquery.tweet.min.js')}}"></script>
 <script src="{{asset('dist/js/functions.js')}}"></script>
 <script src="{{asset('dist/js/fontawesome.min.js')}}"></script>
-
+<script src="{{asset('dist/js/select2.min.js')}}"></script>
 <script src="{{asset('dist/js/jquery-ui.js')}}"></script>
 <!-- SPECIFIC SCRIPTS -->
 <script src="{{asset('dist/layerslider/js/greensock.js')}}"></script>

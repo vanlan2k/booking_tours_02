@@ -17,6 +17,7 @@ return [
     'total' => 'Total',
     'booking' => 'Booking',
     'submit' => 'Submit',
-    'related_tours' => 'Related tours'
+    'related_tours' => 'Related tours',
+    'no_value' => 'No tour currently available'
 ];
 ?>

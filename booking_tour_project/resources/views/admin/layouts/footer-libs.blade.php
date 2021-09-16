@@ -1,14 +1,14 @@
 <!-- jQuery -->
-<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{asset('dist/js/jquery-2.2.4.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+<script src="{{asset('dist/js/jquery-ui.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->
-<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+<script src="{{asset('dist/js/chart.min.js')}}"></script>
 <!-- Sparkline -->
 <script src="{{ asset('plugins/sparklines/sparkline.js') }}"></script>
 <!-- JQVMap -->

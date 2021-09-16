@@ -8,6 +8,8 @@ return [
     'language' => 'Language',
     'email_phone' => 'Email or Phone',
     'password' => 'Password',
-    'forgot_pass' => 'Forgot Password ?'
+    'forgot_pass' => 'Forgot Password ?',
+    'profile' => 'Profile',
+    'logout' => 'Logout'
 ];
 ?>

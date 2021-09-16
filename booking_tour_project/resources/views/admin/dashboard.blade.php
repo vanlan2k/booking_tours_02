@@ -1,5 +1,4 @@
 @extends('admin.layouts.main')
-
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->

@@ -32,8 +32,9 @@
         <!-- End filters -->
 
 
-        <div class="container">
+        <div class="container mb-2">
             <div class="row">
+                @if($tours == null)
                 @foreach($tours as $tour)
                     <div class="col-md-4 col-sm-6 wow fadeIn animated" data-wow-delay="0.2s">
                         <div class="img_wrapper">
@@ -65,7 +66,9 @@
                     {{$tours->links('web.layouts.pagelist')}}
                 </nav>
                 <!-- End pagination -->
-
+                @else
+                <h3>{{__('single.no_value')}}</h3>
+                @endif
             </div>
             <!-- End row -->
         </div>

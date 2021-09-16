@@ -1,0 +1,221 @@
+@extends('admin.layouts.main')
+@section('content')
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-secondary">
+                    <div class="card-header">
+                        <h3 class="card-title">{{__('admin_tour.detail')}}</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form method="POST" action="{{ route('tour.update', $tour->id) }}">
+                        @csrf
+                        @method('PUT')
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="name">{{__('admin_tour.name')}}</label>
+                                <input type="text" class="form-control {{$errors->has('name') ? 'is-invalid' : ''}}"
+                                       name="name"
+                                       placeholder="{{__('admin_tour.name_note')}}" value="{{ $tour->name }}"/>
+                                <div style="color: red">
+                                    @error('name')
+                                    {{$message}}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="category">{{__('admin_tour.category')}}</label>
+                                <select class="custom-select" name="cate_id">
+                                    @foreach($categories as $category)
+                                        <option
+                                            value="{{$category->id}}" {{$category->id == $tour->cate_id ? 'selected' : ''}}>{{$category->name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">{{__('admin_tour.address_tour')}}</label>
+                                <input type="text" class="form-control {{$errors->has('address') ? 'is-invalid' : ''}}"
+                                       name="address"
+                                       placeholder="{{__('admin_tour.address_note')}}" value="{{ $tour->address }}"/>
+                                <div style="color: red">
+                                    @error('address')
+                                    {{$message}}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">{{__('admin_tour.avata')}}</label>
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                     <a data-input="thumbnail_avata" id="lfm_avata" data-preview="avata"
+                                        class="btn btn-primary">
+                                       <i class="fa fa-picture-o"></i> Choose
+                                     </a>
+                                    </span>
+                                    <input id="thumbnail_avata"
+                                           class="form-control {{$errors->has('avata') ? 'is-invalid' :''}}"
+                                           type="text" name="avata" value="{{$tour->avata}}">
+                                </div>
+                                <img id="avata" style="margin-top:15px;max-height:100px;" src="{{$tour->avata}}">
+                                <div style="color: red">
+                                    @error('avata')
+                                    {{$message}}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group" id="add-item">
+                                <label>{{__('admin_tour.description')}}</label>
+                                <textarea id="my-editor" name="description"
+                                          class="form-control {{$errors->has('description') ? 'is-invalid' : ''}}"
+                                          >{{ $tour->description }}</textarea>
+                                <div style="color: red">
+                                    @error('description')
+                                    {{$message}}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">{{__('admin_tour.number')}}</label>
+                                <input type="number"
+                                       class="form-control {{$errors->has('number_date') ? 'is-invalid' : ''}}"
+                                       name="number_date"
+                                       placeholder="{{__('admin_tour.date_note')}}" value="{{ $tour->number_date }}"/>
+                                <div style="color: red">
+                                    @error('number_date')
+                                    {{$message}}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">{{__('admin_tour.start')}}</label>
+                                <input type="date"
+                                       class="form-control {{$errors->has('date_start') ? 'is-invalid' : ''}}"
+                                       name="date_start"
+                                       placeholder="{{__('admin_tour.date_start')}}" value="{{ $tour->date_start }}"/>
+                                <div style="color: red">
+                                    @error('date_start')
+                                    {{$message}}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">{{__('admin_tour.end')}}</label>
+                                <input type="date" class="form-control {{$errors->has('date_end') ? 'is-invalid' : ''}}"
+                                       name="date_end"
+                                       placeholder="{{__('admin_tour.end_note')}}" value="{{ $tour->date_end }}"/>
+                                <div style="color: red">
+                                    @error('date_end')
+                                    {{$message}}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Price</label>
+                                <div class="ml-3">
+                                    <div class="">
+                                        <label>{{__('admin_tour.dault')}}</label>
+                                        <input type="number" name="adult" placeholder="{{__('admin_tour.adult_note')}}"
+                                               value="{{getPriceAdmin($tour->tour_detail[1]->price)}}"
+                                               class="form-control {{$errors->has('adult') ? 'is-invalid' :''}}">
+                                        <div style="color: red">
+                                            @error('ault')
+                                            {{$message}}
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <label>{{__('admin_tour.child')}}</label>
+                                        <input type="number" name="child" placeholder="{{__('admin_tour.child_note')}}"
+                                               value="{{getPriceAdmin($tour->tour_detail[0]->price)}}"
+                                               class="form-control {{$errors->has('child') ? 'is-invalid' :''}}">
+                                        <div style="color: red">
+                                            @error('child')
+                                            {{$message}}
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">{{__('admin_tour.list_img')}}</label>
+                                <div class="ml-3" id="add_img">
+                                    @foreach($tour->image as $key => $img)
+                                        <div class="list_img">
+                                            <label>{{__('admin_tour.img')}} #{{++$key}}</label>
+                                            <div class="input-group">
+                                            <span class="input-group-btn">
+                                             <a data-input="thumbnail{{$key}}" id="lfm{{$key}}"
+                                                data-preview="holder{{$key}}"
+                                                class="btn btn-primary">
+                                               <i class="fa fa-picture-o"></i> Choose
+                                             </a>
+                                            </span>
+                                                <input id="thumbnail{{$key}}"
+                                                       class="form-control {{$errors->has('avata') ? 'is-invalid' :''}}"
+                                                       type="text" name="image[]" value="{{$img->url}}">
+                                                <div class="form-group col-md-2 d-flex align-items-end add-button">
+                                                    <button type="button" onclick="clickAddImg()" class="btn btn-success btn-outline js-addSize">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <img id="holder{{$key}}" style="margin-top:15px;max-height:100px;" src="{{$img->url}}">
+                                            <div style="color: red">
+                                                @error('image.*')
+                                                {{$message}}
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="form-group" id="add_item">
+                                <label>{{__('admin_tour.program')}}</label>
+                                @foreach($tour->tour_route as $key => $route)
+                                    <div class="ml-3 program">
+                                        <label>{{__('admin_tour.pro_number')}}{{++$key}}</label>
+                                        <input type="text" name="title[]"
+                                               class="form-control mb-3 {{$errors->has('title.*') ? 'is-invalid' :''}}" value="{{$route->name}}">
+                                        <div style="color: red">
+                                            @error('title.*')
+                                            {{$message}}
+                                            @enderror
+                                        </div>
+                                        <textarea id="my-editor{{$key}}" name="program[]"
+                                                  class="form-control {{$errors->has('program.*') ? 'is-invalid' :''}}"
+                                                  placeholder="Enter title program">{{$route->description}}</textarea>
+                                        <div style="color: red">
+                                            @error('program.*')
+                                            {{$message}}
+                                            @enderror
+                                        </div>
+                                        <div class="form-group col-md-3 mt-3 d-flex align-items-end add-button">
+                                            <div onclick="clickAddElementFunction()"
+                                                 class="btn btn-success btn-outline js-addSize"
+                                                 style="display: block;height: 40px;">{{__('admin_tour.add_cl')}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">{{__('admin_tour.save')}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+@push('script')
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script type="text/javascript" src="{{asset('dist/js/admin_tour.js')}}"></script>
+    <script type="text/javascript" src="{{asset('dist/js/file_manager.js')}}">
+    </script>
+@endpush

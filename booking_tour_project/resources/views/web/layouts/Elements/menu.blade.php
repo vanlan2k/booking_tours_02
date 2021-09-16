@@ -51,13 +51,15 @@
                                     <a href="/login">{{__('menu.singin')}}</a>
                                 </li>
                                 <li>
-                                    <a href="/register">{{__('menu.register')}}</a>
+                                    <a href="{{route('register.index')}}">{{__('menu.register')}}</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" data-toggle="dropdown" href="#">{{__('menu.language')}}</a>
                                     <div class="dropdown-menu dropdown-menu-right p-0">
-                                        <a href="/language/en" class="dropdown-item {{session()->get('language') == 'en' ? 'active' : ''}}">English</a>
-                                        <a href="/language/vi" class="dropdown-item {{session()->get('language') == 'vi' ? 'active' : ''}}">VietNamese</a>
+                                        <a href="/language/en"
+                                           class="dropdown-item {{session()->get('language') == 'en' ? 'active' : ''}}">English</a>
+                                        <a href="/language/vi"
+                                           class="dropdown-item {{session()->get('language') == 'vi' ? 'active' : ''}}">VietNamese</a>
                                     </div>
                                 </li>
                             @else
@@ -65,21 +67,23 @@
                                     <a class="nav-link " data-toggle="dropdown" href="#" role="button"
                                        aria-haspopup="true"
                                        aria-expanded="false">
-                                        <img src="{{\Illuminate\Support\Facades\Auth::user()->avata != null ? \Illuminate\Support\Facades\Auth::user()->avata : asset('dist/img/icon_person.jpg')}}" alt="thumb"
+                                        <img src="{{getAvata()}}" alt="thumb"
                                              class="img-rounded avata">&nbsp;{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="{{route('profile.index')}}">{{__('menu.profile')}}</a>
                                         <a class="dropdown-item" href="#">Another action</a>
                                         <a class="dropdown-item" href="#">Something else here</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="/logout">Sign Out</a>
+                                        <a class="dropdown-item" href="/logout">{{__('menu.logout')}}</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" data-toggle="dropdown" href="#">{{__('menu.language')}}</a>
                                     <div class="dropdown-menu dropdown-menu-right p-0">
-                                        <a href="/language/en" class="dropdown-item {{session()->get('language') == 'en' ? 'active' : ''}}">English</a>
-                                        <a href="/language/vi" class="dropdown-item {{session()->get('language') == 'vi' ? 'active' : ''}}">VietNamese</a>
+                                        <a href="/language/en"
+                                           class="dropdown-item {{session()->get('language') == 'en' ? 'active' : ''}}">English</a>
+                                        <a href="/language/vi"
+                                           class="dropdown-item {{session()->get('language') == 'vi' ? 'active' : ''}}">VietNamese</a>
                                     </div>
                                 </li>
                             @endif
