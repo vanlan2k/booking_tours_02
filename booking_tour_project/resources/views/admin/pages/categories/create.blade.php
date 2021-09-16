@@ -14,7 +14,8 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">{{__('admin_cate.name')}}</label>
-                                <input type="text" class="form-control {{$errors->has('name') ? 'is-invalid' : ''}}" name="name" id="username"
+                                <input type="text" class="form-control {{$errors->has('name') ? 'is-invalid' : ''}}"
+                                       name="name" id="username"
                                        placeholder="{{__('admin_cate.name_note')}}" value="{{ old('name') }}"/>
                                 <div style="color: red">
                                     @error('name')
@@ -22,9 +23,15 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="category">{{__('admin_cate.category')}}</label>
+                                <select class="custom-select" name="parent_id">
+                                    <option value="0">{{__('admin_cate.null')}}</option>
+                                    {{showCategories($categories)}}
+                                </select>
+                            </div>
                         </div>
                         <!-- /.card-body -->
-
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">{{__('single.submit')}}</button>
                         </div>

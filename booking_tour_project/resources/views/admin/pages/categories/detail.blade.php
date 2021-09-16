@@ -23,6 +23,13 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="category">{{__('admin_cate.category')}}</label>
+                                <select class="custom-select" name="parent_id">
+                                    <option value="0">{{__('admin_cate.null')}}</option>
+                                    {{showCategories($categories)}}
+                                </select>
+                            </div>
                         </div>
                         <!-- /.card-body -->
 

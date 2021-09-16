@@ -147,6 +147,7 @@
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/paragonie/sodium_compat" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/pusher/pusher-php-server" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/maatwebsite/excel" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7" />

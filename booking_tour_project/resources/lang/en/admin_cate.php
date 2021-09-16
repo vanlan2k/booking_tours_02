@@ -9,5 +9,7 @@ return [
     'name' => 'Name Category',
     'name_note' => 'Enter name category',
     'create' => 'Create New Category',
-    'detail' => 'Detail Category'
+    'detail' => 'Detail Category',
+    'category' => 'Category Parent',
+    'null' => 'No'
 ];

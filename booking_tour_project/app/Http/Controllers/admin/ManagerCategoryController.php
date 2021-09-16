@@ -18,7 +18,7 @@ class ManagerCategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('id', 'DESC')->paginate(10);
+        $categories = Category::paginate(10);
         $data['categories'] = $categories;
         return view('admin.pages.categories.list')->with($data);
     }
@@ -30,7 +30,9 @@ class ManagerCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.categories.create');
+        $categories = Category::all();
+        $data['categories'] = $categories;
+        return view('admin.pages.categories.create')->with($data);
     }
 
     /**
@@ -58,6 +60,8 @@ class ManagerCategoryController extends Controller
      */
     public function show($id)
     {
+        $categories = Category::all();
+        $data['categories'] = $categories;
         $cate = $this->findCategories($id);
         $data['category'] = $cate;
         return view('admin.pages.categories.detail')->with($data);
@@ -69,7 +73,7 @@ class ManagerCategoryController extends Controller
         try {
             $cate = $this->findCategories($id);
             $cate->fill($input);
-            $save_cat = $cate->save();
+            $cate->save();
             return redirect()->back()->with(['success' => __('admin_cate.ud_cc')]);
         } catch (Exception $e) {
             return redirect()->back()->with(['error' => __('admin_cate.ud_fail')]);

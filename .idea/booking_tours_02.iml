@@ -28,6 +28,8 @@
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/paypal/rest-api-sdk-php" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/phpoffice/phpspreadsheet" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/pusher/pusher-php-server" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/paypal/rest-api-sdk-php" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/phpoffice/phpspreadsheet" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/unisharp/laravel-filemanager" />
     </content>
     <orderEntry type="inheritedJdk" />
