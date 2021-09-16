@@ -1,4 +1,4 @@
-<!-- Google Font: Source Sans Pro -->
+;<!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
 <!-- Ionicons -->
@@ -20,7 +20,7 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<link rel="stylesheet" href="{{asset('dist/css/toastr.min.css')}}">
 
 <!-- xEditalbe -->
 <link rel="stylesheet" href="{{ asset('dist/js/libs/xeditable/bootstrap-editable.css') }}"/>
