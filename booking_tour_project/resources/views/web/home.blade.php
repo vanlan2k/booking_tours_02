@@ -173,7 +173,8 @@
                 <div class="box_how">
                     <div class="icon_how"><span class="icon_set_1_icon-92"></span></div>
                     <h4>{{__('home.certifcate')}}</h4>
-                    <p>Lorem ipsum dolor sit amet, et cum civibus referrentur, at propriae forensibus qui. Duo aliquip necessitatibus ne.</p>
+                    <p>Lorem ipsum dolor sit amet, et cum civibus referrentur, at propriae forensibus qui. Duo aliquip
+                        necessitatibus ne.</p>
                 </div>
             </div>
         </div>
@@ -218,7 +219,8 @@
                                             <h4>Roberta<small>12 October 2015</small></h4>
                                         </div>
                                         <div class="comment">
-                                            "No nam indoctum accommodare, vix ei discere civibus philosophia. Vis ea dicant diceret ocurreret."
+                                            "No nam indoctum accommodare, vix ei discere civibus philosophia. Vis ea
+                                            dicant diceret ocurreret."
                                         </div>
                                     </div>
                                 </div>

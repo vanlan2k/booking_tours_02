@@ -70,9 +70,7 @@
                                         <img src="{{getAvata()}}" alt="thumb"
                                              class="img-rounded avata">&nbsp;{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">{{__('menu.profile')}}</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="{{route('profile.index')}}">{{__('menu.profile')}}</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="/logout">{{__('menu.logout')}}</a>
                                     </div>

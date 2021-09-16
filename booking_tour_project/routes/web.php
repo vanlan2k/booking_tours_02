@@ -25,6 +25,7 @@ Route::get('/payment', [\App\Http\Controllers\web\CheckoutController::class, 'pa
 Route::post('/comment/{id}', [\App\Http\Controllers\web\RatingCommentController::class, 'comment']);
 Route::post('/loadmore', [\App\Http\Controllers\web\LoadMoreController::class, 'review']);
 Route::resource('/search', \App\Http\Controllers\web\SearchController::class);
+Route::resource('/profile', \App\Http\Controllers\web\ProfileController::class);
 
 Route::get('/login', [\App\Http\Controllers\web\auth\LoginController::class, 'index'])->name('loginUser');
 Route::post('/login', [\App\Http\Controllers\web\auth\LoginController::class, 'login']);
@@ -40,4 +41,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.home');
         Route::get('/admin/logout', [\App\Http\Controllers\admin\Auth\LoginController::class, 'logout'])->name('auth.logout');
     });
+});
+
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
 });

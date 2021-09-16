@@ -16,6 +16,10 @@ return [
     'submit' => 'Submit',
     'regis_fail' => 'Register account fail!',
     'regis_succsess'=> 'Register account succeccfully!',
-    'email_phone' => 'Registered email or phone number'
+    'email_phone' => 'Registered email or phone number',
+    'address' => 'Address',
+    'address_note' => 'Enter your address',
+    'update_ss' => 'Update proflie successfully!',
+    'update_f' => 'Update profile fail!'
     ];
 ?>
