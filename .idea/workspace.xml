@@ -24,15 +24,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ef466b3-d8d9-4d8f-b70f-b68134b604d4" name="Default Changelist" comment="">
+    <list default="true" id="6b11fe1f-3a67-4cb3-ba74-e51dd50f7d5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/BookingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/Elements/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/Elements/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/single.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/single.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkinfo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkinfo.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +158,8 @@
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/unisharp/laravel-filemanager" />
     </include_path>
   </component>
   <component name="ProjectId" id="1yJOcWoUsMSpQa5fz2Zr1c3rCYc" />
@@ -170,7 +171,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -184,7 +185,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2ef466b3-d8d9-4d8f-b70f-b68134b604d4" name="Default Changelist" comment="" />
+      <changelist id="6b11fe1f-3a67-4cb3-ba74-e51dd50f7d5d" name="Default Changelist" comment="" />
       <created>1631966303902</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -196,6 +197,11 @@
       <workItem from="1632017015918" duration="476000" />
       <workItem from="1632025984997" duration="11410000" />
       <workItem from="1632394949816" duration="8571000" />
+      <workItem from="1632532051607" duration="28597000" />
+      <workItem from="1632642349516" duration="340000" />
+      <workItem from="1632642743869" duration="9000" />
+      <workItem from="1632642798125" duration="44000" />
+      <workItem from="1632642886787" duration="26000" />
     </task>
     <servers />
   </component>
@@ -215,9 +221,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="579" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1632583024681">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="579" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1632583024681" />
     <state x="477" y="147" width="581" height="530" key="find.popup" timestamp="1632040728823">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="147" width="581" height="530" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1632040728823" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1632411501526">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1632411501526" />
   </component>
 </project>

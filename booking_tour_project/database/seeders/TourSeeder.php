@@ -30,6 +30,7 @@ class TourSeeder extends Seeder
                 'address' => $province[rand(0,33)],
                 'avata' => 'http://localhost:8000/dist/img/tour_list_1.jpg',
                 'description' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh...',
+                'number_date' => rand(2,10),
                 'date_start' => Carbon::now(),
                 'date_end' => Carbon::parse('2022-01-01'),
                 'rate' => 10

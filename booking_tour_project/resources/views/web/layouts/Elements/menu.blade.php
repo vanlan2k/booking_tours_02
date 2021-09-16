@@ -51,7 +51,7 @@
                                     <a href="/login">{{__('menu.singin')}}</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">{{__('menu.register')}}</a>
+                                    <a href="/register">{{__('menu.register')}}</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" data-toggle="dropdown" href="#">{{__('menu.language')}}</a>
@@ -65,8 +65,8 @@
                                     <a class="nav-link " data-toggle="dropdown" href="#" role="button"
                                        aria-haspopup="true"
                                        aria-expanded="false">
-                                        <img src="http://localhost:8000/dist/img/tour_list_1.jpg" alt="thumb"
-                                             class="img-rounded" style="width: 25px;height: 25px;border-radius: 50%;">&nbsp;{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
+                                        <img src="{{\Illuminate\Support\Facades\Auth::user()->avata != null ? \Illuminate\Support\Facades\Auth::user()->avata : asset('dist/img/icon_person.jpg')}}" alt="thumb"
+                                             class="img-rounded avata">&nbsp;{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="#">Action</a>
                                         <a class="dropdown-item" href="#">Another action</a>

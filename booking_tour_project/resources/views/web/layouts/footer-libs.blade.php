@@ -1,10 +1,12 @@
 <script src="{{asset('dist/js/jquery-2.2.4.min.js')}}"></script>
 <script src="{{asset('dist/js/popper.min.js')}}"></script>
 <script src="{{asset('dist/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('dist/js/common_scripts_min.js')}}"></script>
 <script src="{{asset('dist/js/validate.js')}}"></script>
+<script src="{{asset('dist/js/common_scripts_min.js')}}"></script>
 <script src="{{asset('dist/js/jquery.tweet.min.js')}}"></script>
 <script src="{{asset('dist/js/functions.js')}}"></script>
+<script src="{{asset('dist/js/fontawesome.min.js')}}"></script>
+
 <script src="{{asset('dist/js/jquery-ui.js')}}"></script>
 <!-- SPECIFIC SCRIPTS -->
 <script src="{{asset('dist/layerslider/js/greensock.js')}}"></script>
@@ -15,7 +17,7 @@
     $('#date_pick').datepicker();
 </script>
 <script src="{{asset('dist/js/sidebar_carousel_detail_page_func.js')}}"></script>
-<script src="{{asset('dist/js/map.js')}}"></script>
+{{--<script src="{{asset('dist/js/map.js')}}"></script>--}}
 <script type="text/javascript">
     'use strict';
     $('#layerslider').layerSlider({

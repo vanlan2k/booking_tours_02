@@ -20,7 +20,7 @@
 <link href="{{asset('dist/css/responsive.css')}}" rel="stylesheet">
 <link href="{{asset('dist/css/menu.css')}}" rel="stylesheet">
 <link href="{{asset('dist/css/icon_fonts/css/all_icons.min.css')}}" rel="stylesheet">
-
+<link href="{{asset('dist/css/fontawesome.min.css')}}" rel="stylesheet">
 <!-- SPECIFIC CSS -->
 <link href="{{asset('dist/layerslider/css/layerslider.css')}}" rel="stylesheet">
 
@@ -33,4 +33,3 @@
 <![endif]-->
 <link rel="stylesheet" href="{{asset('dist/css/toastr.min.css')}}">
 <link rel="stylesheet" href="{{asset('dist/css/jquery-ui.css')}}">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />

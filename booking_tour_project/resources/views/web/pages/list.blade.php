@@ -38,7 +38,7 @@
                     <div class="col-md-4 col-sm-6 wow fadeIn animated" data-wow-delay="0.2s">
                         <div class="img_wrapper">
                             <div class="price_grid">
-                                ₫{{number_format($tour->tour_detail[1]->price, 0, ',', '.')}}
+                                {{getPrice($tour->tour_detail[1]->price)}}
                             </div>
                             <div class="img_container">
                                 <a href="/single/{{$tour->id}}">

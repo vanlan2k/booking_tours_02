@@ -520,7 +520,7 @@ li.tg-rss a { background:#ff6600; }
 }
 .tg-stars:before { content: '\f006 \f006 \f006 \f006 \f006'; }
 .tg-stars span {
-	overflow: hidden;
+    overflow: hidden;
 }
 .tg-stars span:after { color:#000; }
 .row.no-gutters {
@@ -853,11 +853,11 @@ li.tg-rss a { background:#ff6600; }
 .tg-cartsearch ul li { border-left: 1px solid #414150; }
 .tg-cartsearch ul li a { width: 50px; }
 .tg-navigationarea {
-	width: 100%;
-	float: left;
-	padding: 0 0 0 30px;
-	text-align:center;
-	position: relative;
+    width: 100%;
+    float: left;
+    padding: 0 0 0 30px;
+    text-align:center;
+    position: relative;
 }
 .tg-headerfixed.scroll-to-fixed-fixed{background: #fff;}
 .tg-logo {
@@ -1380,12 +1380,13 @@ li.tg-rss a { background:#ff6600; }
     display: block;
 }
 .tg-tourdestination figcaption .tg-description { padding: 20px 0 0; }
+
 .tg-tourdestination figcaption .tg-description p {
-	margin: 0;
-	font-size: 16px;
-	font-weight: 300;
-	line-height: 16px;
-	text-transform: uppercase;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    text-transform: uppercase;
 }
 .tg-head{
     width:100%;
@@ -1611,11 +1612,11 @@ li.tg-rss a { background:#ff6600; }
     vertical-align: middle;
 }
 .tg-destinations li a h3 {
-margin: 0;
-color: #000;
-font-size: 16px;
-font-weight: 600;
-line-height: 16px;
+    margin: 0;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
 }
 .tg-destinations {
     width: 100%;
@@ -2828,11 +2829,11 @@ line-height: 16px;
     margin: 0 0 130px;
 }
 .tg-findtourvfive {
-padding: 40px;
-background: #fff;
-margin: -65px 0 0;
--webkit-box-shadow: 0 0 15px 2px rgba(0,0,0,0.20);
-box-shadow: 0 0 15px 2px rgba(0,0,0,0.20);
+    padding: 40px;
+    background: #fff;
+    margin: -65px 0 0;
+    -webkit-box-shadow: 0 0 15px 2px rgba(0,0,0,0.20);
+    box-shadow: 0 0 15px 2px rgba(0,0,0,0.20);
 }
 .tg-innerbanner .tg-sectionspace {
     color: #fff;
@@ -3019,11 +3020,11 @@ box-shadow: 0 0 15px 2px rgba(0,0,0,0.20);
     font: 600 42px/32px 'Montserrat', Arial, Helvetica, sans-serif;
 }
 .tg-pkgplanprice sup {
-top: 0;
-font-size: 16px;
-line-height: 16px;
-padding: 0 5px 0 0;
-vertical-align: top;
+    top: 0;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 0 5px 0 0;
+    vertical-align: top;
 }
 .tg-contactinfo {
     width: 100%;
@@ -3710,10 +3711,10 @@ blockquote{
 }
 .tg-404errorcontent .tg-description{margin:0 0 50px;}
 .tg-404errorcontent .tg-description p{
-margin:0;
-color:#fff;
-font-size:15px;
-line-height:15px;
+    margin:0;
+    color:#fff;
+    font-size:15px;
+    line-height:15px;
 }
 .tg-productdetail{
     width:100%;
@@ -4258,12 +4259,12 @@ line-height:15px;
 }
 .tg-tourname .tg-tourduration{margin:0;}
 .tg-btnedit{
-top:0;
-right:0;
-font-size:12px;
-line-height:12px;
-display:block;
-position:absolute;
+    top:0;
+    right:0;
+    font-size:12px;
+    line-height:12px;
+    display:block;
+    position:absolute;
 }
 .tg-billingdetail{
     width:100%;
@@ -4733,12 +4734,12 @@ body.tg-comingsoonpage .tg-main:before{
 }
 .tg-search .tg-btn{background:transparent;}
 .tg-search.open {
-	-webkit-transform: translate(0px, 0px) scale(1, 1);
-	-moz-transform: translate(0px, 0px) scale(1, 1);
-	-o-transform: translate(0px, 0px) scale(1, 1);
-	-ms-transform: translate(0px, 0px) scale(1, 1);
-	transform: translate(0px, 0px) scale(1, 1);
-	opacity: 1;
+    -webkit-transform: translate(0px, 0px) scale(1, 1);
+    -moz-transform: translate(0px, 0px) scale(1, 1);
+    -o-transform: translate(0px, 0px) scale(1, 1);
+    -ms-transform: translate(0px, 0px) scale(1, 1);
+    transform: translate(0px, 0px) scale(1, 1);
+    opacity: 1;
 }
 .tg-search form{
     width:100%;
@@ -5162,9 +5163,9 @@ body.tg-hidescroll{overflow:hidden;}
     100% {top:0; }
 }
 @-moz-keyframes mapping{
-0% {top: 0;}
-50%{top: -5px;}
-100% {top:0; }
+    0% {top: 0;}
+    50%{top: -5px;}
+    100% {top:0; }
 }
 .minus, .plus{
     width:30px;

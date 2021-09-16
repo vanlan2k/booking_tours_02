@@ -18,7 +18,9 @@ class CreateBookingsTable extends Migration
             $table->integer('customer_id')->unsigned();
             $table->decimal('total', 20, 2);
             $table->integer('status');
+            $table->integer('booking_no');
             $table->date('booking_date');
+            $table->boolean('payment');
             $table->timestamps();
         });
     }

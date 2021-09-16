@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\web\BookingController;
+use \App\Http\Controllers\web\auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +18,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\web\HomeController::class, 'index'])->name('home');
 Route::get('/single/{id}', [\App\Http\Controllers\web\SingleController::class, 'index'])->name('single');
 Route::get('/tour', [\App\Http\Controllers\web\TourController::class, 'index'])->name('tour');
+Route::resource('/booking', BookingController::class);
+Route::get('/checkout', [\App\Http\Controllers\web\CheckoutController::class, 'index'])->name('checkout');
+Route::post('/payment', [\App\Http\Controllers\web\CheckoutController::class, 'paymentPost']);
+Route::get('/payment', [\App\Http\Controllers\web\CheckoutController::class, 'payment'])->name('payment');
 
-
-Route::get('/login', [\App\Http\Controllers\web\auth\LoginController::class, 'index'])->name('loginUser');
-Route::post('/login', [\App\Http\Controllers\web\auth\LoginController::class, 'login']);
-Route::get('/logout', [\App\Http\Controllers\web\auth\LoginController::class, 'logout']);
+Route::get('/login', [LoginController::class, 'index'])->name('loginUser');
+Route::post('/login', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/language/{lang}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage']);
 /*admin*/
@@ -29,6 +34,6 @@ Route::post('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::c
 Route::middleware(['auth'])->group(function () {
     Route::group(['middleware' => 'checkAdmin:1'], function () {
         Route::get('/admin/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.home');
-        Route::get('/admin/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('auth.logout');
+        Route::get('/admin/logout', [\App\Http\Controllers\admin\Auth\LoginController::class, 'logout'])->name('auth.logout');
     });
 });
