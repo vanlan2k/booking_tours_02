@@ -119,9 +119,8 @@
                             </div>
                             <div class="col-12 text-center mt-5">
                                 @if($booking->payment == 1)
-                                <button class="bg-primary text-white h5 border-0 p-4">
-                                    {{__('checkout.make_pay')}} <i class="fas fa-arrow-right"></i>
-                                </button>
+                                    <div id="paypal-button"></div>
+                                    <input type="hidden" id="input_total" value="{{round($booking->total/23000, 2)}}">
                                 @endif
                             </div>
                         </div>

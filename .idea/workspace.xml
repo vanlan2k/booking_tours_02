@@ -55,6 +55,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/booking_tours_02.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/booking_tours_02.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/footer-libs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/footer-libs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkinfo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkinfo.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/admin/auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/admin/auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Providers/AppServiceProvider.php" afterDir="false" />
@@ -196,6 +198,14 @@
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/unisharp/laravel-filemanager" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/league/oauth1-client" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/paypal/paypal-checkout-sdk" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/paypal/paypalhttp" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/hanneskod/classtools" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/bensampo/laravel-enum" />
     </include_path>
   </component>
   <component name="ProjectId" id="1yJOcWoUsMSpQa5fz2Zr1c3rCYc" />
@@ -279,6 +289,7 @@
       <workItem from="1633529387339" duration="2342000" />
       <workItem from="1633573106397" duration="2745000" />
       <workItem from="1633268656977" duration="2599000" />
+      <workItem from="1633746202490" duration="1370000" />
     </task>
     <servers />
   </component>
