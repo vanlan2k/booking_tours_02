@@ -27,9 +27,9 @@ Route::post('/loadmore', [\App\Http\Controllers\web\LoadMoreController::class, '
 Route::resource('/search', \App\Http\Controllers\web\SearchController::class);
 Route::resource('/profile', \App\Http\Controllers\web\ProfileController::class);
 
-Route::get('/login', [\App\Http\Controllers\web\auth\LoginController::class, 'index'])->name('loginUser');
-Route::post('/login', [\App\Http\Controllers\web\auth\LoginController::class, 'login']);
-Route::get('/logout', [\App\Http\Controllers\web\auth\LoginController::class, 'logout']);
+Route::get('/login', [LoginController::class, 'index'])->name('loginUser');
+Route::post('/login', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout']);
 Route::resource('/register', \App\Http\Controllers\web\RegisterController::class);
 
 Route::get('/language/{lang}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage']);
@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::group(['middleware' => 'checkAdmin:1'], function () {
         Route::get('/admin/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.home');
         Route::get('/admin/logout', [\App\Http\Controllers\admin\Auth\LoginController::class, 'logout'])->name('auth.logout');
+        Route::resource('/admin/user',\App\Http\Controllers\admin\UserController::class);
     });
 });
 

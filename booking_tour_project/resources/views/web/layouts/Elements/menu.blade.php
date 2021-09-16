@@ -68,7 +68,7 @@
                                        aria-haspopup="true"
                                        aria-expanded="false">
                                         <img src="{{getAvata()}}" alt="thumb"
-                                             class="img-rounded avata">&nbsp;{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
+                                             class="img-rounded avata">&nbsp;{{Auth::user()->name}}</a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('profile.index')}}">{{__('menu.profile')}}</a>
                                         <div class="dropdown-divider"></div>

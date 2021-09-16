@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin\auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use \App\Http\Requests\web\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -11,22 +11,18 @@ class LoginController extends Controller
     public function index(){
         return view('admin.auth.login');
     }
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        $credentials = $this->validate(request(),[
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
-        /*Check thông tin*/
+        $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            /*lưu thông tin đăng nhập*/
             $request->session()->regenerate();
-            return redirect()->intended('admin/')->with(['success' => 'Login success']);
+            return redirect()->intended('/admin/')->with(['success' => __('message.login_success')]);
         }
-        return redirect()->back()->with(['error' => "Unable to login, please check your login information"]);
+        return redirect()->route('loginAdmin')->withErrors([
+            'message' => __('message.login_fail')
+        ]);
     }
     public function logout() {
-        //logout
         Auth::logout();
         session()->flush();
         return redirect()->route('auth.login');

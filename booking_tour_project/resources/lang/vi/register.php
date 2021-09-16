@@ -20,6 +20,7 @@ return [
     'address' => 'Địa Chỉ',
     'address_note' => 'Nhập địa chỉ',
     'update_ss' => 'Cập nhật hồ sơ thành công!',
-    'update_f' => 'Cập nhật hồ sơ không thành công!'
+    'update_f' => 'Cập nhật hồ sơ không thành công!',
+    'title_user' => 'Tạo Mới Người Dùng'
 ];
 ?>

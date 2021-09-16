@@ -72,7 +72,6 @@
         };
         $image.cropper(options);
     });
-
     function changeAspectRatio(_this, aspectRatio) {
         options.aspectRatio = aspectRatio;
         $('.btn-aspectRatio.active').removeClass('active');

@@ -20,6 +20,7 @@ return [
     'address' => 'Address',
     'address_note' => 'Enter your address',
     'update_ss' => 'Update proflie successfully!',
-    'update_f' => 'Update profile fail!'
-    ];
+    'update_f' => 'Update profile fail!',
+    'title_user' => 'Create New User',
+];
 ?>
