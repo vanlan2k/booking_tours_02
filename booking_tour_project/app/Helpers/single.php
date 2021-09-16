@@ -7,10 +7,3 @@ function getBTNSB()
         return '<a href = "/login" class="btn btn-danger" >'.__('single.submit').'</a >';
     }
 }
-function forRate(){
-    $rate = '';
-    for ($i = 1; $i <= 5; $i++){
-        $rate .= '<option value="'.$i.'">'.$i.'</option>';
-    }
-    return $rate;
-}

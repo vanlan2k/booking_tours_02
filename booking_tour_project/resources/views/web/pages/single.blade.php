@@ -16,14 +16,10 @@
         <div class="container">
             <div class="row" id="tab">
                 <div class="col-md-7">
-
                     <div class="owl-carousel add_bottom_15">
-                        <div class="item"><img src="{{asset('dist/img/carousel/carousel_in_1.jpg')}}" alt="">
-                        </div>
-                        <div class="item"><img src="{{asset('dist/img/carousel/carousel_in_2.jpg')}}" alt="">
-                        </div>
-                        <div class="item"><img src="{{asset('dist/img/carousel/carousel_in_3.jpg')}}" alt="">
-                        </div>
+                        @foreach($tour->image as $img)
+                            <div class="item"><img src="{{$img->url}}" alt=""></div>
+                        @endforeach
                     </div>
 
                     <ul class="nav nav-tabs">
@@ -36,85 +32,18 @@
                     <div class="tab-content">
                         <div class="tab-pane in active" id="tab_1">
 
-                            <p>{{$tour->description}}</p>
+                            <p>{!! $tour->description !!}</p>
                             <hr>
 
-                            <h3>Program <span>(4 days)</span></h3>
-                            <p>
-                                Iudico omnesque vis at, ius an laboramus adversarium. An eirmod doctus admodum est, vero
-                                numquam et mel, an duo modo error. No affert timeam mea, legimus ceteros his in. Aperiri
-                                honestatis sit at. Eos aeque fuisset ei, case denique eam ne. Augue invidunt has ad,
-                                ullum debitis mea ei, ne aliquip dignissim nec.
-                            </p>
-                            <ul>
-                                <li>
-                                    <div>
-                                        1
+                            <h3>Program <span>({{count($tour->tour_route)}} days)</span></h3>
+                            <div class="row pl-4 mt-4   ">
+                                @foreach($tour->tour_route as $route)
+                                    <h6 class=""><u>{{$route->name}}</u></h6>
+                                    <div class="col-12 justify-content-between">
+                                        {!! $route->description !!}
                                     </div>
-                                    <div>
-                                        <div class="hidden-xs">
-                                            <img src="img/tour_plan_1.jpg" alt="" class="img-circle thumb_visit">
-                                        </div>
-                                        <h4>Augue invidunt has</h4>
-                                        <p>
-                                            Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu.
-                                            Ius diam vivendo ne.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <time class="cbp_tmtime" datetime="11:30"><span>2 hours</span><span>11:30</span>
-                                    </time>
-                                    <div class="cbp_tmicon">
-                                        2
-                                    </div>
-                                    <div class="cbp_tmlabel">
-                                        <div class="hidden-xs">
-                                            <img src="img/tour_plan_2.jpg" alt="" class="img-circle thumb_visit">
-                                        </div>
-                                        <h4>An eirmod doctus admodum</h4>
-                                        <p>
-                                            Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu.
-                                            Ius diam vivendo ne.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <time class="cbp_tmtime" datetime="13:30"><span>1 hour</span><span>13:30</span>
-                                    </time>
-                                    <div class="cbp_tmicon">
-                                        3
-                                    </div>
-                                    <div class="cbp_tmlabel">
-                                        <div class="hidden-xs">
-                                            <img src="img/tour_plan_3.jpg" alt="" class="img-circle thumb_visit">
-                                        </div>
-                                        <h4>Eos aeque fuisset</h4>
-                                        <p>
-                                            Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu.
-                                            Ius diam vivendo ne.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <time class="cbp_tmtime" datetime="14:30"><span>2 hours</span><span>14:30</span>
-                                    </time>
-                                    <div class="cbp_tmicon">
-                                        4
-                                    </div>
-                                    <div class="cbp_tmlabel">
-                                        <div class="hidden-xs">
-                                            <img src="img/tour_plan_4.jpg" alt="" class="img-circle thumb_visit">
-                                        </div>
-                                        <h4>No affert timeam mea</h4>
-                                        <p>
-                                            Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu.
-                                            Ius diam vivendo ne.
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-
+                                @endforeach
+                            </div>
                         </div>
                         <!-- End tab_1 -->
 
@@ -159,6 +88,24 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label>{{__('single.your_review')}}</label>
+                                        <textarea name="comment" class="form-control"
+                                                  style="height:130px;"></textarea>
+                                    </div>
+                                    <div style="color: red" class="form-group">
+                                        @error('comment')
+                                        {{$message}}
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        {!! getBTNSB() !!}
+                                    </div>
+                                    <div style="color: red" class="form-group">
+                                        @error('rating')
+                                        {{$message}}
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Your Review</label>
                                         <textarea name="comment" class="form-control"
                                                   style="height:130px;"></textarea>
                                     </div>

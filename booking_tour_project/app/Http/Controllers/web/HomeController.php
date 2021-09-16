@@ -12,8 +12,9 @@ use function Sodium\add;
 
 class HomeController extends Controller
 {
-    public function index(){
-        $tours = Tour::limit(9)->get();
+    public function index()
+    {
+        $tours = Tour::topTour();
         $tour_news = Tour::limit(4)->orderby('id', 'DESC')->get();
         $tours_highly = Tour::limit(4)->orderby('rate', 'DESC')->get();
         $cates = Category::all();

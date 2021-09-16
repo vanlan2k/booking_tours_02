@@ -11,6 +11,7 @@ return [
     'forgot_pass' => 'Forgot Password ?',
     'profile' => 'Profile',
     'logout' => 'Logout',
-    'your_review' => 'Your Review'
+    'your_review' => 'Your Review',
+    'news' => 'News'
 ];
 ?>

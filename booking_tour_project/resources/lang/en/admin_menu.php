@@ -13,5 +13,8 @@ return [
     'list_cmt' => 'List Comment',
     'category' => 'Category',
     'list_cate' => 'List Category',
-    'create_cate' => 'Create Category'
+    'create_cate' => 'Create Category',
+    'post' => 'News',
+    'list_post' => 'List News',
+    'create_post' => 'Create News'
 ];

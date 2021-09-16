@@ -13,5 +13,8 @@ return[
     'list_cmt' => 'Danh Sách Bình Luận',
     'category' => 'Loại Tour',
     'list_cate' => 'Danh Sách',
-    'create_cate' => 'Thêm Mới Loại Tour'
+    'create_cate' => 'Thêm Mới Loại Tour',
+    'post' => 'Tin Tức',
+    'list_post' => 'Danh Sách Tin Tức',
+    'create_post' => 'Thêm Mới Tin Tức'
 ];
