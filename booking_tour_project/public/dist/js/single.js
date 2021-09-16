@@ -20,3 +20,31 @@ function getTotalFunction() {
     $('#tickets').find('.total_tour').val(formatter.format(total_tour));
     $('#tickets').find('.total_tour').data('total', total_tour);
 }
+
+
+//Load More
+$(document).ready(function () {
+
+    var _token = $('input[name="_token"]').val();
+
+    load_data('', _token);
+
+    function load_data(id = "", _token) {
+        $.ajax({
+            url: "/loadmore",
+            method: "POST",
+            data: {id: id, _token: _token},
+            success: function (data) {
+                $('#load_more_button').remove();
+                $('#review_data').append(data.output);
+            }
+        })
+    }
+
+    $(document).on('click', '#load_more_button', function () {
+        var id = $(this).data('id');
+        $('#load_more_button').html('<b>Loading...</b>');
+        load_data(id, _token);
+    });
+
+})

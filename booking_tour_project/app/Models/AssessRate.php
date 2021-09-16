@@ -13,6 +13,9 @@ class AssessRate extends Model
         return $this->belongsTo(Tour::class, 'tour_id', 'id');
     }
     public function user(){
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'customer_id', 'id');
+    }
+    public static function getRating($id){
+        return AssessRate::where('tour_id', $id)->avg('number_rate');
     }
 }

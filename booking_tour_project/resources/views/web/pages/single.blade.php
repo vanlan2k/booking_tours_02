@@ -121,10 +121,12 @@
                         <div class="tab-pane" id="tab_2">
 
                             <div id="summary_review">
-                                <div class="review_score"><span>8,9</span>
+                                <div class="review_score">
+                                    <span>{{\App\Models\AssessRate::getRating($tour->id)!= null ? number_format(\App\Models\AssessRate::getRating($tour->id), 1) : '5.0'}}</span>
                                 </div>
                                 <div class="review_score_2">
-                                    <h4>Fabulous <span>(Based on 34 reviews)</span></h4>
+                                    <h4>Fabulous <span>(Based on {{\App\Models\Review::countReview()}} reviews)</span>
+                                    </h4>
                                     <p>
                                         Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu. Ius
                                         diam vivendo ne.
@@ -132,131 +134,41 @@
                                 </div>
                             </div>
                             <!-- End review summary -->
-
-                            <div class="reviews-container">
-
-                                <div class="review-box clearfix">
-                                    <figure class="rev-thumb"><img src="img/avatar1.jpg" alt="">
-                                    </figure>
-                                    <div class="rev-content">
-                                        <div class="rating">
-                                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                                class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                                class="icon-star-empty"></i>
-                                        </div>
-                                        <div class="rev-info">
-                                            Admin – April 03, 2016:
-                                        </div>
-                                        <div class="rev-text">
-                                            <p>
-                                                Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar
-                                                hendrerit. Cum sociis natoque penatibus et magnis dis
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End review-box -->
-
-                                <div class="review-box clearfix">
-                                    <figure class="rev-thumb"><img src="img/avatar2.jpg" alt="">
-                                    </figure>
-                                    <div class="rev-content">
-                                        <div class="rating">
-                                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                                class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                                class="icon-star-empty"></i>
-                                        </div>
-                                        <div class="rev-info">
-                                            Ahsan – April 01, 2016:
-                                        </div>
-                                        <div class="rev-text">
-                                            <p>
-                                                Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar
-                                                hendrerit. Cum sociis natoque penatibus et magnis dis
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End review-box -->
-
-                                <div class="review-box clearfix">
-                                    <figure class="rev-thumb"><img src="img/avatar3.jpg" alt="">
-                                    </figure>
-                                    <div class="rev-content">
-                                        <div class="rating">
-                                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                                class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                                class="icon-star-empty"></i>
-                                        </div>
-                                        <div class="rev-info">
-                                            Sara – March 31, 2016:
-                                        </div>
-                                        <div class="rev-text">
-                                            <p>
-                                                Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar
-                                                hendrerit. Cum sociis natoque penatibus et magnis dis
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End review-box -->
-
+                            <div class="reviews-container" id="review_data">
+                                @csrf
                             </div>
                             <!-- End review-container -->
-
                             <hr>
 
                             <div class="add-review">
-                                <h4>Leave a Review</h4>
+                                <h4>{{__('single.leaver_eview')}}</h4>
                                 <div id="message-review"></div>
-                                <form method="post" action="assets/review.php" id="review" autocomplete="off">
-                                    <input type="hidden" id="tour_name_review" name="tour_name_review"
-                                           value="General Louvre Tour">
-                                    <div class="row">
-                                        <div class="form-group col-md-6">
-                                            <label>Name *</label>
-                                            <input type="text" name="name_review" id="name_review" placeholder=""
-                                                   class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Lastname *</label>
-                                            <input type="text" name="lastname_review" id="lastname_review"
-                                                   placeholder="" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Email *</label>
-                                            <input type="email" name="email_review" id="email_review"
-                                                   class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Rating </label>
-                                            <select name="rating_review" id="rating_review" class="form-control">
-                                                <option value="">Select</option>
-                                                <option value="1">1 (lowest)</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5 (medium)</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10 (highest)</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <label>Your Review</label>
-                                            <textarea name="review_text" id="review_text" class="form-control"
-                                                      style="height:130px;"></textarea>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Are you human? 3 + 1 =</label>
-                                            <input type="text" id="verify_review" class=" form-control"
-                                                   placeholder="Are you human? 3 + 1 =">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <input type="submit" value="Submit" class="btn_1" id="submit-review">
-                                        </div>
+                                <form method="post" action="/comment/{{$tour->id}}" class="row">
+                                    @csrf
+                                    <div class="form-group col-md-12">
+                                        <label>{{__('single.rating')}}</label>
+                                        <select name="rating" class="form-control">
+                                            <option value="">Select</option>
+                                            {!! forRate()!!}
+                                        </select>
+                                    </div>
+                                    <div style="color: red" class="form-group">
+                                        @error('rating')
+                                        {{$message}}
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>{{__('single.your_review')}}</label>
+                                        <textarea name="comment" class="form-control"
+                                                  style="height:130px;"></textarea>
+                                    </div>
+                                    <div style="color: red" class="form-group">
+                                        @error('comment')
+                                        {{$message}}
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        {!! getBTNSB() !!}
                                     </div>
                                 </form>
                             </div>
@@ -387,26 +299,25 @@
     <!-- End section -->
 
     <div class="container margin_30">
-        <h3 class="second_title">{{__('single.related_tour')}}</h3>
-        <div class="carousel add_bottom_30">
+        <h3 class="second_title">{{__('single.related_tours')}}</h3>
+        <div class="carousel add_bottom_30 d-flex">
             @foreach($tours as $tourItem)
-                <div>
+                <div class=" wow fadeIn animated" data-wow-delay="0.2s">
                     <div class="img_wrapper">
                         <div class="price_grid">
-                            {{getPrice($tourItem->tour_detail[1]->price)}}
+                            {{getPrice($tour->tour_detail[1]->price)}}
                         </div>
-                        <!-- End tools i-->
                         <div class="img_container">
-                            <a href="detail-page.html">
-                                <img src="{{$tourItem->avata}}" width="350" height="200" class="img-responsive" alt="">
+                            <a href="/single/{{$tour->id}}">
+                                <img src="{{$tour->avata}}" width="350" height="200" class="img-responsive" alt="">
                                 <div class="short_info">
-                                    <h3>{{$tourItem->name}}</h3>
-                                    {{--                                    <em>Duration 3 days</em>--}}
+                                    <h3>{{$tour->name}}</h3>
+                                    <em>{{$tour->name}}</em>
                                     <p>
-                                        {{$tourItem->description}}
+                                        {{$tour->description}}
                                     </p>
-                                    <div class="score_wp">
-                                        <div class="score">{{$tourItem->rate}}</div>
+                                    <div class="score_wp">Superb
+                                        <div class="score">7.5</div>
                                     </div>
                                 </div>
                             </a>

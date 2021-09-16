@@ -17,6 +17,8 @@ return [
     'total' => 'Total',
     'booking' => 'Booking',
     'submit' => 'Submit',
-    'related_tours' => 'Related tours'
+    'related_tours' => 'Related tours',
+    'leava_review' => 'Leave a Review',
+    'your_review' => 'Your Review',
 ];
 ?>
