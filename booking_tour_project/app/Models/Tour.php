@@ -5,6 +5,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Tour extends Model
 {
@@ -57,5 +58,48 @@ class Tour extends Model
                 }, function ($qr) use ($date) {
                     $qr->where('date_start', '>', $date);
                 });
+    }
+    public function scopeTopTour()
+    {
+        $values = BookingDetail::select(DB::raw('COUNT(tour_id)'), 'tour_id')
+            ->orderBy(DB::raw('COUNT(tour_id)'), 'DESC')
+            ->groupBy('tour_id')
+            ->limit(9)
+            ->get();
+        $tours = [];
+        foreach ($values as $value) {
+            $item = Tour::find($value->tour_id);
+            array_push($tours, $item);
+        }
+        return $tours;
+    }
+
+    public function scopePopularityTour($query)
+    {
+        return $query->select('tours.*')
+            ->join('booking_details', 'tours.id', '=', 'booking_details.tour_id')
+            ->orderBy(DB::raw('COUNT(booking_details.tour_id)'), 'DESC')
+            ->groupBy('tours.id')
+            ->paginate(12);
+    }
+
+    public function scopePrice($query){
+        return $query->orderBy('priceAdult')->paginate(12);
+    }
+    public function scopePriceDESC($query){
+        return $query->orderBy('priceAdult', 'DESC')->paginate(12);
+    }
+    public function scopeTopRate()
+    {
+        $values = AssessRate::select(DB::raw('AVG(number_rate)'), 'tour_id')
+            ->orderBy(DB::raw('AGV(number_rate)', 'DESC'))
+            ->limit(4)
+            ->get();
+        $tours = [];
+        foreach ($values as $value) {
+            $item = Tour::find($value->tour_id);
+            array_push($tours, $item);
+        }
+        return $tours;
     }
 }

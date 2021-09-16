@@ -140,6 +140,30 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item {{in_array(\Request::route()->getName(), ['news.index', 'news.create', 'news.show']) ? 'menu-is-opening menu-open' : ""}}">
+                    <a href="#"
+                       class="nav-link {{in_array(\Request::route()->getName(), ['news.index', 'news.create', 'news.show']) ? 'active' : ""}}">
+                        <i class="nav-icon fas fa-sticky-note"></i>
+                        <p>
+                            {{__('admin_menu.post')}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('news.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('admin_menu.list_post')}}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('news.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('admin_menu.create_post')}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>

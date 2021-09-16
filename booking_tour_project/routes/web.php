@@ -44,7 +44,7 @@ Route::get('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::cl
 Route::post('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::class, 'login'])->name('auth.login');
 Route::middleware(['auth'])->group(function () {
     Route::group(['middleware' => 'checkAdmin:1'], function () {
-        Route::get('/admin/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.home');
+        Route::get('/admin/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.home')->only(['index']);
         Route::get('admin/chart', [\App\Http\Controllers\admin\ChartController::class, 'chartBar']);
         Route::post('/admin/filterDate', [\App\Http\Controllers\admin\ChartController::class,'filterDate']);
         Route::post('/admin/filterBy', [\App\Http\Controllers\admin\ChartController::class, 'ChartService']);
