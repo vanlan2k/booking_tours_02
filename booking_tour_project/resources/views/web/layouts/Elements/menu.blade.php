@@ -22,6 +22,9 @@
                             <li class="submenu">
                                 <a href="/tour" class="show-submenu">{{__('menu.tours')}}</a>
                             </li>
+                            <li class="submenu">
+                                <a href="/news" class="show-submenu">{{__('menu.news')}}</a>
+                            </li>
                             <li>
                                 <a href="about.html">{{__('menu.about')}}</a>
                             </li>
