@@ -40,20 +40,7 @@
                         </div>
                         <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                         <ul>
-                            <li class="submenu">
-                                <a href="javascript:void(0);" class="show-submenu">Home</a>
-                                <ul>
-                                    <li><a href="index.html">Home Video background</a>
-                                    </li>
-                                    <li><a href="index_2.html">Home Layer Slider</a>
-                                    </li>
-                                    <li><a href="index_3.html">Home Full Header</a>
-                                    </li>
-                                    <li><a href="index_4.html">Home Popup</a>
-                                    </li>
-                                    <li><a href="index_5.html">Home Cookie bar</a>
-                                    </li>
-                                </ul>
+                            <li class="submenu"><a href="/" >Home</a>
                             </li>
                             <li class="submenu">
                                 <a href="/tour" class="show-submenu">Tours</a>

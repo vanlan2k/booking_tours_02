@@ -1,10 +1,5 @@
 @extends('web.layouts.main', ['title' => 'Detail Tour'])
-<<<<<<< HEAD
 @section('content')
-    <!-- SubHeader =============================================== -->
-=======
-@section('content')=
->>>>>>> d5ac538 (view tour)
     <section class="parallax_window_in" data-parallax="scroll"
              data-image-src="{{asset('dist/img/sub_header_list_museum_in.jpg')}}"
              data-natural-width="1400" data-natural-height="470">
@@ -15,12 +10,6 @@
             </div>
         </div>
     </section>
-<<<<<<< HEAD
-    <!-- End section -->
-    <!-- End SubHeader ============================================ -->
-
-=======
->>>>>>> d5ac538 (view tour)
     <section class="wrapper">
         <div class="divider_border"></div>
 

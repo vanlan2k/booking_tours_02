@@ -1,12 +1,12 @@
 
-<script src="{{asset('dist/js/jquery.min.js')}}"></script>
+<script src="{{asset('dist/js/jquery.js')}}"></script>
 <script src="{{asset('dist/js/popper.min.js')}}"></script>
 <script src="{{asset('dist/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('dist/js/common_scripts_min.js')}}"></script>
 <script src="{{asset('dist/js/validate.js')}}"></script>
 <script src="{{asset('dist/js/jquery.tweet.min.js')}}"></script>
 <script src="{{asset('dist/js/functions.js')}}"></script>
-
+<script src="{{asset('dist/js/jquery-ui.js')}}"></script>
 <!-- SPECIFIC SCRIPTS -->
 <script src="{{asset('dist/layerslider/js/greensock.js')}}"></script>
 <script src="{{asset('dist/layerslider/js/layerslider.transitions.js')}}"></script>
