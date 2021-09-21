@@ -12,18 +12,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*web*/
 Route::get('/', [\App\Http\Controllers\web\HomeController::class, 'index'])->name('home');
-Route::get('/admin/login', function () {
-    return view('admin.auth.login');
-})->name('login');
+Route::get('/single/{id}', [\App\Http\Controllers\web\SingleController::class, 'index'])->name('single');
+Route::get('/tour', [\App\Http\Controllers\web\TourController::class, 'index'])->name('tour');
+
+Route::get('/login/page', [\App\Http\Controllers\web\auth\LoginController::class, 'index'])->name('loginUser');
+Route::post('/login', [\App\Http\Controllers\web\auth\LoginController::class, 'login']);
+Route::get('/logout', [\App\Http\Controllers\web\auth\LoginController::class, 'logout']);
+/*admin*/
+Route::get('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::class, 'index'])->name('loginAdmin');
 Route::post('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::class, 'login'])->name('auth.login');
 Route::middleware(['auth'])->group(function () {
     Route::group(['middleware' => 'checkAdmin:1'], function () {
-        Route::get('/admin/', function () {
-            return view('admin.dashboard');
-        });
-        Route::get('/admin/home', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('home');
+        Route::get('/admin/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.home');
         Route::get('/admin/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('auth.logout');
     });
 });

@@ -20,6 +20,7 @@ class CreateToursTable extends Migration
             $table->string('address');
             $table->string('avata');
             $table->text('description');
+            $table->integer('number_date');
             $table->date('date_start');
             $table->date('date_end');
             $table->double('rate');
