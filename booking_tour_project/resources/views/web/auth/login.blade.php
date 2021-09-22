@@ -3,9 +3,9 @@
     <form action="/login" method="POST">
         @csrf
         <div id="signin">
-            <div class="form-title">Sign in</div>
+            <div class="form-title"><h3>{{__('menu.singin')}}</h3></div>
             <div class="form-group">
-                <label for="lastname" style="color: #ffffff">Email or Phone</label>
+                <label for="lastname" style="color: #ffffff">{{__('menu.email_phone')}}</label>
                 <input type="email"
                        class="form-control {{$errors->has('email') ? 'is-invalid' : ''}}"
                        name="email" value="{{ old('email') }}" placeholder="">
@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="lastname" style="color: #ffffff">Password</label>
+                <label for="lastname" style="color: #ffffff">{{__('menu.password')}}</label>
                 <input type="password"
                        class="form-control {{$errors->has('password') ? 'is-invalid' : ''}}"
                        name="password" value="{{ old('password') }}" placeholder="">
@@ -26,11 +26,8 @@
                     @enderror
                 </div>
             </div>
-            <a href="" class="forgot-pw">Forgot Password ?</a>
-            <button class="login">Login</button>
-            <div class="check">
-                <i class="material-icons">check</i>
-            </div>
+            <a href="" class="forgot-pw">{{__('menu.forgot_pass')}}</a>
+            <button class="login">{{__('menu.singin')}}</button>
         </div>
     </form>
 @endsection

@@ -11,7 +11,6 @@
 		$('body').delay(350).css({'overflow': 'visible'});
 		$('#animate_intro').addClass('animated fadeInUp');
 	})
-
 	/* ==============================================
 	Sticky nav +  Scroll to top
 	=============================================== */

@@ -17,9 +17,12 @@ Route::get('/', [\App\Http\Controllers\web\HomeController::class, 'index'])->nam
 Route::get('/single/{id}', [\App\Http\Controllers\web\SingleController::class, 'index'])->name('single');
 Route::get('/tour', [\App\Http\Controllers\web\TourController::class, 'index'])->name('tour');
 
-Route::get('/login/page', [\App\Http\Controllers\web\auth\LoginController::class, 'index'])->name('loginUser');
+
+Route::get('/login', [\App\Http\Controllers\web\auth\LoginController::class, 'index'])->name('loginUser');
 Route::post('/login', [\App\Http\Controllers\web\auth\LoginController::class, 'login']);
 Route::get('/logout', [\App\Http\Controllers\web\auth\LoginController::class, 'logout']);
+
+Route::get('/language/{lang}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage']);
 /*admin*/
 Route::get('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::class, 'index'])->name('loginAdmin');
 Route::post('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::class, 'login'])->name('auth.login');

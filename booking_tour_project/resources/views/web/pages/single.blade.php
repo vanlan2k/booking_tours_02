@@ -1,5 +1,5 @@
 @extends('web.layouts.main', ['title' => 'Detail Tour'])
-@section('content')=
+@section('content')
     <section class="parallax_window_in" data-parallax="scroll"
              data-image-src="{{asset('dist/img/sub_header_list_museum_in.jpg')}}"
              data-natural-width="1400" data-natural-height="470">
@@ -15,7 +15,7 @@
 
         <div class="container">
             <div class="row" id="tab">
-                <div class="col-md-8">
+                <div class="col-md-7">
 
                     <div class="owl-carousel add_bottom_15">
                         <div class="item"><img src="{{asset('dist/img/carousel/carousel_in_1.jpg')}}" alt="">
@@ -27,9 +27,9 @@
                     </div>
 
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab_1" data-toggle="tab">Overview</a>
+                        <li class="active"><a href="#tab_1" data-toggle="tab">{{__('single.overview')}}</a>
                         </li>
-                        <li><a href="#tab_2" data-toggle="tab">Reviews</a>
+                        <li><a href="#tab_2" data-toggle="tab">{{__('single.reviews')}}</a>
                         </li>
                     </ul>
 
@@ -269,10 +269,13 @@
                 </div>
                 <!-- End Col -->
 
-                <aside class="col-md-4">
+                <aside class="col-md-5">
                     <div class="box_style_1">
                         <div class="price">
-                            <strong>$649</strong><small>per person</small>
+                            <strong> ₫{{number_format($tour->tour_detail[0]->price, 0, ',', '.')}}</strong><small>{{__('single.per_adult')}}</small>
+                        </div>
+                        <div class="price">
+                            <strong> ₫{{number_format($tour->tour_detail[1]->price, 0, ',', '.')}}</strong><small>{{__('single.per_child')}}</small>
                         </div>
                         <ul class="list_ok">
                             <li>Sea te propriae lobortis</li>
@@ -280,62 +283,88 @@
                             <li>12 Quando omnium</li>
                             <li>4 Vide urbanitas</li>
                         </ul>
-                        <small>*Free for childs under 8 years old</small>
                     </div>
                     <div class="box_style_2">
-                        <h3>Book Your Tour<span>Free service - Confirmed immediately</span></h3>
+                        <h3>{{__('single.book_your_tour')}}<span>{{__('single.free_service')}}</span></h3>
                         <div id="message-booking"></div>
-                        <form method="post" action="assets/check_avail.php" id="check_avail" autocomplete="off">
-                            <input type="hidden" id="tour_name" name="tour_name" value="General Louvre Tour">
+                        <form method="post" action="/booking/{{$tour->id}}" autocomplete="off">
+                            @csrf
                             <table id="tickets" class="table">
                                 <thead>
                                 <tr>
-                                    <th>Tickets</th>
+                                    <th>{{__('single.tickers')}}</th>
 
-                                    <th>Quantity</th>
-                                    <th class="text-center"><span class="subtotal">Subtotal</span>
-
+                                    <th>{{__('single.quantity')}}</th>
+                                    <th class="text-center"><span class="subtotal">{{__('single.subtotal')}}</span>
                                     </th>
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr class="total_row">
-                                    <td colspan="2"><strong>TOTAL</strong>
+                                    <td colspan="2"><strong>{{__('single.total')}}</strong>
                                     </td>
                                     <td class="text-center">
-                                        <input name="total" id="total" value="₫0">
+                                        <input class="total_tour" data-total="0" id="total" value="₫0">
                                     </td>
                                 </tr>
                                 </tfoot>
                                 <tbody>
                                 <tr>
-                                    <td><strong>Adult</strong>
+                                    <td><strong>{{__('single.adult')}}</strong>
                                     </td>
                                     <td>
                                         <div class="styled-select">
-                                            <input type="number" name="child">
+                                            <input type="number" value="0" name="adult"
+                                                   class="qty_adult {{$errors->has('adult') ? 'is-invalid' : ''}}"
+                                                   onchange="getTotalFunction()"
+                                                   data-adult="{{$tour->tour_detail[0]->price}}">
                                         </div>
                                     </td>
-                                    <td class="text-center"><span class="subtotal">₫0</span>
+                                    <td class="text-center total_adult"><span class="subtotal">₫0</span>
+                                    </td>
+                                <tr>
+                                    <td colspan="3" style="border-top: none; padding: 0 10px">
+                                        <div style="color: red">
+                                            @error('adult')
+                                            {{$message}}
+                                            @enderror
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tr>
+                                <tr>
+                                    <td><strong>{{__('single.child')}}</strong>
+                                    </td>
+                                    <td>
+                                        <div class="styled-select">
+                                            <input type="number" name="child"
+                                                   class="qty_child {{$errors->has('child') ? 'is-invalid' : ''}}"
+                                                   value="0"
+                                                   data-child="{{$tour->tour_detail[1]->price}}"
+                                                   onchange="getTotalFunction()">
+                                        </div>
+                                    </td>
+                                    <td class="text-center total_child"><span class="subtotal">₫0</span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Child</strong>
-                                    </td>
-                                    <td>
-                                        <div class="styled-select">
-                                            <input type="number" name="child">
+                                    <td colspan="3" style="border-top: none; padding: 0 10px">
+                                        <div style="color: red">
+                                            @error('child')
+                                            {{$message}}
+                                            @enderror
                                         </div>
-                                    </td>
-                                    <td class="text-center"><span class="subtotal">₫0</span>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
                             <div class="form-group">
-                                <input type="submit" value="Booking" class="btn_full" id="submit-booking">
+                                @if(\Illuminate\Support\Facades\Auth::user() != null)
+                                    <button class="btn_full">{{__('single.booking')}}</button>
+                                @else
+                                    <a href="/login" class="btn_full">{{__('single.booking')}}</a>
+                                @endif
                             </div>
-
                         </form>
                         <hr>
                     </div>
@@ -348,7 +377,7 @@
     <!-- End section -->
 
     <div class="container margin_30">
-        <h3 class="second_title">Related tours</h3>
+        <h3 class="second_title">{{__('single.related_tour')}}</h3>
         <div class="carousel add_bottom_30">
             @foreach($tours as $tourItem)
                 <div>
@@ -381,3 +410,7 @@
     </div>
     <!-- End container -->
 @endsection
+@push('script')
+    <script src="{{asset('dist/js/sweetalert.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('dist/js/single.js')}}"></script>
+@endpush
