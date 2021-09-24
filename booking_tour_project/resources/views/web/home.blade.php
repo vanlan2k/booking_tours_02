@@ -39,16 +39,12 @@
         <div class="container">
 
             <div class="main_title">
-                <h2>Our <span>Top</span> Travel Tours</h2>
-                <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+                <h2>{{__('home.our_top')}}</h2>
             </div>
             <div class="row">
                 @foreach($tours as $tour)
                 <div class="col-md-4 col-sm-6 wow fadeIn animated" data-wow-delay="0.2s">
                     <div class="img_wrapper">
-                        <div class="ribbon">
-                            <span>Popular</span>
-                        </div>
                         <div class="price_grid">
                             ₫{{number_format($tour->tour_detail[1]->price, 0, ',', '.')}}
                         </div>
@@ -74,14 +70,13 @@
 
             </div>
             <!-- End row -->
-
+<hr>
             <div class="main_title_2">
-                <h3>View other <span>popular</span> tours</h3>
-                <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+                <h3>{{__('home.our_popular')}}</h3>
             </div>
             <div class="row list_tours">
                 <div class="col-sm-6">
-                    <h3>New Tours</h3>
+                    <h3>{{__('home.new_tour')}}</h3>
                     <ul>
                         @foreach($tours_new as $tour_new)
                         <li>
@@ -101,7 +96,7 @@
                 </div>
 
                 <div class="col-sm-6">
-                    <h3>Highly rated tour</h3>
+                    <h3>{{__('home.highly_tour')}}</h3>
                     <ul>
                         @foreach($tours_highly as $tour_highly)
                         <li>
@@ -124,7 +119,7 @@
             <!-- End row -->
 
             <p class="text-center add_bottom_45">
-                <a href="/tour" class="btn_1">Explore all tours (24)</a>
+                <a href="/tour" class="btn_1">{{__('home.all_tour')}} (24)</a>
             </p>
 
         </div>
@@ -133,15 +128,14 @@
 
     <section class="container margin_60">
         <div class="main_title">
-            <h3>Why choose BesTours</h3>
-            <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+            <h3>{{__('home.why_choose')}}</h3>
         </div>
         <div class="row">
             <div class="col-sm-4">
                 <div class="box_how">
                     <div class="icon_how"><span class="icon_set_1_icon-81"></span>
                     </div>
-                    <h4>Best price guarantee</h4>
+                    <h4>{{__('home.best_price')}}</h4>
                     <p>Lorem ipsum dolor sit amet, et cum civibus referrentur, at propriae forensibus qui. Duo aliquip necessitatibus ne.</p>
                 </div>
             </div>
@@ -149,7 +143,7 @@
                 <div class="box_how">
                     <div class="icon_how"><span class="icon_set_1_icon-94"></span>
                     </div>
-                    <h4>Professional local guides</h4>
+                    <h4>{{__('home.professional')}}</h4>
                     <p>Lorem ipsum dolor sit amet, et cum civibus referrentur, at propriae forensibus qui. Duo aliquip necessitatibus ne.</p>
                 </div>
             </div>
@@ -157,7 +151,7 @@
                 <div class="box_how">
                     <div class="icon_how"><span class="icon_set_1_icon-92"></span>
                     </div>
-                    <h4>Certifcate of Excellence</h4>
+                    <h4>{{__('home.certifcate')}}</h4>
                     <p>Lorem ipsum dolor sit amet, et cum civibus referrentur, at propriae forensibus qui. Duo aliquip necessitatibus ne.</p>
                 </div>
             </div>

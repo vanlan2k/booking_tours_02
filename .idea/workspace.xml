@@ -26,15 +26,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2ef466b3-d8d9-4d8f-b70f-b68134b604d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/public/dist/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/public/dist/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/public/dist/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/layouts/footer-libs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/layouts/footer-libs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/footer-libs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/footer-libs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/header-libs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/header-libs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/Elements/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/Elements/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/single.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/single.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,9 +170,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Rikai\booking_tour\booking_tours_02\booking_tour_project\resources\lang" />
+      <recent name="F:\Rikai\booking_tour\booking_tours_02\booking_tour_project\resources\lang\en" />
       <recent name="F:\Rikai\booking_tour\booking_tours_02\booking_tour_project\resources\views\web\auth" />
     </key>
   </component>
@@ -194,6 +195,7 @@
       <workItem from="1631972267539" duration="2386000" />
       <workItem from="1632017015918" duration="476000" />
       <workItem from="1632025984997" duration="11410000" />
+      <workItem from="1632394949816" duration="8571000" />
     </task>
     <servers />
   </component>
@@ -210,6 +212,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="477" y="147" width="581" height="530" key="find.popup" timestamp="1632040728823">

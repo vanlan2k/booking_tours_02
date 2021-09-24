@@ -50,14 +50,6 @@
         <hr>
         <div class="row">
             <div class="col-sm-8">
-                <div class="styled-select">
-                    <select class="form-control" name="lang" id="lang">
-                        <option value="English" selected>English</option>
-                        <option value="French">French</option>
-                        <option value="Spanish">Spanish</option>
-                        <option value="Russian">Russian</option>
-                    </select>
-                </div>
                 <span id="copy">© BestTours 2016 - All rights reserved</span>
             </div>
             <div class="col-sm-4" id="social_footer">

@@ -1,0 +1,12 @@
+<?php
+return [
+    'our_top' => 'OUR TOP TRAVEL TOURS',
+    'our_popular' => 'VIEW OTHER POPULAR TOURS',
+    'new_tour' => 'New Tours',
+    'highly_tour' => 'Highly rated tour',
+    'why_choose' => 'Why Choose BesTours',
+    'best_price' => 'Best price guarantee',
+    'professional' => 'Professional local guides',
+    'certifcate' => 'Certifcate of Excellence',
+    'all_tour' => 'Explore all tours'
+];

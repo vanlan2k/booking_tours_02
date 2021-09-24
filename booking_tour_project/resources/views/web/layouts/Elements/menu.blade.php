@@ -30,9 +30,6 @@
                     </div>
                 </div>
                 <nav class="col-md-9 col-sm-9 col-xs-9">
-                    {{--                    <ul id="tools_top" class="d-flex">--}}
-                    {{--                        <li><a href="login.html">Sign In</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Sign Up</a></li>--}}
-                    {{--                    </ul>--}}
                     <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
@@ -41,63 +38,27 @@
                         <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                         <ul>
                             <li class="submenu">
-                                <a href="javascript:void(0);" class="show-submenu">Home</a>
-                                <ul>
-                                    <li><a href="index.html">Home Video background</a>
-                                    </li>
-                                    <li><a href="index_2.html">Home Layer Slider</a>
-                                    </li>
-                                    <li><a href="index_3.html">Home Full Header</a>
-                                    </li>
-                                    <li><a href="index_4.html">Home Popup</a>
-                                    </li>
-                                    <li><a href="index_5.html">Home Cookie bar</a>
-                                    </li>
-                                </ul>
+                                <a href="/" class="show-submenu">{{__('menu.home')}}</a>
                             </li>
                             <li class="submenu">
-                                <a href="/tour" class="show-submenu">Tours</a>
+                                <a href="/tour" class="show-submenu">{{__('menu.tours')}}</a>
                             </li>
                             <li>
-                                <a href="about.html">About us</a>
-                            </li>
-                            <li><a href="faq.html">Faq</a>
-                            </li>
-                            <li class="submenu">
-                                <a href="javascript:void(0);" class="show-submenu">Other pages</a>
-                                <ul>
-                                    <li><a href="index_3.html">Header Version 2</a>
-                                    </li>
-                                    <li><a href="blog.html">Blog</a>
-                                    </li>
-                                    <li><a href="blog_post.html">Blog post</a>
-                                    </li>
-                                    <li><a href="gallery.html">Gallery</a>
-                                    </li>
-                                    <li><a href="maintenance.html">Mantainance</a>
-                                    </li>
-                                    <li><a href="profile.html">Team Profile</a>
-                                    </li>
-                                    <li><a href="contacts_2.html">Contact 2</a>
-                                    </li>
-                                    <li><a href="coming_soon/index.html">Coming soon</a>
-                                    </li>
-                                    <li><a href="shortcodes.html">Shortcodes</a>
-                                    </li>
-                                    <li><a href="icon_pack_1.html">Icon pack 1</a>
-                                    </li>
-                                    <li><a href="icon_pack_2.html">Icon pack 2</a>
-                                    </li>
-                                    <li><a href="icon_pack_3.html">Icon pack 3</a>
-                                    </li>
-                                </ul>
+                                <a href="about.html">{{__('menu.about')}}</a>
                             </li>
                             @if(\Illuminate\Support\Facades\Auth::user() == null)
                                 <li>
-                                    <a href="/login/page">Sign In</a>
+                                    <a href="/login">{{__('menu.singin')}}</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Sign Up</a>
+                                    <a href="login.html">{{__('menu.register')}}</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" data-toggle="dropdown" href="#">{{__('menu.language')}}</a>
+                                    <div class="dropdown-menu dropdown-menu-right p-0">
+                                        <a href="/language/en" class="dropdown-item {{session()->get('language') == 'en' ? 'active' : ''}}">English</a>
+                                        <a href="/language/vi" class="dropdown-item {{session()->get('language') == 'vi' ? 'active' : ''}}">VietNamese</a>
+                                    </div>
                                 </li>
                             @else
                                 <li class="nav-item dropdown">
@@ -112,6 +73,13 @@
                                         <a class="dropdown-item" href="#">Something else here</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="/logout">Sign Out</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" data-toggle="dropdown" href="#">{{__('menu.language')}}</a>
+                                    <div class="dropdown-menu dropdown-menu-right p-0">
+                                        <a href="/language/en" class="dropdown-item {{session()->get('language') == 'en' ? 'active' : ''}}">English</a>
+                                        <a href="/language/vi" class="dropdown-item {{session()->get('language') == 'vi' ? 'active' : ''}}">VietNamese</a>
                                     </div>
                                 </li>
                             @endif

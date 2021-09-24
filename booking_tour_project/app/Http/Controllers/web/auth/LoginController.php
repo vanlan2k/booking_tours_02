@@ -20,10 +20,10 @@ class LoginController extends Controller
         ]);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/')->with(['success' => 'Đăng nhập thành công']);
+            return redirect()->intended('/')->with(['success' => __('message.login_success')]);
         }
-        return redirect()->route('login')->withErrors([
-            'message' => 'Không thể đăng nhập, vui lòng kiểm tra lại thông tin đăng nhập'
+        return redirect()->route('loginUser')->withErrors([
+            'message' => __('message.login_fail')
         ]);
     }
     public function logout() {
