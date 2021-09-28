@@ -272,10 +272,10 @@
                 <aside class="col-md-5">
                     <div class="box_style_1">
                         <div class="price">
-                            <strong> ₫{{number_format($tour->tour_detail[0]->price, 0, ',', '.')}}</strong><small>{{__('single.per_adult')}}</small>
+                            <strong>{{getPrice($tour->tour_detail[0]->price)}}</strong><small>{{__('single.per_adult')}}</small>
                         </div>
                         <div class="price">
-                            <strong> ₫{{number_format($tour->tour_detail[1]->price, 0, ',', '.')}}</strong><small>{{__('single.per_child')}}</small>
+                            <strong>{{getPrice($tour->tour_detail[1]->price)}}</strong><small>{{__('single.per_child')}}</small>
                         </div>
                         <ul class="list_ok">
                             <li>Sea te propriae lobortis</li>
@@ -288,6 +288,7 @@
                         <h3>{{__('single.book_your_tour')}}<span>{{__('single.free_service')}}</span></h3>
                         <div id="message-booking"></div>
                         <form method="post" action="/booking/{{$tour->id}}" autocomplete="off">
+                            @method('PUT')
                             @csrf
                             <table id="tickets" class="table">
                                 <thead>
@@ -330,6 +331,15 @@
                                             @enderror
                                         </div>
                                     </td>
+                                <tr>
+                                    <td colspan="3" style="border-top: none; padding: 0 10px">
+                                        <div style="color: red">
+                                            @error('adult')
+                                            {{$message}}
+                                            @enderror
+                                        </div>
+                                    </td>
+                                </tr>
                                 </tr>
                                 </tr>
                                 <tr>
@@ -383,7 +393,7 @@
                 <div>
                     <div class="img_wrapper">
                         <div class="price_grid">
-                            ₫{{number_format($tourItem->tour_detail[1]->price, 0, ',', '.')}}
+                            {{getPrice($tourItem->tour_detail[1]->price)}}
                         </div>
                         <!-- End tools i-->
                         <div class="img_container">

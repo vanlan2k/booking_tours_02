@@ -46,7 +46,7 @@
                 <div class="col-md-4 col-sm-6 wow fadeIn animated" data-wow-delay="0.2s">
                     <div class="img_wrapper">
                         <div class="price_grid">
-                            ₫{{number_format($tour->tour_detail[1]->price, 0, ',', '.')}}
+                            {{getPrice($tour->tour_detail[1]->price)}}
                         </div>
                         <div class="img_container">
                             <a href="/single/{{$tour->id}}">
@@ -87,7 +87,7 @@
                                     <h4>{{$tour_new->name}}</h4>
                                     <small>Point rate &nbsp; </small>
                                     <small class="score-1">{{$tour_new->rate}}</small>
-                                    <span class="price_list">₫{{number_format($tour_new->tour_detail[1]->price, 0, ',', '.')}}</span>
+                                    <span class="price_list">{{getPrice($tour_new->tour_detail[1]->price)}}</span>
                                 </a>
                             </div>
                         </li>
@@ -107,7 +107,7 @@
                                     <h4>{{$tour_highly->name}}</h4>
                                     <small>Point rate &nbsp; </small>
                                     <small class="score-1">{{$tour_highly->rate}}</small>
-                                    <span class="price_list">₫{{number_format($tour_highly->tour_detail[1]->price, 0, ',', '.')}}</span>
+                                    <span class="price_list">{{getPrice($tour_highly->tour_detail[1]->price)}}</span>
                                 </a>
                             </div>
                         </li>
