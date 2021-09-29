@@ -26,12 +26,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6b11fe1f-3a67-4cb3-ba74-e51dd50f7d5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/BookingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkinfo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkinfo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/RegisterController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +197,8 @@
       <workItem from="1632642743869" duration="9000" />
       <workItem from="1632642798125" duration="44000" />
       <workItem from="1632642886787" duration="26000" />
+      <workItem from="1632532051607" duration="25304000" />
+      <workItem from="1632837055746" duration="726000" />
     </task>
     <servers />
   </component>
