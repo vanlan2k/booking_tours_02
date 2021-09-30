@@ -56,8 +56,10 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" data-toggle="dropdown" href="#">{{__('menu.language')}}</a>
                                     <div class="dropdown-menu dropdown-menu-right p-0">
-                                        <a href="/language/en" class="dropdown-item {{session()->get('language') == 'en' ? 'active' : ''}}">English</a>
-                                        <a href="/language/vi" class="dropdown-item {{session()->get('language') == 'vi' ? 'active' : ''}}">VietNamese</a>
+                                        <a href="/language/en"
+                                           class="dropdown-item {{session()->get('language') == 'en' ? 'active' : ''}}">English</a>
+                                        <a href="/language/vi"
+                                           class="dropdown-item {{session()->get('language') == 'vi' ? 'active' : ''}}">VietNamese</a>
                                     </div>
                                 </li>
                             @else
@@ -78,8 +80,10 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" data-toggle="dropdown" href="#">{{__('menu.language')}}</a>
                                     <div class="dropdown-menu dropdown-menu-right p-0">
-                                        <a href="/language/en" class="dropdown-item {{session()->get('language') == 'en' ? 'active' : ''}}">English</a>
-                                        <a href="/language/vi" class="dropdown-item {{session()->get('language') == 'vi' ? 'active' : ''}}">VietNamese</a>
+                                        <a href="/language/en"
+                                           class="dropdown-item {{session()->get('language') == 'en' ? 'active' : ''}}">English</a>
+                                        <a href="/language/vi"
+                                           class="dropdown-item {{session()->get('language') == 'vi' ? 'active' : ''}}">VietNamese</a>
                                     </div>
                                 </li>
                             @endif
