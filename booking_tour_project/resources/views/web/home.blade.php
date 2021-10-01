@@ -49,7 +49,32 @@
         <div class="divider_border "></div>
 
         <div class="container">
-
+            <form action="/search" method="POST" class="row mt-3">
+                @csrf
+                <div class="col-5">
+                    <div class="form-group">
+                        <label>{{__('home.address')}}:</label>
+                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;"tabindex="-1" aria-hidden="true" name="address">
+                            <option selected="selected" value="">----------{{__('home.select_address')}}----------</option>
+                            @foreach($add_tours as $address)
+                                <option value="{{$address->address}}">{{$address->address}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <label>{{__('home.date_start')}}:</label>
+                    <div id="datepicker" class="input-group date" data-date-format="dd-mm-yyyy">
+                        <input class="form-control" readonly="" type="text" name="date_start">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    </div>
+                </div>
+                <div class="col-2 mt-3">
+                    <label> </label>
+                    <button class="btn btn-outline-success my-2 p-2 my-sm-0 col-12"type="submit">{{__('home.search')}}</button>
+                </div>
+            </form>
+            <hr>
             <div class="main_title">
                 <h2>{{__('home.our_top')}}</h2>
             </div>
@@ -66,80 +91,63 @@
                                     <div class="short_info">
                                         <h3>{{$tour->name}}</h3>
                                         <em>{{$tour->name}}</em>
-                                        <p>
-                                            {{$tour->description}}
-                                        </p>
-                                        <div class="score_wp">Superb
-                                            <div class="score">7.5</div>
+                                        <p>{{$tour->description}}</p>
+                                        <div class="score_wp">Superb<div class="score">7.5</div>
                                         </div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <!-- End img_wrapper -->
+                @endforeach
             </div>
-            @endforeach
-
-        </div>
-        <!-- End row -->
-        <hr>
-        <div class="main_title_2">
-            <h3>{{__('home.our_popular')}}</h3>
-        </div>
-        <div class="row list_tours">
-            <div class="col-sm-6">
-                <h3>{{__('home.new_tour')}}</h3>
-                <ul>
-                    @foreach($tours_new as $tour_new)
-                        <li>
-                            <div>
-                                <a href="/single/{{$tour_new->id}}">
-                                    <figure><img src="{{$tour_new->avata}}" alt="thumb" class="img-rounded" width="60"
-                                                 height="60">
-                                    </figure>
-                                    <h4>{{$tour_new->name}}</h4>
-                                    <small>Point rate &nbsp; </small>
-                                    <small class="score-1">{{$tour_new->rate}}</small>
-                                    <span class="price_list">{{getPrice($tour_new->tour_detail[1]->price)}}</span>
-                                </a>
-                            </div>
-                        </li>
-                    @endforeach
-                </ul>
+            <hr>
+            <div class="main_title_2">
+                <h3>{{__('home.our_popular')}}</h3>
             </div>
-
-            <div class="col-sm-6">
-                <h3>{{__('home.highly_tour')}}</h3>
-                <ul>
-                    @foreach($tours_highly as $tour_highly)
-                        <li>
-                            <div>
-                                <a href="/single/{{$tour_highly->id}}">
-                                    <figure><img src="{{$tour_highly->avata}}" alt="thumb" class="img-rounded"
-                                                 width="60" height="60">
-                                    </figure>
-                                    <h4>{{$tour_highly->name}}</h4>
-                                    <small>Point rate &nbsp; </small>
-                                    <small class="score-1">{{$tour_highly->rate}}</small>
-                                    <span class="price_list">{{getPrice($tour_highly->tour_detail[1]->price)}}</span>
-                                </a>
-                            </div>
-                        </li>
-                    @endforeach
-                </ul>
+            <div class="row list_tours">
+                <div class="col-sm-6">
+                    <h3>{{__('home.new_tour')}}</h3>
+                    <ul>
+                        @foreach($tours_new as $tour_new)
+                            <li>
+                                <div>
+                                    <a href="/single/{{$tour_new->id}}">
+                                        <figure><img src="{{$tour_new->avata}}" alt="thumb" class="img-rounded" width="60" height="60"></figure>
+                                        <h4>{{$tour_new->name}}</h4>
+                                        <small>Point rate &nbsp; </small>
+                                        <small class="score-1">{{$tour_new->rate}}</small>
+                                        <span class="price_list">{{getPrice($tour_new->tour_detail[1]->price)}}</span>
+                                    </a>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <h3>{{__('home.highly_tour')}}</h3>
+                    <ul>
+                        @foreach($tours_highly as $tour_highly)
+                            <li>
+                                <div>
+                                    <a href="/single/{{$tour_highly->id}}">
+                                        <figure><img src="{{$tour_highly->avata}}" alt="thumb" class="img-rounded" width="60" height="60"></figure>
+                                        <h4>{{$tour_highly->name}}</h4>
+                                        <small>Point rate &nbsp; </small>
+                                        <small class="score-1">{{$tour_highly->rate}}</small>
+                                        <span class="price_list">{{getPrice($tour_highly->tour_detail[1]->price)}}</span>
+                                    </a>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
-
-        </div>
-        <!-- End row -->
-
-        <p class="text-center add_bottom_45">
-            <a href="/tour" class="btn_1">{{__('home.all_tour')}} (24)</a>
-        </p>
-
+            <p class="text-center add_bottom_45">
+                <a href="/tour" class="btn_1">{{__('home.all_tour')}} (24)</a>
+            </p>
         </div>
     </section>
-    <!-- End section -->
-
     <section class="container margin_60">
         <div class="main_title">
             <h3>{{__('home.why_choose')}}</h3>
@@ -147,8 +155,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="box_how">
-                    <div class="icon_how"><span class="icon_set_1_icon-81"></span>
-                    </div>
+                    <div class="icon_how"><span class="icon_set_1_icon-81"></span></div>
                     <h4>{{__('home.best_price')}}</h4>
                     <p>Lorem ipsum dolor sit amet, et cum civibus referrentur, at propriae forensibus qui. Duo aliquip
                         necessitatibus ne.</p>
@@ -156,8 +163,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="box_how">
-                    <div class="icon_how"><span class="icon_set_1_icon-94"></span>
-                    </div>
+                    <div class="icon_how"><span class="icon_set_1_icon-94"></span></div>
                     <h4>{{__('home.professional')}}</h4>
                     <p>Lorem ipsum dolor sit amet, et cum civibus referrentur, at propriae forensibus qui. Duo aliquip
                         necessitatibus ne.</p>
@@ -165,17 +171,13 @@
             </div>
             <div class="col-sm-4">
                 <div class="box_how">
-                    <div class="icon_how"><span class="icon_set_1_icon-92"></span>
-                    </div>
+                    <div class="icon_how"><span class="icon_set_1_icon-92"></span></div>
                     <h4>{{__('home.certifcate')}}</h4>
-                    <p>Lorem ipsum dolor sit amet, et cum civibus referrentur, at propriae forensibus qui. Duo aliquip
-                        necessitatibus ne.</p>
+                    <p>Lorem ipsum dolor sit amet, et cum civibus referrentur, at propriae forensibus qui. Duo aliquip necessitatibus ne.</p>
                 </div>
             </div>
         </div>
-        <!-- End Row -->
     </section>
-    <!-- End Container -->
 
     <section class="promo_full">
         <div class="promo_full_wp">
@@ -188,9 +190,7 @@
                                 <div>
                                     <div class="box_overlay">
                                         <div class="pic">
-                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt=""
-                                                         class="img-circle">
-                                            </figure>
+                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt="" class="img-circle"></figure>
                                             <h4>Roberta<small>12 October 2015</small></h4>
                                         </div>
                                         <div class="comment">
@@ -198,15 +198,11 @@
                                             elaboraret sed, mel cu unum nostrud."
                                         </div>
                                     </div>
-                                    <!-- End box_overlay -->
                                 </div>
-
                                 <div>
                                     <div class="box_overlay">
                                         <div class="pic">
-                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt=""
-                                                         class="img-circle">
-                                            </figure>
+                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt="" class="img-circle"></figure>
                                             <h4>Roberta<small>12 October 2015</small></h4>
                                         </div>
                                         <div class="comment">
@@ -214,36 +210,23 @@
                                             dicant diceret ocurreret."
                                         </div>
                                     </div>
-                                    <!-- End box_overlay -->
                                 </div>
-
                                 <div>
                                     <div class="box_overlay">
                                         <div class="pic">
-                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt=""
-                                                         class="img-circle">
-                                            </figure>
+                                            <figure><img src="{{asset('dist/img/testimonial_1.jpg')}}" alt="" class="img-circle"></figure>
                                             <h4>Roberta<small>12 October 2015</small></h4>
                                         </div>
                                         <div class="comment">
-                                            "No nam indoctum accommodare, vix ei discere civibus philosophia. Vis ea
-                                            dicant diceret ocurreret."
+                                            "No nam indoctum accommodare, vix ei discere civibus philosophia. Vis ea dicant diceret ocurreret."
                                         </div>
                                     </div>
-                                    <!-- End box_overlay -->
                                 </div>
-
                             </div>
-                            <!-- End carousel_testimonials -->
                         </div>
-                        <!-- End col-md-8 -->
                     </div>
-                    <!-- End row -->
                 </div>
-                <!-- End container -->
             </div>
-            <!-- End promo_full_wp -->
         </div>
-        <!-- End promo_full -->
     </section>
 @endsection

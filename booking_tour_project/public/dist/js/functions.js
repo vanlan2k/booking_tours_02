@@ -146,3 +146,14 @@
 	};
 
 })(window.jQuery); // JavaScript Document
+$(document).ready(function () {
+    $('.select2').select2({
+        closeOnSelect: false
+    });
+    $(function () {
+        $("#datepicker").datepicker({
+            autoclose: true,
+            todayHighlight: true
+        }).datepicker('update', new Date());
+    });
+});

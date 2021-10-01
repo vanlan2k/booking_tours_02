@@ -20,5 +20,6 @@ return [
     'related_tours' => 'Các Chuyến Du Lịch Liên Quan',
     'leava_review' => 'Để Lại Nhận Xét',
     'your_review' => 'Nhận Xét Của Bạn',
+    'no_value' => 'Không có tour hiện hành'
 ];
 ?>
