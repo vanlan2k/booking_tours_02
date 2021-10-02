@@ -4,6 +4,7 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\BookingDetail;
 use App\Models\Cart;
 use App\Models\Tour;
 use Illuminate\Http\Request;
@@ -32,6 +33,12 @@ class CheckoutController extends Controller
             $booking->payment = $request->payment;
             $booking->booking_no = rand(100000, 999999);
             $booking->save();
+            $booking_detail = new BookingDetail();
+            $booking_detail->booking_id = $booking->id;
+            $booking_detail->tour_id = $cart->cart['id_tour'];
+            $booking_detail->adult = $cart->cart['qty_adult'];
+            $booking_detail->child = $cart->cart['qty_child'];
+            $booking_detail->save();
             $cart->cart['id_booking'] = $booking->id;
             session()->put('cart', $cart->cart);
             DB::commit();

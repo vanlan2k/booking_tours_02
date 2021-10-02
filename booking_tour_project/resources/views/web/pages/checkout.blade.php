@@ -114,7 +114,7 @@
                                 <hr>
                                 <div class="text-center">
                                     <button class="bg-primary text-white h5 border-0 p-4">
-                                        {{__('checkout.booking')}} <i class="fas fa-arrow-right"></i>
+                                        {{__('checkout.bookings')}} <i class="fas fa-arrow-right"></i>
                                     </button>
                                 </div>
                             </form>

@@ -15,7 +15,7 @@ return [
     'child' => 'Trẻ em',
     'adult' => 'Người Lớn',
     'total' => 'Tổng Cộng',
-    'booking' => 'Đặt Vé',
+    'bookings' => 'Đặt Vé',
     'submit' => 'Gửi',
     'related_tours' => 'Các Chuyến Du Lịch Liên Quan',
     'no_value' => 'Không có tour hiện hành'

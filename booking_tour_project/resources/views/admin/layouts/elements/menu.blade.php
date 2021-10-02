@@ -81,6 +81,24 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item {{in_array(\Request::route()->getName(), ['booking.index', 'booking.create', 'booking.show']) ? 'menu-is-opening menu-open' : ""}}">
+                    <a href="#"
+                       class="nav-link {{in_array(\Request::route()->getName(), ['booking.index', 'booking.create', 'booking.show']) ? 'active' : ""}}">
+                        <i class="nav-icon fas fa-shopping-cart"></i>
+                        <p>
+                            {{__('admin_menu.bookings')}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('booking.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('admin_menu.list_booking')}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>
