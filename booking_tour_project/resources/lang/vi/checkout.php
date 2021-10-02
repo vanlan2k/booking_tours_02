@@ -15,7 +15,7 @@ return [
     'ATM' => 'ATM/Intermet Banking',
     'cash_note' => 'Quý khách vui lòng thanh toán tại bất kỳ văn phòng BesTours trên toàn quốc và các chi nhánh ngoài nước. Chi tiết Xin lưu ý, Quý khách nên liên lạc trước khi đến để biết rõ hơn về giờ làm việc và các hồ sơ cần chuẩn bị khi thanh toán.',
     'ATM_note' => 'BesTous chấp nhận thanh toán bằng thẻ ATM qua cổng thanh toán 123 pay. Hãy đảm bảo bạn đang sử dụng thẻ ATM do ngân hàng trong nước phát hành và đã được kích hoạt chức năng thanh toán trực tuyến.',
-    'booking' => 'Đặt Tour',
+    'bookings' => 'Đặt Tour',
     'price' => 'Giá',
     'thanks' => 'Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi',
     'booking_sheet' => 'Phiếu Xác Nhận Booking',
@@ -33,10 +33,10 @@ return [
     'payments' => 'Phương Thức TT',
     'stt' => 'Trạng Thái',
     'pay_term' => 'Thời Hạn TT',
-    'note_no' => 'Quý khách vui lòng nhớ số booking (Booking No) để thuận tiện cho các giao dịch sau này',
+    'note_no' => 'Quý khách vui lòng nhớ số bookings (Booking No) để thuận tiện cho các giao dịch sau này',
     'note_stt1' => 'Booking đang đợi BesTours xác nhận',
     'note_stt2' => 'Đã thanh toán',
-    'note_term' => 'Nếu quá thời hạn trên mà quý khách chưa thanh toán. BesTours sẽ hủy booking này',
+    'note_term' => 'Nếu quá thời hạn trên mà quý khách chưa thanh toán. BesTours sẽ hủy bookings này',
     'make_pay' => 'Tiến Hành Thanh Toán',
     'error' => 'Đã xảy ra lỗi!'
 ];

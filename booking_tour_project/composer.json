@@ -24,7 +24,8 @@
     "autoload": {
         "files": [
             "app/Helpers/number_format.php",
-            "app/Helpers/auth_avata.php"
+            "app/Helpers/auth_avata.php",
+            "app/Helpers/list_booking.php"
         ],
         "psr-4": {
             "App\\": "app/",
