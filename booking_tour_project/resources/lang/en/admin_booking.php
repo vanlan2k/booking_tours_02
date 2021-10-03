@@ -16,5 +16,9 @@ return [
     'total' => 'Total',
     'adult' => 'Adult',
     'child' => 'Child',
-    'save' => 'Save'
+    'save' => 'Save',
+    'date_cmt' => 'Date comment',
+    'cmt' => 'Comment content',
+    'id' => 'ID user',
+    'list_cmt' => 'Comment List'
 ];

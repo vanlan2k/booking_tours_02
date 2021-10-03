@@ -25,11 +25,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b11fe1f-3a67-4cb3-ba74-e51dd50f7d5d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/admin_booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/admin_booking.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/admin_booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/admin_booking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/pages/bookings/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/pages/bookings/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/pages/bookings/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/pages/bookings/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/pages/comments/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/pages/comments/list.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +226,7 @@
       <workItem from="1632876509582" duration="1882000" />
       <workItem from="1633143902536" duration="8036000" />
       <workItem from="1633223272124" duration="8503000" />
-      <workItem from="1633268656977" duration="2599000" />
+      <workItem from="1633268656977" duration="5731000" />
     </task>
     <servers />
   </component>

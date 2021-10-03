@@ -7,5 +7,7 @@ return [
     'create_tour' => 'Create Tour',
     'list_tour' => 'List Tour',
     'bookings' => 'Booking',
-    'list_booking' => 'List Booking'
+    'list_booking' => 'List Booking',
+    'comment' => 'Comment',
+    'list_cmt' => 'List Comment'
 ];

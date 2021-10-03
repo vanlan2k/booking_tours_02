@@ -43,6 +43,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('/admin/user',\App\Http\Controllers\admin\UserController::class);
         Route::resource('/admin/tour',\App\Http\Controllers\admin\TourController::class);
         Route::resource('/admin/booking',  \App\Http\Controllers\admin\ManagerBookingController::class);
+        Route::resource('/admin/comment',  \App\Http\Controllers\admin\ManagerCommentController::class);
     });
 });
 

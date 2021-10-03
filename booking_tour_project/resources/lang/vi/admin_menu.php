@@ -7,5 +7,7 @@ return[
     'create_tour' => 'Thêm Tour',
     'list_tour' => 'Danh Sách Tour',
     'bookings' => 'Tour Đặt Trước',
-    'list_booking' => 'Danh Sách'
+    'list_booking' => 'Danh Sách',
+    'comment' => 'Bình Luận',
+    'list_cmt' => 'Danh Sách Bình Luận'
 ];

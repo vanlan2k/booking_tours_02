@@ -17,4 +17,8 @@ return [
     'adult' => 'Người lớn',
     'child' => 'Trẻ em',
     'save' => 'Lưu',
+    'date_cmt' => 'Ngày bình luận',
+    'cmt' => 'Nội dung bình luận',
+    'id' => 'ID người dùng',
+    'list_cmt' => 'Danh Sách Bình Luận'
 ];
