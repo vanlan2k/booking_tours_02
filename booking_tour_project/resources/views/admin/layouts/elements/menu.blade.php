@@ -33,6 +33,16 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
+                <li class="nav-item {{in_array(\Request::route()->getName(), ['admin.home']) ? 'menu-is-opening menu-open' : ""}}">
+                    <a href="/admin/"
+                       class="nav-link {{in_array(\Request::route()->getName(), ['user.index', 'user.create', 'user.show']) ? 'active' : ""}}">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            {{__('admin_menu.home')}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item {{in_array(\Request::route()->getName(), ['user.index', 'user.create', 'user.show']) ? 'menu-is-opening menu-open' : ""}}">
                     <a href="#"
                        class="nav-link {{in_array(\Request::route()->getName(), ['user.index', 'user.create', 'user.show']) ? 'active' : ""}}">
@@ -113,6 +123,30 @@
                             <a href="{{route('comment.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>{{__('admin_menu.list_cmt')}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item {{in_array(\Request::route()->getName(), ['category.index', 'category.create', 'category.show']) ? 'menu-is-opening menu-open' : ""}}">
+                    <a href="#"
+                       class="nav-link {{in_array(\Request::route()->getName(), ['category.index', 'category.create', 'category.show']) ? 'active' : ""}}">
+                        <i class="nav-icon fas fa-list-alt"></i>
+                        <p>
+                            {{__('admin_menu.category')}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('category.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('admin_menu.list_cate')}}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('category.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('admin_menu.create_cate')}}</p>
                             </a>
                         </li>
                     </ul>

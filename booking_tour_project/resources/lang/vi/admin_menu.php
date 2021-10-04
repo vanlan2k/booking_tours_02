@@ -1,5 +1,6 @@
 <?php
 return[
+    'home' => 'Trang Chủ',
     'user' => 'Người Dùng',
     'create_user' => 'Thêm Người Dùng',
     'list_user' => 'Danh Sách Người Dùng',
@@ -9,5 +10,8 @@ return[
     'bookings' => 'Tour Đặt Trước',
     'list_booking' => 'Danh Sách',
     'comment' => 'Bình Luận',
-    'list_cmt' => 'Danh Sách Bình Luận'
+    'list_cmt' => 'Danh Sách Bình Luận',
+    'category' => 'Loại Tour',
+    'list_cate' => 'Danh Sách',
+    'create_cate' => 'Thêm Mới Loại Tour'
 ];

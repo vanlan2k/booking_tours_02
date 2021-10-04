@@ -9,6 +9,9 @@ class Category extends Model
 {
     use HasFactory;
     protected $table = 'categories';
+    protected $fillable = [
+        'name'
+    ];
     public function tour(){
         return $this->hasMany(Tour::class, 'cate_id', 'id');
     }

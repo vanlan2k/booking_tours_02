@@ -44,6 +44,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('/admin/tour',\App\Http\Controllers\admin\TourController::class);
         Route::resource('/admin/booking',  \App\Http\Controllers\admin\ManagerBookingController::class);
         Route::resource('/admin/comment',  \App\Http\Controllers\admin\ManagerCommentController::class);
+        Route::resource('/admin/category',  \App\Http\Controllers\admin\ManagerCategoryController::class);
     });
 });
 
