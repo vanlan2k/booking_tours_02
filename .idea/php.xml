@@ -116,6 +116,11 @@
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/intervention/image" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/unisharp/laravel-filemanager" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/hanneskod/classtools" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/bensampo/laravel-enum" />
     </include_path>
   </component>
   <component name="PhpUnit">

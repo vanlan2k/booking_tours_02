@@ -46,6 +46,5 @@ class ProfileController extends Controller
         } catch (Exception $e) {
             return redirect()->back()->with(['error' => __('register.update_f')]);
         }
-
     }
 }
