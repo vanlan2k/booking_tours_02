@@ -24,16 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b11fe1f-3a67-4cb3-ba74-e51dd50f7d5d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/admin/ManagerCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/admin/ManagerCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/admin_cate.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/admin_cate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/admin_menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/admin_menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/admin_cate.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/admin_cate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/admin_menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/admin_menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/layouts/elements/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/layouts/elements/menu.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="6b11fe1f-3a67-4cb3-ba74-e51dd50f7d5d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -237,6 +228,9 @@
       <workItem from="1633143902536" duration="8036000" />
       <workItem from="1633223272124" duration="8503000" />
       <workItem from="1633268656977" duration="5731000" />
+      <workItem from="1633481283111" duration="7447000" />
+      <workItem from="1633529387339" duration="2342000" />
+      <workItem from="1633573106397" duration="2745000" />
     </task>
     <servers />
   </component>
@@ -264,30 +258,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1633240872792" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1633230521447">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1633425134986">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1633230521447" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1632844306863">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1633425134986" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1633482839958">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1632844306863" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1633482839958" />
     <state x="579" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1632583024681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="579" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1632583024681" />
-    <state x="477" y="147" width="581" height="530" key="find.popup" timestamp="1633340735808">
+    <state x="477" y="147" width="581" height="530" key="find.popup" timestamp="1633363305020">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="147" width="581" height="530" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1633340735808" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1633271399766">
+    <state x="477" y="147" width="581" height="530" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1633363305020" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1633483758801">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1633271399766" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1633339959525">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1633483758801" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1633533113917">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1633339959525" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1633533113917" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

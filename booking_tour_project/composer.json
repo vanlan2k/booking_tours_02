@@ -25,7 +25,8 @@
         "files": [
             "app/Helpers/number_format.php",
             "app/Helpers/auth_avata.php",
-            "app/Helpers/list_booking.php"
+            "app/Helpers/list_booking.php",
+            "app/Helpers/single.php"
         ],
         "psr-4": {
             "App\\": "app/",

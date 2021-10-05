@@ -35,7 +35,7 @@
                 data-accordion="false">
                 <li class="nav-item {{in_array(\Request::route()->getName(), ['admin.home']) ? 'menu-is-opening menu-open' : ""}}">
                     <a href="/admin/"
-                       class="nav-link {{in_array(\Request::route()->getName(), ['user.index', 'user.create', 'user.show']) ? 'active' : ""}}">
+                       class="nav-link {{in_array(\Request::route()->getName(), ['admin.home']) ? 'active' : ""}}">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
                             {{__('admin_menu.home')}}

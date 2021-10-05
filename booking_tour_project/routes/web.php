@@ -39,6 +39,9 @@ Route::post('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::c
 Route::middleware(['auth'])->group(function () {
     Route::group(['middleware' => 'checkAdmin:1'], function () {
         Route::get('/admin/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.home');
+        Route::get('admin/chart', [\App\Http\Controllers\admin\ChartController::class, 'chartBar']);
+        Route::post('/admin/filterDate', [\App\Http\Controllers\admin\ChartController::class,'filterDate']);
+        Route::post('/admin/filterBy', [\App\Http\Controllers\admin\ChartController::class, 'filterBy']);
         Route::get('/admin/logout', [\App\Http\Controllers\admin\Auth\LoginController::class, 'logout'])->name('auth.logout');
         Route::resource('/admin/user',\App\Http\Controllers\admin\UserController::class);
         Route::resource('/admin/tour',\App\Http\Controllers\admin\TourController::class);

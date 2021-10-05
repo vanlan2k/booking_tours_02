@@ -150,11 +150,7 @@
                                         <label>Rating </label>
                                         <select name="rating" class="form-control">
                                             <option value="">Select</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
+                                            {!! forRate() !!}
                                         </select>
                                     </div>
                                     <div style="color: red" class="form-group">
@@ -173,11 +169,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12">
-                                        @if(\Illuminate\Support\Facades\Auth::user()!= null)
-                                            <button class="btn btn-danger">Submit</button>
-                                        @else
-                                            <a href="/login" class="btn btn-danger">Submit</a>
-                                        @endif
+                                        {!! getBTNSB() !!}
                                     </div>
                                 </form>
                             </div>
