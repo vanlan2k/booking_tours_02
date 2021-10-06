@@ -63,9 +63,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        if (!$user) {
-            abort(404);
-        }
+        getNotFound($user);
         $roles = Role::all();
         $data['roles'] = $roles;
         $data['user'] = $user;
@@ -84,9 +82,7 @@ class UserController extends Controller
         $input = $request->all();
         try {
             $user = User::find($id);
-            if (!$user) {
-                abort(404);
-            }
+            getNotFound($user);
             if (!$input['password']) {
                 $input['password'] = bcrypt($input['password']);
             }
@@ -108,9 +104,7 @@ class UserController extends Controller
     {
         try {
             $user = User::find($id);
-            if (!$user) {
-                abort(404);
-            }
+            getNotFound($user);
             $user->delete();
             return response()->json([
                 'error' => false,

@@ -22,5 +22,6 @@
 
 <link rel="stylesheet" href="{{asset('dist/css/toastr.min.css')}}">
 
+<link rel="stylesheet" href="{{asset('dist/css/admin_style.css')}}">
 <!-- xEditalbe -->
 <link rel="stylesheet" href="{{ asset('dist/js/libs/xeditable/bootstrap-editable.css') }}"/>

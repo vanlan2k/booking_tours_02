@@ -17,7 +17,7 @@ use \App\Http\Controllers\web\auth\LoginController;
 /*web*/
 Route::get('/', [\App\Http\Controllers\web\HomeController::class, 'index'])->name('home');
 Route::get('/single/{id}', [\App\Http\Controllers\web\SingleController::class, 'index'])->name('single');
-Route::get('/tour', [\App\Http\Controllers\web\TourController::class, 'index'])->name('tour');
+Route::get('/tour', [\App\Http\Controllers\web\TourController::class, 'index']);
 Route::resource('/booking', BookingController::class);
 Route::get('/checkout', [\App\Http\Controllers\web\CheckoutController::class, 'index'])->name('checkout');
 Route::post('/payment', [\App\Http\Controllers\web\CheckoutController::class, 'paymentPost']);
@@ -41,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.home');
         Route::get('/admin/logout', [\App\Http\Controllers\admin\Auth\LoginController::class, 'logout'])->name('auth.logout');
         Route::resource('/admin/user',\App\Http\Controllers\admin\UserController::class);
+        Route::resource('/admin/tour',\App\Http\Controllers\admin\TourController::class);
     });
 });
 

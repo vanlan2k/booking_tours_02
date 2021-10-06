@@ -56,6 +56,30 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item {{in_array(\Request::route()->getName(), ['tour.index', 'tour.create', 'tour.show']) ? 'menu-is-opening menu-open' : ""}}">
+                    <a href="#"
+                       class="nav-link {{in_array(\Request::route()->getName(), ['tour.index', 'tour.create', 'tour.show']) ? 'active' : ""}}">
+                        <i class="nav-icon fas fa-archway"></i>
+                        <p>
+                            {{__('admin_menu.tour')}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('tour.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('admin_menu.list_tour')}}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('tour.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('admin_menu.create_tour')}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>

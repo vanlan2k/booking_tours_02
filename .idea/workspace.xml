@@ -26,9 +26,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6b11fe1f-3a67-4cb3-ba74-e51dd50f7d5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/admin_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/en/admin_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/admin_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/lang/vi/admin_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/pages/users/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/admin/pages/users/detail.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,6 +232,7 @@
       <workItem from="1632532051607" duration="25304000" />
       <workItem from="1632837055746" duration="4561000" />
       <workItem from="1632876509582" duration="1882000" />
+      <workItem from="1633143902536" duration="8036000" />
     </task>
     <servers />
   </component>
@@ -266,14 +264,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1633065135318" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1632839994480">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1633008576171">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1632839994480" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1632844306863">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1633008576171" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1633432504137">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1632844306863" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1633432504137" />
     <state x="579" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1632583024681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -282,10 +280,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="147" width="581" height="530" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1632040728823" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1633343757443">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1632995364610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1633343757443" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1632995364610" />
     <state x="431" y="145" key="search.everywhere.popup" timestamp="1633067492479">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

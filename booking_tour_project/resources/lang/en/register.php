@@ -22,5 +22,6 @@ return [
     'update_ss' => 'Update proflie successfully!',
     'update_f' => 'Update profile fail!',
     'title_user' => 'Create New User',
+    'title_tour' => 'Create New Tour',
 ];
 ?>
