@@ -15,7 +15,7 @@ use \App\Http\Controllers\web\auth\LoginController;
 |
 */
 /*web*/
-Route::get('/', [\App\Http\Controllers\web\HomeController::class, 'index'])->name('home');
+Route::get('/', [\App\Http\Controllers\web\HomeController::class, 'index', 'https'])->name('home');
 Route::get('/single/{id}', [\App\Http\Controllers\web\SingleController::class, 'index'])->name('single');
 Route::get('/tour', [\App\Http\Controllers\web\TourController::class, 'index']);
 Route::resource('/booking', BookingController::class);
@@ -27,6 +27,9 @@ Route::post('/loadmore', [\App\Http\Controllers\web\LoadMoreController::class, '
 Route::resource('/search', \App\Http\Controllers\web\SearchController::class);
 Route::resource('/profile', \App\Http\Controllers\web\ProfileController::class);
 
+
+Route::get('/redirect/{provider}', [LoginController::class, 'redirect']);
+Route::get('/callback/{provider}', [LoginController::class, 'callback']);
 Route::get('/login', [LoginController::class, 'index'])->name('loginUser');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);

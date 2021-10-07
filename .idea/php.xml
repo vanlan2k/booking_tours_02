@@ -115,7 +115,8 @@
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/intervention/image" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/unisharp/laravel-filemanager" />
-      <path value="$PROJECT_DIR$/booking_tour_project/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/laravel/socialite" />
     </include_path>
   </component>
   <component name="PhpUnit">
