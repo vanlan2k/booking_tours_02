@@ -56,9 +56,9 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {{in_array(\Request::route()->getName(), ['tour.index', 'tour.create', 'tour.show']) ? 'menu-is-opening menu-open' : ""}}">
+                <li class="nav-item {{getTour()}}">
                     <a href="#"
-                       class="nav-link {{in_array(\Request::route()->getName(), ['tour.index', 'tour.create', 'tour.show']) ? 'active' : ""}}">
+                       class="nav-link {{getTour()}}">
                         <i class="nav-icon fas fa-archway"></i>
                         <p>
                             {{__('admin_menu.tour')}}
@@ -76,6 +76,42 @@
                             <a href="{{route('tour.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>{{__('admin_menu.create_tour')}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item {{getBooking()}}">
+                    <a href="#"
+                       class="nav-link {{getBooking()}}">
+                        <i class="nav-icon fas fa-shopping-cart"></i>
+                        <p>
+                            {{__('admin_menu.bookings')}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('booking.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('admin_menu.list_booking')}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item {{getComment()}}">
+                    <a href="#"
+                       class="nav-link {{getComment()}}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            {{__('admin_menu.comment')}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('comment.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{__('admin_menu.list_cmt')}}</p>
                             </a>
                         </li>
                     </ul>

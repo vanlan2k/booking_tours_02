@@ -68,8 +68,7 @@
                             <div class="form-group" id="add-item">
                                 <label>{{__('admin_tour.description')}}</label>
                                 <textarea id="my-editor" name="description"
-                                          class="form-control {{$errors->has('description') ? 'is-invalid' : ''}}"
-                                >{{ $tour->description }}</textarea>
+                                          class="form-control {{$errors->has('description') ? 'is-invalid' : ''}}">{{ $tour->description }}</textarea>
                                 <div style="color: red">
                                     @error('description')
                                     {{$message}}

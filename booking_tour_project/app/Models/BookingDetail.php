@@ -13,6 +13,6 @@ class BookingDetail extends Model
         return $this->belongsTo(Booking::class, 'booking_id', 'id');
     }
     public function tour(){
-        return $this->hasMany(Tour::class, 'tour_id', 'id');
+        return $this->belongsTo(Tour::class, 'tour_id', 'id');
     }
 }
