@@ -25,20 +25,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b11fe1f-3a67-4cb3-ba74-e51dd50f7d5d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/booking_tours_02.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/booking_tours_02.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/admin/auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/admin/auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Http/Controllers/web/auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking_tour_project/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/footer-libs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/layouts/footer-libs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkinfo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/booking_tour_project/resources/views/web/pages/checkinfo.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
