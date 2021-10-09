@@ -1,5 +1,6 @@
 <?php
 return [
+    'home' => 'Home',
     'user' => 'Users',
     'create_user' => 'Create User',
     'list_user' => 'List User',
@@ -9,5 +10,8 @@ return [
     'bookings' => 'Booking',
     'list_booking' => 'List Booking',
     'comment' => 'Comment',
-    'list_cmt' => 'List Comment'
+    'list_cmt' => 'List Comment',
+    'category' => 'Category',
+    'list_cate' => 'List Category',
+    'create_cate' => 'Create Category'
 ];

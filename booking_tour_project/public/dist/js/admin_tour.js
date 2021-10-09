@@ -18,8 +18,9 @@ function deleteTour(id, token, i) {
                         $('.row-item'+ i).remove();
                         swal("Good job!", "Item deleted successfully!","success")
                             .then((value) => {
-                                for (var j = 0; j < $('.stt').length;){
-                                    $('.stt').eq(j).text(j+=1)
+                                for (var j = 0; j <= $('.stt').length; j++){
+                                    var z = j + 1;
+                                    $('.stt').eq(j).text(z)
                                 }
                             });
                         return;
@@ -78,7 +79,6 @@ for(var i = 1; i <= x ; i++) {
 
 
 function clickAddImg() {
-    console.log()
     y ++;
     $('#add_img').append('<div class="list_img"><label>Image #'+y+'</label><div class="input-group"><span class="input-group-btn"><a data-input="thumbnail'+y+'" id="lfm'+y+'" data-preview="holder'+y+'" class="btn btn-primary"><i class="fa fa-picture-o"></i> Choose</a></span><input id="thumbnail'+y+'"class="form-control" type="text" name="image[]"><div class="form-group col-md-2 d-flex align-items-end"><button type="button" class="btn_minus btn btn-danger btn-outline js-addSize" ><i class="fa fa-minus"></i></button></div></div><img id="holder'+y+'" style="margin-top:15px;max-height:100px;"></div>')
     $('#lfm'+y).filemanager('file');

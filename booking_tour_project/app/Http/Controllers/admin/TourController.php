@@ -89,8 +89,9 @@ class TourController extends Controller
         $input = $request->all();
         DB::beginTransaction();
         try {
+            $tour = $this->findTour($id);
             $update = new AdminService();
-            $update->updateTour($input, $id);
+            $update->updateTour($input, $tour, $id);
             DB::commit();
             return redirect()->back()->with(['success' => __('admin_tour.ud_ss')]);
         } catch (Exception $e) {
@@ -107,18 +108,17 @@ class TourController extends Controller
      */
     public function destroy($id)
     {
-        try {
-            $delete = new AdminService();
-            $delete->deleteTour($id);
-            return response()->json([
-                'error' => false,
-                'message' => __('admin_tour.delete_ss')
-            ]);
-        } catch (Exception $e) {
-            return redirect()->back()->with([
-                'error' => true,
-                'message' => __("admin_tour.delete_fail")
-            ]);
+        $tour = $this->findTour($id);
+        $delete = new AdminService();
+        $delete->deleteTour($tour, $id);
+    }
+
+    private function findTour($id)
+    {
+        $tour = Tour::find($id);
+        if (!$tour) {
+            return abort(404);
         }
+        return $tour;
     }
 }
