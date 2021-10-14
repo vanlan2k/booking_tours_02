@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -46,5 +47,11 @@ class User extends Authenticatable
 
     public function roles(){
         return $this->belongsTo(Role::class, 'role_id', 'id');
+    }
+    public function scopeSumRegister($query, $dateStart, $now){
+        return $query->select(DB::raw('COUNT("id") as register'))
+            ->whereBetween('created_at', [$dateStart, $now])
+            ->groupBy(DB::raw('MONTH(created_at)'))
+            ->first();
     }
 }

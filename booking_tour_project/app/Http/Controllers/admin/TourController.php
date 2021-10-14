@@ -49,14 +49,12 @@ class TourController extends Controller
     public function store(TourRequest $request)
     {
         $input = $request->all();
-        DB::beginTransaction();
-        try {
-            $create = new AdminService();
-            $create->createTour($input);
-            DB::commit();
+        $create = new AdminService();
+        $check = $create->createTour($input);
+        if ($check){
             return redirect()->back()->with(['success' => __('admin_tour.add_cc')]);
-        } catch (Exception $e) {
-            DB::rollBack();
+        }
+        else{
             return redirect()->back()->with(['error' => __('admin_tour.add_fail')]);
         }
     }
@@ -69,14 +67,12 @@ class TourController extends Controller
      */
     public function show($id)
     {
-        $tour = Tour::find($id);
-        getNotFound($tour);
+        $tour = $this->findTour($id);
         $categories = Category::all();
         $data['tour'] = $tour;
         $data['categories'] = $categories;
         return view('admin.pages.tours.detail')->with($data);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -87,15 +83,13 @@ class TourController extends Controller
     public function update(TourRequest $request, $id)
     {
         $input = $request->all();
-        DB::beginTransaction();
-        try {
-            $tour = $this->findTour($id);
-            $update = new AdminService();
-            $update->updateTour($input, $tour, $id);
-            DB::commit();
-            return redirect()->back()->with(['success' => __('admin_tour.ud_ss')]);
-        } catch (Exception $e) {
-            DB::rollBack();
+        $tour = $this->findTour($id);
+        $update = new AdminService();
+        $check = $update->updateTour($input, $tour, $id);
+        if ($check){
+            return redirect()->back()->with(['success' => __('admin_tour.ud_cc')]);
+        }
+        else{
             return redirect()->back()->with(['error' => __('admin_tour.ud_fail')]);
         }
     }
@@ -110,7 +104,20 @@ class TourController extends Controller
     {
         $tour = $this->findTour($id);
         $delete = new AdminService();
-        $delete->deleteTour($tour, $id);
+        $check = $delete->deleteTour($tour, $id);
+        if ($check){
+            return response()->json([
+                'error' => false,
+                'message' => __('admin_tour.delete_ss')
+            ]);
+        }
+        else{
+            return redirect()->back()->with([
+                'error' => true,
+                'message' => __("admin_tour.delete_fail")
+            ]);
+        }
+
     }
 
     private function findTour($id)

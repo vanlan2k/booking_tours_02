@@ -62,6 +62,7 @@ class ManagerCategoryController extends Controller
         $data['category'] = $cate;
         return view('admin.pages.categories.detail')->with($data);
     }
+
     public function update(CategoryRequest $request, $id)
     {
         $input = $request->all();
@@ -85,17 +86,27 @@ class ManagerCategoryController extends Controller
     {
         $cate = $this->findCategories($id);
         $cateService = new AdminService();
-        $cateService->deleteCate($cate, $id);
+        $check = $cateService->deleteCate($cate, $id);
+        if ($check) {
+            return response()->json([
+                'error' => false,
+                'message' => __('admin_cate.delete_ss')
+            ]);
+        } else {
+            return redirect()->back()->with([
+                'error' => true,
+                'message' => __("admin_cate.delete_fail")
+            ]);
+        }
     }
 
     // Function find Categories
     private function findCategories($id)
     {
         $categories = Category::find($id);
-        if($categories)
-        {
+        if ($categories) {
             return $categories;
-        }else{
+        } else {
             return abort(404);
         }
     }

@@ -43,6 +43,7 @@ var options = {
 CKEDITOR.replace('my-editor', options);
 CKEDITOR.replace('my-editor1', options);
 
+
 var x = $('.program').length, y = $('.list_img').length;
 function clickAddElementFunction() {
     x++;
@@ -75,6 +76,12 @@ for(var i = 1; i <= x ; i++) {
     $('#thumbnail' + i).on('change', function (e) {
         $('#holder' + z).attr('src', $(this).val());
     })
+}
+var z = $('.tour_route').length;
+console.log(z)
+for (var i = 2; i <= z; i++){
+    console.log(i)
+    CKEDITOR.replace('my-editor'+i, options);
 }
 
 

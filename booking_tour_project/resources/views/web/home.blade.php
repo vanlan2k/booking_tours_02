@@ -54,10 +54,10 @@
                 <div class="col-5">
                     <div class="form-group">
                         <label>{{__('home.address')}}:</label>
-                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;"tabindex="-1" aria-hidden="true" name="address">
+                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;"tabindex="-1" aria-hidden="true" name="cate_id">
                             <option selected="selected" value="">----------{{__('home.select_address')}}----------</option>
-                            @foreach($add_tours as $address)
-                                <option value="{{$address->address}}">{{$address->address}}</option>
+                            @foreach($cates as $cate)
+                                <option value="{{$cate->id}}">{{$cate->name}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -83,7 +83,7 @@
                     <div class="col-md-4 col-sm-6 wow fadeIn animated" data-wow-delay="0.2s">
                         <div class="img_wrapper">
                             <div class="price_grid">
-                                {{getPrice($tour->tour_detail[1]->price)}}
+                                {{getPrice($tour->priceAdult)}}
                             </div>
                             <div class="img_container">
                                 <a href="/single/{{$tour->id}}">
@@ -117,7 +117,7 @@
                                         <h4>{{$tour_new->name}}</h4>
                                         <small>Point rate &nbsp; </small>
                                         <small class="score-1">{{$tour_new->rate}}</small>
-                                        <span class="price_list">{{getPrice($tour_new->tour_detail[1]->price)}}</span>
+                                        <span class="price_list">{{getPrice($tour_new->priceAdult)}}</span>
                                     </a>
                                 </div>
                             </li>
@@ -135,7 +135,7 @@
                                         <h4>{{$tour_highly->name}}</h4>
                                         <small>Point rate &nbsp; </small>
                                         <small class="score-1">{{$tour_highly->rate}}</small>
-                                        <span class="price_list">{{getPrice($tour_highly->tour_detail[1]->price)}}</span>
+                                        <span class="price_list">{{getPrice($tour_highly->priceAdult)}}</span>
                                     </a>
                                 </div>
                             </li>
@@ -232,3 +232,4 @@
         </div>
     </section>
 @endsection
+

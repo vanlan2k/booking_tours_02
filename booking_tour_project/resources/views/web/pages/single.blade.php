@@ -149,7 +149,7 @@
                                         <label>{{__('single.rating')}}</label>
                                         <select name="rating" class="form-control">
                                             <option value="">Select</option>
-                                            {!! forRate()!!}
+                                            {!! forRate() !!}
                                         </select>
                                     </div>
                                     <div style="color: red" class="form-group">
@@ -184,10 +184,10 @@
                 <aside class="col-md-5">
                     <div class="box_style_1">
                         <div class="price">
-                            <strong>{{getPrice($tour->tour_detail[0]->price)}}</strong><small>{{__('single.per_adult')}}</small>
+                            <strong>{{getPrice($tour->priceAdult)}}</strong><small>{{__('single.per_adult')}}</small>
                         </div>
                         <div class="price">
-                            <strong>{{getPrice($tour->tour_detail[1]->price)}}</strong><small>{{__('single.per_child')}}</small>
+                            <strong>{{getPrice($tour->priceChild)}}</strong><small>{{__('single.per_child')}}</small>
                         </div>
                         <ul class="list_ok">
                             <li>Sea te propriae lobortis</li>

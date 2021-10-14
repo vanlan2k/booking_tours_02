@@ -14,10 +14,10 @@ class Tour extends Model
     protected $fillable = [
         'cate_id',
         'name',
-        'address',
         'avata',
         'description',
-        'number_date',
+        'priceChild',
+        'priceAdult',
         'date_start',
         'date_end'
     ];
@@ -35,11 +35,6 @@ class Tour extends Model
         return $this->hasMany(BookingDetail::class, 'tour_id', 'id');
     }
 
-    public function tour_detail()
-    {
-        return $this->hasMany(TourDetail::class, 'tour_id', 'id');
-    }
-
     public function review()
     {
         return $this->hasMany(Review::class, 'tour_id', 'id');
@@ -55,12 +50,12 @@ class Tour extends Model
         return $this->rate * 10;
     }
 
-    public function scopeSearchTour($query, $address, $date)
+    public function scopeSearchTour($query, $cate_id, $date)
     {
-        return $query->when($address != null, function ($qr) use ($address, $date) {
-                    $qr->where('address', $address)->where('date_start', $date);
+        return $query->when($cate_id != null, function ($qr) use ($cate_id, $date) {
+                    $qr->where('cate_id', $cate_id)->where('date_start', '>' , $date);
                 }, function ($qr) use ($date) {
-                    $qr->where('date_start', $date);
+                    $qr->where('date_start', '>', $date);
                 });
     }
 }
