@@ -17,6 +17,9 @@
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/laravel/serializable-closure" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/laravel/socialite" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/league/oauth1-client" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/laravel/serializable-closure" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/laravel/socialite" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/league/oauth1-client" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/unisharp/laravel-filemanager" />
     </content>
     <orderEntry type="inheritedJdk" />

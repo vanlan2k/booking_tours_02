@@ -20,7 +20,6 @@ class Booking extends Model
         "0" => "Cash",
         "1" => "ATM/Internet Bacnking",
     ];
-
     public function booking_detail()
     {
         return $this->hasMany(BookingDetail::class, 'booking_id', 'id');
