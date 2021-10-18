@@ -11,6 +11,7 @@ return [
     'forgot_pass' => 'Quên Mật Khẩu ?',
     'profile' => 'Hồ Sơ',
     'logout' => 'Đăng xuất',
-    'your_review' => 'Đánh giá của bạn'
+    'your_review' => 'Đánh giá của bạn',
+    'news' => 'Tin tức',
 ];
 ?>
