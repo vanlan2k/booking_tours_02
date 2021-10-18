@@ -45,3 +45,6 @@
         @endif
     });
 </script>
+{{--Paypal--}}
+<script src="{{asset('dist/js/checkout_paypal.js')}}"></script>
+<script src="{{asset('dist/js/paypal.js')}}"></script>
