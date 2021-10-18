@@ -26,6 +26,7 @@ Route::post('/comment/{id}', [\App\Http\Controllers\web\RatingCommentController:
 Route::post('/loadmore', [\App\Http\Controllers\web\LoadMoreController::class, 'review']);
 Route::resource('/search', \App\Http\Controllers\web\SearchController::class);
 Route::resource('/profile', \App\Http\Controllers\web\ProfileController::class);
+Route::get('/review', [\App\Http\Controllers\web\YouReviewController::class, 'index']);
 
 
 Route::get('/redirect/{provider}', [LoginController::class, 'redirect']);

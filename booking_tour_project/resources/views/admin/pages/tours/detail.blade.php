@@ -9,7 +9,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form method="POST" action="{{ route('tour.update', [$tour->id]) }}">
+                    <form method="POST" action="{{ route('tour.update', $tour) }}">
                         @csrf
                         @method('PUT')
                         <div class="card-body">

@@ -97,7 +97,7 @@ class ManagerCategoryController extends Controller
                 'error' => true,
                 'message' => __("admin_cate.delete_fail")
             ]);
-            
+
         }
     }
 

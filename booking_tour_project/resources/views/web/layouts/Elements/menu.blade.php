@@ -1,26 +1,5 @@
 <div id="header_1" class="layer_slider">
     <header>
-        <div id="top_line">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <a href="tel://004542344599" id="phone_top">0045 043204434</a><span id="opening">Mon - Sat 8.00/18.00</span>
-                    </div>
-                    <div class="col-md-6 col-sm-6 hidden-xs">
-                        <ul id="top_links">
-                            <li><a href="wishlist.html" id="wishlist_link">Wishlist</a>
-                            </li>
-                            <li><a href="#0">PURCHASE THIS TEMPLATE</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End row -->
-            </div>
-            <!-- End container-->
-        </div>
-        <!-- End top line-->
-
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-3">
@@ -71,6 +50,7 @@
                                              class="img-rounded avata">&nbsp;{{Auth::user()->name}}</a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{route('profile.index')}}">{{__('menu.profile')}}</a>
+                                        <a class="dropdown-item" href="/review">{{__('menu.your_review')}}</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="/logout">{{__('menu.logout')}}</a>
                                     </div>
