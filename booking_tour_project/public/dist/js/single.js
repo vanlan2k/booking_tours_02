@@ -33,7 +33,7 @@ $(document).ready(function () {
         $.ajax({
             url: "/loadmore",
             method: "POST",
-            data: {id: id, _token: _token},
+            data: {id: id, _token: _token, tour_id: id_tour},
             success: function (data) {
                 $('#load_more_button').remove();
                 $('#review_data').append(data.output);
@@ -44,7 +44,7 @@ $(document).ready(function () {
     $(document).on('click', '#load_more_button', function () {
         var id = $(this).data('id');
         $('#load_more_button').html('<b>Loading...</b>');
-        load_data(id, _token);
+        load_data(id, _token, id_tour, id_tour);
     });
 
 })

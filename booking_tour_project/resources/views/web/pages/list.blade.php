@@ -16,17 +16,13 @@
         <div class="divider_border_gray"></div>
         <div id="filters" class="clearfix">
             <div id="sort_filters">
-                <select name="orderby" class="selectbox">
-                    <option value="popularity">Sort by Popularity</option>
-                    <option value="rating">Sort by Average Rating</option>
-                    <option value="date" selected='selected'>Sort by Newness</option>
-                    <option value="price">Sort by Price: Low to High</option>
-                    <option value="price-desc">Sort by Price: High to Low</option>
+                @csrf
+                <select name="orderby" id="selectbox" class="selectbox">
+                    <option value="popularity" {{$sort == 'popularity' ? 'selected' :''}}>{{__('list_tour.sort_by_popularity')}}</option>
+                    <option value="date" {{$sort == 'date' ? 'selected' : (!$sort ? 'selected': '')}}>{{__('list_tour.sort_by_new')}}</option>
+                    <option value="price" {{$sort == 'price' ? 'selected' :''}}>{{__('list_tour.sort_by_price')}}</option>
+                    <option value="priceDesc" {{$sort == 'priceDesc' ? 'selected' :''}}>{{__('list_tour.sort_by_price_desc')}}</option>
                 </select>
-            </div>
-            <div id="view_change">
-                <a href="/tour" class="grid_bt"></a>
-                <a href="/tour-list" class="list_bt"></a>
             </div>
         </div>
         <!-- End filters -->
@@ -70,3 +66,6 @@
         <!-- End container -->
     </section>
 @endsection
+@push('script')
+    <script type="text/javascript" src="{{asset('dist/js/list_tour.js')}}"></script>
+@endpush
