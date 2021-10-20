@@ -29,5 +29,8 @@ return [
     'date_note' => 'Enter number date',
     'adult_note' => 'Enter price per adult',
     'child_note' => 'Enter price per child',
-    'detail' => 'Tour Detail'
+    'detail' => 'Tour Detail',
+    'search' => 'Search',
+    'search_note' => 'Enter tour name',
+    'select_category' => 'Select Category'
 ];

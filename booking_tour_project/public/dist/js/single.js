@@ -26,9 +26,8 @@ function getTotalFunction() {
 $(document).ready(function () {
 
     var _token = $('input[name="_token"]').val();
-
-    load_data('', _token);
-
+    var id_tour = $('#tour_id').data('tour');
+    load_data('', _token, id_tour);
     function load_data(id = "", _token) {
         $.ajax({
             url: "/loadmore",

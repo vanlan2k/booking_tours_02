@@ -29,5 +29,8 @@ return [
     'date_note' => 'Nhập số ngày',
     'adult_note' => 'Nhập giá cho mỗi người lớn',
     'child_note' => 'Nhập giá cho mỗi trẻ em',
-    'detail' => 'Chi Tiết Tour'
+    'detail' => 'Chi Tiết Tour',
+    'search' => 'Tìm Kiếm',
+    'search_note' => 'Nhập tên tour',
+    'select_category' => 'Chọn Loại Tour'
 ];

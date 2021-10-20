@@ -102,4 +102,18 @@ class Tour extends Model
         }
         return $tours;
     }
+
+    public function scopeIndexTour($query, $input)
+    {
+        return $query->when($input != null, function ($qr) use ($input) {
+            $qr->whereHas('category', function ($qr) use ($input) {
+                $qr->where('cate_id', $input);
+            });
+        })->orderBy('updated_at', 'DESC')
+            ->orderBy('created_at', 'DESC')
+            ->paginate(12);
+    }
+    public function scopeSearchTour1($query, $input){
+        return $query->where('name', 'like', '%'. $input. '%')->get();
+    }
 }

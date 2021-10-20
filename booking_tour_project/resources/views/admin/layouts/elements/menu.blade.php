@@ -4,7 +4,6 @@
         <img src="/dist/img/logo.png" alt="BesTour Logo" class=" elevation-3 mb-2"
              style="opacity: .8; background:white">
     </a>
-
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->

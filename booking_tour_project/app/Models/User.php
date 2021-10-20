@@ -54,4 +54,7 @@ class User extends Authenticatable
             ->groupBy(DB::raw('MONTH(created_at)'))
             ->first();
     }
+    public function news(){
+        return $this->hasMany(News::class, 'admin_id', 'id');
+    }
 }
