@@ -13,7 +13,7 @@ class SingleController extends Controller
         $tour = Tour::find($id);
         $tours = Tour::limit(4)->where('cate_id', $tour->cate_id)->get();
         $ratings = AssessRate::where('tour_id', $id)->get();
-        $comments = Review::where('tour_id', $id)->get();
+        $comments = Review::where('tour_id', $id)->where('status', true)->get();
         $data['tour'] = $tour;
         $data['tours'] = $tours;
         $data['ratings'] = $ratings;
