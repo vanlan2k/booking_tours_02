@@ -64,13 +64,13 @@ class ChartService
     {
         $now = Carbon::now();
         if ($input['filter'] == 'day') {
-            $result = $this->filterDay($now);
+            $result = $this->filterDay($now->addDay());
         } elseif ($input['filter'] == 'lastmonth') {
             $result = $this->filterLastMonth();
         } elseif ($input['filter'] == 'thismonth') {
-            $result = $this->filterThisMonth($now);
+            $result = $this->filterThisMonth($now->addDay());
         } else {
-            $result = $this->filterYear($now);
+            $result = $this->filterYear($now->addMonth());
         }
         return $result;
     }
@@ -87,7 +87,7 @@ class ChartService
     {
         $sub30Days = Carbon::now()->subDays(30);
         $now = Carbon::now();
-        $result = $this->filterFunction($sub30Days, $now);
+        $result = $this->filterFunction($sub30Days, $now->addDay());
         return $result;
     }
 
@@ -118,7 +118,7 @@ class ChartService
     public function exportExcel()
     {
         $this_month = Carbon::now()->startOfMonth();
-        $now = Carbon::now();
+        $now = Carbon::now()->addDay();
         $data = [];
         $date = [];
         do {

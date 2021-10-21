@@ -2,13 +2,19 @@
 
 namespace App\Services;
 
+use App\Enums\UserRole;
+use App\Jobs\NotificationTourJob;
+use App\Jobs\SendMail;
+use App\Mail\NotificationTourMail;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Tour;
 use App\Models\TourDetail;
 use App\Models\TourRoute;
-use Dflydev\DotAccessData\Data;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class AdminService
 {
@@ -24,6 +30,7 @@ class AdminService
             $programs = $this->createProgram($input, $tour);
             TourRoute::insert($programs);
             DB::commit();
+            dispatch(new NotificationTourJob($tour));
             return true;
         } catch (Exception $e) {
             DB::rollBack();
