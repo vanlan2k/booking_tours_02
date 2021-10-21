@@ -24,7 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('calculateTotal:cron')->dailyAt('23:59');
+        $schedule->command('calculateTotal:cron')->withoutOverlapping()->dailyAt('23:59');
+        $schedule->command('calculateRating:cron')->withoutOverlapping()->everySixHours();
     }
 
     /**
@@ -32,6 +33,7 @@ class Kernel extends ConsoleKernel
      *
      * @return void
      */
+
     protected function commands()
     {
         $this->load(__DIR__.'/Commands');

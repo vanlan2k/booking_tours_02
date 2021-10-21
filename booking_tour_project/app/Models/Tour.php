@@ -43,6 +43,10 @@ class Tour extends Model
     {
         return $this->hasMany(Review::class, 'tour_id', 'id');
     }
+    public function assessRate()
+    {
+        return $this->hasMany(AssessRate::class, 'tour_id', 'id');
+    }
 
     public function category()
     {

@@ -133,6 +133,7 @@
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/hanneskod/classtools" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/bensampo/laravel-enum" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/paypal/rest-api-sdk-php" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/phpoffice/phpspreadsheet" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/ezyang/htmlpurifier" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/markbaker/matrix" />
@@ -142,6 +143,7 @@
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/paypal/rest-api-sdk-php" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/maatwebsite/excel" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/paypal/rest-api-sdk-php" />
+      <path value="$PROJECT_DIR$/booking_tour_project/vendor/maatwebsite/excel" />
     </include_path>
   </component>
   <component name="PhpUnit">
