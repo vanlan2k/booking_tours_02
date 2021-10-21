@@ -40,7 +40,7 @@ class LoadMoreService
                 for ($i = 0; $i < 5 - $count; $i++) {
                     $star .= '<i class="icon-star-empty"></i>';
                 }
-                $output .= '<div class="review-box"><figure class="rev-thumb"><img style="border-radius: 50%"src="' . $rate->user->avata . '" alt=""></figure><div class="rev-content"><div class="rating">' . $star . '</div><div class="rev-info">' . $rate->user->name . '</div><div class="rev-text" ><p > ' . $comments[$key]->comment . '</p ></div ></div ></div>';
+                $output .= '<div class="review-box"><figure class="rev-thumb"><img style="border-radius: 50%"src="' . getAvataSingle($rate->user->avata) . '" alt=""></figure><div class="rev-content"><div class="rating">' . $star . '</div><div class="rev-info">' . $rate->user->name . '</div><div class="rev-text" ><p > ' . $comments[$key]->comment . '</p ></div ></div ></div>';
                 $last_id = $rate->id;
             }
             $output .= '<div id="load_more"><button class="btn btn-danger justify-content-center" data-id="' . $last_id . '" id="load_more_button" style="color: white">Load More</button></div>';

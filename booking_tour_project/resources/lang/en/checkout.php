@@ -40,6 +40,9 @@ return [
     'make_pay' => 'Make Payment',
     'error' => 'An error occurred!',
     'st_sale' => 'Sale Date',
-    'end_sale' => 'Sale Closing Date'
+    'end_sale' => 'Sale Closing Date',
+    'confirmation' => 'Tour Booking Confirmation',
+    'create_cc' => 'You have successfully booked for the tour',
+    'create_faild' => 'You have failed to book for the tour'
 ];
 ?>
