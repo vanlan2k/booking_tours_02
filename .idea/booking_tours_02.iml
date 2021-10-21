@@ -23,9 +23,11 @@
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/markbaker/complex" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/markbaker/matrix" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/myclabs/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/paragonie/sodium_compat" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/paypal/rest-api-sdk-php" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/phpoffice/phpspreadsheet" />
-      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/paypal/rest-api-sdk-php" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/pusher/pusher-php-server" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/unisharp/laravel-filemanager" />
     </content>
     <orderEntry type="inheritedJdk" />

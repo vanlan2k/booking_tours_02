@@ -2,10 +2,8 @@
 
 namespace App\Services;
 
-use App\Enums\UserRole;
 use App\Jobs\NotificationTourJob;
 use App\Jobs\SendMail;
-use App\Mail\NotificationTourMail;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Tour;

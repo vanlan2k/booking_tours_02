@@ -6,7 +6,6 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Log;
 
 class NotificationTourMail extends Mailable
 {
@@ -19,7 +18,6 @@ class NotificationTourMail extends Mailable
      */
     public function __construct($tour)
     {
-        Log::debug($tour);
         $this->subject('NEW PRODUCT INFORMATION');
         $this->tour = $tour;
     }

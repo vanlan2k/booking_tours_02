@@ -125,10 +125,17 @@ class ChartService
             array_push($date, $this->formatDate($this_month));
             $value = Booking::filterDay($this->formatDate($this_month));
             $this_month->addDay();
-            array_push($data, $value);
+            array_push($data, $value ? $value : '0');
         } while ($this_month->lte($now));
         $result['data'] = $data;
         $result['date'] = $date;
+        return $result;
+    }
+    public function exportExcelStatistic()
+    {
+        $early_last_month = Carbon::now()->subMonth()->startOfMonth();
+        $end_of_last_month = Carbon::now()->subMonth()->endOfMonth();
+        $result = $this->filterFunction($early_last_month, $end_of_last_month);
         return $result;
     }
 }
