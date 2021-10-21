@@ -57,6 +57,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('/admin/comment',  \App\Http\Controllers\admin\ManagerCommentController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);
         Route::resource('/admin/category',  \App\Http\Controllers\admin\ManagerCategoryController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);
         Route::resource('/admin/news',  \App\Http\Controllers\admin\NewsController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);
+        Route::get('/admin/export-excel', [\App\Http\Controllers\admin\HomeController::class, 'exportStatistic']);
     });
 });
 

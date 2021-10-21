@@ -37,7 +37,6 @@ class Booking extends Model
             ->first();
         return $data['revenue'] ? $data['revenue'] : 0;
     }
-
     public function scopeFilterYear($query, $year, $month)
     {
         $data = $query->select(DB::raw('SUM(total) as revenue'))
