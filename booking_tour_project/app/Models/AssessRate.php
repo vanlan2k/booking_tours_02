@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class AssessRate extends Model
 {
@@ -17,5 +18,11 @@ class AssessRate extends Model
     }
     public static function getRating($id){
         return AssessRate::where('tour_id', $id)->avg('number_rate');
+    }
+    public function scopeGetRate($query, $id){
+        $value = $query->select(DB::raw('AVG(number_rate) as rate'))
+            ->where('tour_id', $id)
+            ->first();
+        return $value['rate'] ? $value['rate'] : 0;
     }
 }

@@ -14,6 +14,7 @@ class SearchController extends Controller
         $cate_id = $request->cate_id;
         $date = Carbon::parse($request->date_start)->format('Y-m-d');
         $tours = Tour::searchTour($cate_id, $date)->paginate(12);
+        $data['sort'] = '';
         $data['tours'] = $tours;
         return view('web.pages.list')->with($data);
     }

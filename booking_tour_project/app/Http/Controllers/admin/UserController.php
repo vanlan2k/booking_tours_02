@@ -84,11 +84,14 @@ class UserController extends Controller
             if (!$input['password']) {
                 $input['password'] = bcrypt($input['password']);
             }
+            if (!$input['avata']) {
+                $input['avata'] = $user->avata;
+            }
             $user->fill($input);
             $user->save();
-            return redirect()->back()->with(['success' => __('admin_user.update_cc')]);
+            return redirect()->back()->with(['success' => __('admin_user.ud_cc')]);
         } catch (Exception $e) {
-            return redirect()->back()->with(['error' => __('admin_user.update_fail')]);
+            return redirect()->back()->with(['error' => __('admin_user.ud_fail')]);
         }
     }
 

@@ -29,6 +29,7 @@ class CheckoutController extends Controller
             $booking->customer_id = Auth::user()->id;
             $booking->total = $cart->getTotal();
             $booking->status = 0;
+            $booking->date_start = $cart->cart['date_start'];
             $booking->booking_date = date('Y-m-d H:m:s');
             $booking->payment = $request->payment;
             $booking->booking_no = rand(100000, 999999);

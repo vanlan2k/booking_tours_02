@@ -18,8 +18,10 @@ return [
     'bookings' => 'Đặt Vé',
     'submit' => 'Gửi',
     'related_tours' => 'Các Chuyến Du Lịch Liên Quan',
-    'leava_review' => 'Để Lại Nhận Xét',
-    'your_review' => 'Nhận Xét Của Bạn',
-    'no_value' => 'Không có tour hiện hành'
+    'no_value' => 'Không có tour hiện hành',
+    'program' => 'Chương Trình',
+    'day' => 'ngày',
+    'based_on' => 'Dựa trên',
+    'date_start' => 'Chọn ngày đi'
 ];
 ?>

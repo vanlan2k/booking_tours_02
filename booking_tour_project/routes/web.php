@@ -44,17 +44,17 @@ Route::get('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::cl
 Route::post('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::class, 'login'])->name('auth.login');
 Route::middleware(['auth'])->group(function () {
     Route::group(['middleware' => 'checkAdmin:1'], function () {
-        Route::get('/admin/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.home')->only(['index']);
+        Route::get('/admin/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.home');
         Route::get('admin/chart', [\App\Http\Controllers\admin\ChartController::class, 'chartBar']);
         Route::post('/admin/filterDate', [\App\Http\Controllers\admin\ChartController::class,'filterDate']);
         Route::post('/admin/filterBy', [\App\Http\Controllers\admin\ChartController::class, 'ChartService']);
         Route::get('/admin/logout', [\App\Http\Controllers\admin\Auth\LoginController::class, 'logout'])->name('auth.logout');
-        Route::resource('/admin/user',\App\Http\Controllers\admin\UserController::class)->only(['index', 'create', 'store', 'update']);
-        Route::resource('/admin/tour',\App\Http\Controllers\admin\TourController::class)->only(['index', 'create', 'store', 'update']);;
-        Route::resource('/admin/booking',  \App\Http\Controllers\admin\ManagerBookingController::class)->only(['index', 'create', 'store', 'update']);;
-        Route::resource('/admin/comment',  \App\Http\Controllers\admin\ManagerCommentController::class)->only(['index', 'create', 'store', 'update']);;
-        Route::resource('/admin/category',  \App\Http\Controllers\admin\ManagerCategoryController::class)->only(['index', 'create', 'store', 'update']);;
-        Route::resource('/admin/news',  \App\Http\Controllers\admin\NewsController::class)->only(['index', 'create', 'store', 'update']);;
+        Route::resource('/admin/user',\App\Http\Controllers\admin\UserController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);
+        Route::resource('/admin/tour',\App\Http\Controllers\admin\TourController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);;
+        Route::resource('/admin/booking',  \App\Http\Controllers\admin\ManagerBookingController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);;
+        Route::resource('/admin/comment',  \App\Http\Controllers\admin\ManagerCommentController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);;
+        Route::resource('/admin/category',  \App\Http\Controllers\admin\ManagerCategoryController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);;
+        Route::resource('/admin/news',  \App\Http\Controllers\admin\NewsController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);;
     });
 });
 

@@ -10,7 +10,7 @@
                         <div class="col-12 d-flex justify-content-center text-center">
                             <div class="col-sm-3">
                                 <div class="text-center">
-                                    <img src="{{getAvata()}}"
+                                    <img src="{{getAvataUser($user->avata)}}"
                                          class="avatar img-circle img-thumbnail" id="holder"
                                          alt="avatar">
                                     <div class="input-group">

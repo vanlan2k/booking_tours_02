@@ -25,7 +25,8 @@ class BookingRequest extends FormRequest
     {
         return [
             'adult' => 'required|numeric|min:1',
-            'child' => 'required|numeric|min:0'
+            'child' => 'required|numeric|min:0',
+            'date_start' => 'required'
         ];
     }
 }

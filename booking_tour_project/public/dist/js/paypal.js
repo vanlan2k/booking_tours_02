@@ -22,7 +22,7 @@ paypal.Button.render({
         return actions.payment.create({
             transactions: [{
                 amount: {
-                    total: `1`,
+                    total: `${total}`,
                     currency: 'USD'
                 }
             }]

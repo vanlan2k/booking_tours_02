@@ -13,13 +13,12 @@ class BookingController extends Controller
 {
     public function update(BookingRequest $request, $id)
     {
-        $request->all();
         $tour = Tour::find($id);
         if (!$tour) {
             abort(404);
         }
         $cart = new Cart();
-        $cart->addToCart($tour, $request['adult'], $request['child']);
+        $cart->addToCart($tour, $request['adult'], $request['child'], $request['date_start']);
         return redirect()->route('checkout');
     }
 }
