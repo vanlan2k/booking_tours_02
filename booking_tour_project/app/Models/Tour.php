@@ -49,13 +49,13 @@ class Tour extends Model
         return $this->belongsTo(Category::class, 'cate_id', 'id');
     }
 
-    public function scopeSearchTour($query, $cate_id, $date)
+    public function scopeSearchTourCategory($query, $input)
     {
-        return $query->when($cate_id != null, function ($qr) use ($cate_id, $date) {
-            $qr->where('cate_id', $cate_id)->where('date_start', '<', $date);
-        }, function ($qr) use ($date) {
-            $qr->where('date_start', '<', $date);
-        });
+        return $query->where('cate_id', $input)->paginate(12);
+    }
+    public function scopeSearchTour($query, $input)
+    {
+        return $query->where('name', 'like', '%'.$input.'%')->paginate(12);
     }
 
     public function scopeTopTour()
@@ -118,5 +118,12 @@ class Tour extends Model
     public function scopeSearchTourAdmin($query, $input)
     {
         return $query->where('name', 'like', '%' . $input . '%')->paginate(12);
+    }
+    public function scopeFullTextSearch($query, $input){
+        return $query->whereRaw("MATCH(name)AGAINST('".$input."')")
+            ->orWhere('name', 'like', '%' . $input . '%')
+            ->orderBy('id', 'DESC')
+            ->limit(5)
+            ->get();
     }
 }

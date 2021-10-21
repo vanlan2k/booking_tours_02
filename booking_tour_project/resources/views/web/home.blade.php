@@ -49,32 +49,17 @@
         <div class="divider_border "></div>
 
         <div class="container">
-            <form action="/search" method="POST" class="row mt-3">
+            <form action="/search" method="GET" class="row mt-3 " autocomplete="off">
                 @csrf
-                <div class="col-5">
-                    <div class="form-group">
-                        <label>{{__('home.address')}}:</label>
-                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;"
-                                tabindex="-1" aria-hidden="true" name="cate_id">
-                            <option selected="selected" value="">----------{{__('home.select_address')}}----------
-                            </option>
-                            @foreach($cates as $cate)
-                                <option value="{{$cate->id}}">{{$cate->name}}</option>
-                            @endforeach
-                        </select>
+                <div class="col-12 card-body d-flex justify-content-center form-outline">
+                    <div class="col-10">
+                        <input type="search" id="key_works" name="search" class="form-control"
+                               placeholder="{{__('home.search_note')}}"/>
+                        <div id="auto-conplete" class="row"></div>
                     </div>
-                </div>
-                <div class="col-5">
-                    <label>{{__('home.date_start')}}:</label>
-                    <div id="datepicker" class="input-group date" data-date-format="dd-mm-yyyy">
-                        <input class="form-control" readonly="" type="text" name="date_start">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                    </div>
-                </div>
-                <div class="col-2 mt-2">
-                    <label> </label>
-                    <button class="btn btn-outline-success my-2 p-2 my-sm-0 col-12"
-                            type="submit">{{__('home.search')}}</button>
+                    <button type="submit" class="btn btn-primary ml-1" style="height: 38px">
+                        <strong>{{__('home.search')}}</strong>&nbsp;<i class="fas fa-search"></i>
+                    </button>
                 </div>
             </form>
             <hr>
@@ -135,7 +120,7 @@
                 <div class="col-sm-6">
                     <h3>{{__('home.highly_tour')}}</h3>
                     <ul>
-                        @if($tours_highly[0]){
+                        @if($tours_highly[0])
                         @foreach($tours_highly as $tour_highly)
                             <li>
                                 <div>
@@ -246,3 +231,6 @@
         </div>
     </section>
 @endsection
+@push('script')
+    <script type="text/javascript" src="{{asset('dist/js/home.js')}}"></script>
+@endpush

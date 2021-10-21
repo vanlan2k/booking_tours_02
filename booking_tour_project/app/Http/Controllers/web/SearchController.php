@@ -3,19 +3,36 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Tour;
+use App\Services\HomeService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function store(Request $request)
+    public function index(Request $request)
     {
-        $cate_id = $request->cate_id;
-        $date = Carbon::parse($request->date_start)->format('Y-m-d');
-        $tours = Tour::searchTour($cate_id, $date)->paginate(12);
+        if($request['category']) {
+            $tours = Tour::SearchTourCategory($request['category']);
+        }
+        if ($request['search']){
+            $tours = Tour::searchTour($request['search']);
+        }
         $data['sort'] = '';
         $data['tours'] = $tours;
         return view('web.pages.list')->with($data);
+    }
+
+    public function autoComplete(Request $request)
+    {
+        $input = $request->all();
+        if ($input['query']) {
+            $service = new HomeService();
+            $output = $service->fullTextSearch($input);
+        }
+        return response()->json([
+            'output' => $output
+        ]);
     }
 }

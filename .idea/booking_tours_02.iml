@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/booking_tour_project/app" isTestSource="false" packagePrefix="App\" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/bensampo/laravel-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/ezyang/htmlpurifier" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/hanneskod/classtools" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/intervention/image" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/laminas/laminas-code" />
@@ -17,9 +18,13 @@
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/laravel/serializable-closure" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/laravel/socialite" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/league/oauth1-client" />
-      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/laravel/serializable-closure" />
-      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/laravel/socialite" />
-      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/league/oauth1-client" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/maatwebsite/excel" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/maennchen/zipstream-php" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/markbaker/complex" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/markbaker/matrix" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/myclabs/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/paypal/rest-api-sdk-php" />
+      <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/phpoffice/phpspreadsheet" />
       <excludeFolder url="file://$MODULE_DIR$/booking_tour_project/vendor/unisharp/laravel-filemanager" />
     </content>
     <orderEntry type="inheritedJdk" />
