@@ -32,5 +32,6 @@ return [
     'detail' => 'Tour Detail',
     'search' => 'Search',
     'search_note' => 'Enter tour name',
-    'select_category' => 'Select Category'
+    'select_category' => 'Select Category',
+    'tags' => 'Tags'
 ];

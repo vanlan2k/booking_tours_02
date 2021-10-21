@@ -202,7 +202,7 @@
                                             {{__('single.date_start')}}
                                         </strong>
                                     </td>
-                                    <td colspan="2" class="m-2" >
+                                    <td colspan="2" class="m-2">
                                         <input type="date" name="date_start" class="form-control">
                                     </td>
                                 </tr>
@@ -227,6 +227,19 @@
                         </form>
                         <hr>
                     </div>
+                    <fieldset class="box_style_2">
+                        <div class="d-flex">
+                            <h5 class="pr-1">{{__('single.tags')}}</h5>
+                            <p class="pr-3"><i class="fa fa-tag"></i></p>
+                        </div>
+                        @php
+                            $tags = $tour->tags;
+                            $tags = explode(",", $tags);
+                        @endphp
+                        @foreach($tags as $tag)
+                            <a href="{{url('/tag', $tag)}}" class="tag_style pr-1 pl-1">{{$tag}}</a>
+                        @endforeach
+                    </fieldset>
                 </aside>
             </div>
             <!-- End row -->

@@ -11,7 +11,7 @@
                     <!-- form start -->
                     <form method="POST" action="{{ route('tour.update', $tour) }}">
                         @csrf
-                        @method('PUT')
+                        @method('PATCH')
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">{{__('admin_tour.name')}}</label>
@@ -112,6 +112,17 @@
                                             @enderror
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">{{__('admin_tour.tags')}}</label>
+                                <input type="text" data-role="tagsinput"
+                                       class="form-control {{$errors->has('tags') ? 'is-invalid' : ''}}"
+                                       name="tags" value="{{$tour->tags}}"/>
+                                <div style="color: red">
+                                    @error('tags')
+                                    {{$message}}
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">

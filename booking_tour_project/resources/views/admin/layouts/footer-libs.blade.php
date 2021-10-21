@@ -31,6 +31,7 @@
 <script src="{{asset('dist/js/select2.min.js')}}"></script>
 <script src="{{asset('dist/js/jquery-ui.js')}}"></script>
 <script src="{{asset('dist/js/pusher.min.js')}}"></script>
+<script src="{{asset('dist/js/bootstrap-tagsinput.min.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         @if (Session::get('success'))

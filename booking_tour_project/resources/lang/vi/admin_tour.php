@@ -32,5 +32,6 @@ return [
     'detail' => 'Chi Tiết Tour',
     'search' => 'Tìm Kiếm',
     'search_note' => 'Nhập tên tour',
-    'select_category' => 'Chọn Loại Tour'
+    'select_category' => 'Chọn Loại Tour',
+    'tags' => 'Thẻ'
 ];

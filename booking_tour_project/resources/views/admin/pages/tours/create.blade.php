@@ -99,6 +99,17 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="name">{{__('admin_tour.tags')}}</label>
+                                <input type="text" data-role="tagsinput"
+                                       class="form-control {{$errors->has('tags') ? 'is-invalid' : ''}}"
+                                       name="tags" value="{{ old('tags') }}"/>
+                                <div style="color: red">
+                                    @error('tags')
+                                    {{$message}}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label>{{__('admin_tour.price')}}</label>
                                 <div class="ml-3">
                                     <div class="">

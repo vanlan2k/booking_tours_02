@@ -27,6 +27,6 @@
 
 <link href="{{asset('dist/css/select2.min.css')}}" rel="stylesheet" />
 <link href="{{asset('dist/css/bootstrap-notifications.css')}}" rel="stylesheet" />
-
+<link href="{{asset('dist/css/bootstrap-tagsinput.css')}}" rel="stylesheet" />
 
 
