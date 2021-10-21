@@ -18,7 +18,7 @@ class ManagerCategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(10);
+        $categories = Category::orderBy('parent_id')->paginate(10);
         $data['categories'] = $categories;
         return view('admin.pages.categories.list')->with($data);
     }

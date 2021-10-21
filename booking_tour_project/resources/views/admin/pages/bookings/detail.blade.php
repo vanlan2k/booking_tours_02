@@ -52,7 +52,7 @@
                                     <td>{{__('admin_booking.adult')}}</td>
                                     <td>{{getPriceAdmin($booking->booking_detail[0]->tour->priceAdult)}}</td>
                                     <td>{{$booking->booking_detail[0]->adult}}</td>
-                                    <td>{{getPriceAdmin($booking->booking_detail[0]->adult * $booking->booking_detail[0]->tourtour->priceAdult)}}</td>
+                                    <td>{{getPriceAdmin($booking->booking_detail[0]->adult * $booking->booking_detail[0]->tour->priceAdult)}}</td>
                                 </tr>
                                 <tr>
                                     <td>2.</td>

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\web\auth;
 
 use App\Enums\UserRole;
+use App\Events\formSubmit;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\web\LoginRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
@@ -18,6 +20,8 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request)
     {
+        $email = request()->email;
+        $password = request()->password;
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();

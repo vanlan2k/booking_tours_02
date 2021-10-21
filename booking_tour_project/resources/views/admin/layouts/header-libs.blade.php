@@ -26,5 +26,7 @@
 <link rel="stylesheet" href="{{ asset('dist/js/libs/xeditable/bootstrap-editable.css') }}"/>
 
 <link href="{{asset('dist/css/select2.min.css')}}" rel="stylesheet" />
+<link href="{{asset('dist/css/bootstrap-notifications.css')}}" rel="stylesheet" />
+
 
 

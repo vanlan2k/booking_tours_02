@@ -1,6 +1,7 @@
 <?php
 namespace App\Services;
 
+use App\Enums\NotifyEnum;
 use App\Mail\BookingMail;
 use App\Models\Booking;
 use App\Models\BookingDetail;
@@ -21,6 +22,10 @@ class BookingService{
             session()->put('cart', $cart->cart);
             Mail::to(Env::get('MAIL_FROM_ADDRESS'))->send(new BookingMail($cart));
             DB::commit();
+            $data['id_item'] = $id_booking;
+            $data['type_notify'] = NotifyEnum::CreateBooking;
+            $norify = new NotifyService();
+            $norify->notification($data);
             session()->forget('cart');
             return true;
         } catch (\Exception $e) {
