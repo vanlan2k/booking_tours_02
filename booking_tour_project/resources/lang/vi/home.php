@@ -12,5 +12,8 @@ return [
     'select_address' => 'Chọn Loại Tour',
     'address' => 'Loại Tour',
     'date_start' => 'Ngày Khởi Hành',
-    'search' => 'Tìm Kiếm'
+    'search' => 'Tìm Kiếm',
+    'search_note' => 'Tìm Kiếm.....',
+    'tour' => 'Tour Du Lịch',
+    'cate' => 'Thể Loại'
 ];

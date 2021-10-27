@@ -12,5 +12,8 @@ return [
     'select_address' => 'Select Category',
     'address' => 'Category',
     'date_start' => 'Date Start',
-    'search' => 'Search'
+    'search' => 'Search',
+    'search_note' => 'Search.....',
+    'tour' => 'Tour',
+    'cate' => 'Category',
 ];
