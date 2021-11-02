@@ -57,4 +57,10 @@ class Booking extends Model
             ->groupBy(DB::raw('MONTH(booking_date)'))
             ->first();
     }
+    public function scopeSumRevenueDay($query){
+        $value =  $query->select(DB::raw('SUM(total) as revenue'))
+            ->where('booking_date', '=' , Carbon::now()->format('Y-m-d'))
+            ->first();
+        return $value->revenue ? $value->revenue : 0;
+    }
 }

@@ -38,6 +38,9 @@ return [
     'note_stt2' => 'Đã thanh toán',
     'note_term' => 'Nếu quá thời hạn trên mà quý khách chưa thanh toán. BesTours sẽ hủy bookings này',
     'make_pay' => 'Tiến Hành Thanh Toán',
-    'error' => 'Đã xảy ra lỗi!'
+    'error' => 'Đã xảy ra lỗi!',
+    'confirmation' => 'Xác nhận đặt tour',
+    'create_cc' => 'Bạn đã đặt tour thành công',
+    'create_faild' => 'Bạn đặt tour không thành công'
 ];
 ?>

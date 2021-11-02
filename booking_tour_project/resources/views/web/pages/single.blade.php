@@ -69,7 +69,7 @@
                             <hr>
 
                             <div class="add-review">
-                                <h4>{{__('single.leaver_eview')}}</h4>
+                                <h4>{{__('single.leave_review')}}</h4>
                                 <div id="message-review"></div>
                                 <form method="post" action="/comment/{{$tour->id}}" class="row">
                                     @csrf
@@ -130,8 +130,7 @@
                     <div class="box_style_2">
                         <h3>{{__('single.book_your_tour')}}<span>{{__('single.free_service')}}</span></h3>
                         <div id="message-booking"></div>
-                        <form method="post" action="/booking/{{$tour->id}}" autocomplete="off">
-                            @method('PUT')
+                        <form method="POST" action="/booking/{{$tour->id}}" autocomplete="off">
                             @csrf
                             <table id="tickets" class="table">
                                 <thead>

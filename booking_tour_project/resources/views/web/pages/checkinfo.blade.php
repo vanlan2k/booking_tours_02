@@ -72,7 +72,7 @@
                                             {{__('checkout.booking_no')}}:
                                         </div>
                                         <div class="col-10">
-                                            {{$booking->booking_no}} ({{__('checkout.note_no')}})
+                                            {{$cart->cart['booking_no']}} ({{__('checkout.note_no')}})1
                                         </div>
                                     </div>
                                     <div class="d-flex tour-name">
@@ -80,7 +80,7 @@
                                             {{__('checkout.total_bill')}}:
                                         </div>
                                         <div class="col-10">
-                                            {{getPrice($booking->total)}}
+                                            {{getPrice($cart->cart['total'])}}
                                         </div>
                                     </div>
                                     <div class="d-flex tour-name">
@@ -88,7 +88,7 @@
                                             {{__('checkout.date_registra')}}:
                                         </div>
                                         <div class="col-10">
-                                            {{\Carbon\Carbon::parse($booking->booking_date)->format('d-m-Y')}}
+                                            {{\Carbon\Carbon::parse($cart->cart['booking_date'])->format('d-m-Y')}}
                                         </div>
                                     </div>
                                     <div class="d-flex tour-name">
@@ -96,7 +96,7 @@
                                             {{__('checkout.date_st')}}:
                                         </div>
                                         <div class="col-10">
-                                            {{\Carbon\Carbon::parse($booking->date_start)->format('d-m-Y')}}
+                                            {{\Carbon\Carbon::parse($cart->cart['date_start'])->format('d-m-Y')}}
                                         </div>
                                     </div>
                                     <div class="d-flex tour-name">
@@ -104,7 +104,7 @@
                                             {{__('checkout.payments')}}:
                                         </div>
                                         <div class="col-10">
-                                            {{$booking->payment == 1 ? __('checkout.ATM') : __('checkout.cash')}}
+                                            {{$cart->cart['payment'] == 1 ? __('checkout.ATM') : __('checkout.cash')}}
                                         </div>
                                     </div>
                                     <div class="d-flex tour-name">
@@ -112,7 +112,7 @@
                                             {{__('checkout.stt')}}:
                                         </div>
                                         <div class="col-10">
-                                            {{$booking->status == 0 ? __('checkout.note_stt1') : __('checkout.note_stt2')}}
+                                            {{$cart->cart['status'] == 0 ? __('checkout.note_stt1') : __('checkout.note_stt2')}}
                                         </div>
                                     </div>
                                     <div class="d-flex tour-name">
@@ -120,16 +120,35 @@
                                             {{__('checkout.pay_term')}}:
                                         </div>
                                         <div class="col-10">
-                                            {{(new \Carbon\Carbon($booking->booking_date))->addDays(5)->format('d-m-Y')}}
+                                            {{(new \Carbon\Carbon($cart->cart['booking_date']))->addDays(5)->format('d-m-Y')}}
                                             ({{__('checkout.note_term')}})
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 text-center mt-5">
-                                @if($booking->payment == 1)
-                                    <div id="paypal-button"></div>
-                                    <input type="hidden" id="input_total" value="{{round($booking->total/23000, 2)}}">
+                                @if($cart->cart['payment'] == 1)
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <a href="/booking" class="btn btn-primary rounded">{{__('checkout.confirmation')}}</a>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="paypal-button"></div>
+                                            <input type="hidden" id="input_total" value="{{round($cart->cart['total']/23000, 2)}}">
+                                            @csrf
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="row">
+                                        <div class="col-6">
+                                    <a href="/booking" class="btn btn-primary rounded">{{__('checkout.confirmation')}}</a>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="paypal-button"></div>
+                                            <input type="hidden" id="input_total" value="{{round($cart->cart['total']/23000, 2)}}">
+                                            @csrf
+                                        </div>
+                                    </div>
                                 @endif
                             </div>
                         </div>

@@ -129,7 +129,7 @@
                                                      width="60" height="60"></figure>
                                         <h4>{{$tour_highly->name}}</h4>
                                         <small>Point rate &nbsp; </small>
-                                        <small class="score-1">{{$tour_highly->rate}}</small>
+                                        <small class="score-1">{{number_format(\App\Models\AssessRate::getRate($tour_highly->id), 1)}}</small>
                                         <span class="price_list">{{getPrice($tour_highly->priceAdult)}}</span>
                                     </a>
                                 </div>

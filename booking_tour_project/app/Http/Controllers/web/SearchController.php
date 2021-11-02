@@ -14,7 +14,7 @@ class SearchController extends Controller
     public function index(Request $request)
     {
         if($request['category']) {
-            $tours = Tour::SearchTourCategory($request['category']);
+            $tours = Tour::searchTourCategory($request['category']);
         }
         if ($request['search']){
             $tours = Tour::searchTour($request['search']);
