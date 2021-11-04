@@ -10,4 +10,6 @@ return [
     'last_month' => 'Last Month',
     'this_month' => 'This Month',
     'sub12month' => 'Last 12 Month',
+    'filter_result' => 'Filter Results',
+    'export' => 'Export Excel'
 ];

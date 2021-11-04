@@ -10,4 +10,6 @@ return [
     'last_month' => 'Tháng trước',
     'this_month' => 'Tháng này',
     'sub12month' => '12 tháng qua',
+    'filter_result' => 'Lọc Kết Quả',
+    'export' => 'Xuất Excel'
 ];

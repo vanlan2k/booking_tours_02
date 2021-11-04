@@ -115,4 +115,20 @@ class ChartService
         $result['date'] = $date;
         return $result;
     }
+    public function exportExcel()
+    {
+        $this_month = Carbon::now()->startOfMonth();
+        $now = Carbon::now();
+        $data = [];
+        $date = [];
+        do {
+            array_push($date, $this->formatDate($this_month));
+            $value = Booking::filterDay($this->formatDate($this_month));
+            $this_month->addDay();
+            array_push($data, $value);
+        } while ($this_month->lte($now));
+        $result['data'] = $data;
+        $result['date'] = $date;
+        return $result;
+    }
 }

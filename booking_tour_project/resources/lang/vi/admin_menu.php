@@ -1,5 +1,5 @@
 <?php
-return[
+return [
     'home' => 'Trang Chủ',
     'user' => 'Người Dùng',
     'create_user' => 'Thêm Người Dùng',

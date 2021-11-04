@@ -58,11 +58,12 @@
                                 @csrf
                                 <label class="col-12">{{__('admin_home.date_from')}}</label>
                                 <input type="date" id="dateFrom" class="p-2 form-row form-control col-8">
-                                <button type="submit" id="btn_sort" class="btn btn-success mt-2">Lọc Kết Quả</button>
+                                <button type="submit" id="btn_sort" class="btn btn-success mt-2">{{__('admin_home.filter_result')}}</button>
                             </div>
                             <div class="col-4">
                                 <label class="col-12">{{__('admin_home.date_to')}}</label>
                                 <input type="date" id="dateTo" class="p-2 form-row form-control col-8">
+                                <a href="/admin/export-excel" class="btn btn-success mt-2">{{__('admin_home.export')}}</a>
                             </div>
                             <div class="col-4">
                                 <label class="col-12">{{__('admin_home.filter_the')}}</label>
