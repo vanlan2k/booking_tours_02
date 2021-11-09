@@ -78,9 +78,11 @@
                                     <img src="{{$tour->avata}}" width="350" height="200" class="img-responsive" alt="">
                                     <div class="short_info">
                                         <h3 class="text_description">{{$tour->name}}</h3>
-                                        <div class="score_wp">Superb
-                                            <div class="score">{{\App\Models\AssessRate::getRate($tour->id)}}</div>
-                                        </div>
+                                        @if($tour->rate !=0)
+                                            <div class="score_wp">
+                                                <div class="score">{{$tour->rate}}</div>
+                                            </div>
+                                        @endif
                                     </div>
                                 </a>
                             </div>
@@ -108,8 +110,9 @@
                                         <figure><img src="{{$tour_new->avata}}" alt="thumb" class="img-rounded"
                                                      width="60" height="60"></figure>
                                         <h4>{{$tour_new->name}}</h4>
-                                        <small>Point rate &nbsp; </small>
-                                        <small class="score-1">{{$tour_new->rate}}</small>
+                                        @if($tour_new->rate != 0)
+                                            <small class="score-1">{{$tour_new->rate}}</small>
+                                        @endif
                                         <span class="price_list">{{getPrice($tour_new->priceAdult)}}</span>
                                     </a>
                                 </div>
@@ -128,8 +131,9 @@
                                         <figure><img src="{{$tour_highly->avata}}" alt="thumb" class="img-rounded"
                                                      width="60" height="60"></figure>
                                         <h4>{{$tour_highly->name}}</h4>
-                                        <small>Point rate &nbsp; </small>
-                                        <small class="score-1">{{number_format(\App\Models\AssessRate::getRate($tour_highly->id), 1)}}</small>
+                                        @if($tour_highly->rate != 0)
+                                            <small class="score-1">{{$tour_highly->rate}}</small>
+                                        @endif
                                         <span class="price_list">{{getPrice($tour_highly->priceAdult)}}</span>
                                     </a>
                                 </div>
@@ -140,7 +144,7 @@
                 </div>
             </div>
             <p class="text-center add_bottom_45">
-                <a href="/tour" class="btn_1">{{__('home.all_tour')}} (24)</a>
+                <a href="/tour" class="btn_1">{{__('home.all_tour')}}</a>
             </p>
         </div>
     </section>

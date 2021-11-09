@@ -47,9 +47,12 @@
                                              alt="">
                                         <div class="short_info">
                                             <h3 class="text_description">{{$tour->name}}</h3>
-                                            <div class="score_wp">
-                                                <div class="score">{!! \App\Models\AssessRate::getRate($tour->id)!!}</div>
-                                            </div>
+                                            @if($tour->rate !=0)
+                                                <div class="score_wp">
+                                                    <div class="score">{{$tour->rate}}</div>
+                                                </div>
+                                            @endif
+
                                     </a>
                                 </div>
                             </div>

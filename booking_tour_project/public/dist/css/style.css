@@ -1301,9 +1301,9 @@ a#phone_2 {
 .review_score {
     border: 2px solid #fff;
     border-radius: 50%;
-    width: 110px;
-    height: 110px;
-    padding-top: 5px;
+    width: 115px;
+    height: 115px;
+    padding-top: 8px;
     box-sizing: border-box;
     position: absolute;
     left: 30px;
@@ -1314,7 +1314,7 @@ a#phone_2 {
 .review_score span {
     background-color: #fff;
     border-radius: 50%;
-    width: 95px;
+    width: 100px;
     display: block;
     height: 95px;
     margin: auto;
@@ -3827,5 +3827,6 @@ ul.list_ok li:before {
 .rating:hover>input:checked~label:before {
     opacity: 0.4
 }
-
-
+.review_score_2{
+    padding-bottom: 30px;
+}
