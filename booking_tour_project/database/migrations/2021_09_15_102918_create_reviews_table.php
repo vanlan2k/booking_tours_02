@@ -17,6 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->integer('tour_id')->unsigned();
             $table->integer('customer_id')->unsigned();
+            $table->boolean('status')->default(true);
             $table->text('comment');
             $table->timestamps();
         });

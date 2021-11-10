@@ -21,5 +21,6 @@ return [
     'cmt' => 'Comment content',
     'id' => 'ID user',
     'list_cmt' => 'Comment List',
-    'back' => 'Back'
+    'back' => 'Back',
+    'status' => 'Status'
 ];

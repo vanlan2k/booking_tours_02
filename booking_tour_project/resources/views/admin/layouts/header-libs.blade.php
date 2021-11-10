@@ -1,6 +1,5 @@
 ;<!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-
 <!-- Ionicons -->
 <link rel="stylesheet" href="{{asset('dist/css/ionicons.min.css')}}">
 <!-- Tempusdominus Bootstrap 4 -->
@@ -27,4 +26,5 @@
 <link rel="stylesheet" href="{{ asset('dist/js/libs/xeditable/bootstrap-editable.css') }}"/>
 
 <link href="{{asset('dist/css/select2.min.css')}}" rel="stylesheet" />
+
 

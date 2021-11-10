@@ -21,5 +21,6 @@ return [
     'cmt' => 'Nội dung bình luận',
     'id' => 'ID người dùng',
     'list_cmt' => 'Danh Sách Bình Luận',
-    'back' => 'Quay lại'
+    'back' => 'Quay lại',
+    'status' => 'Trạng Thái'
 ];

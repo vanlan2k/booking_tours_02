@@ -51,12 +51,12 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/admin/filterDate', [\App\Http\Controllers\admin\ChartController::class,'filterDate']);
         Route::post('/admin/filterBy', [\App\Http\Controllers\admin\ChartController::class, 'ChartService']);
         Route::get('/admin/logout', [\App\Http\Controllers\admin\Auth\LoginController::class, 'logout'])->name('auth.logout');
-        Route::resource('/admin/user',\App\Http\Controllers\admin\UserController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);
-        Route::resource('/admin/tour',\App\Http\Controllers\admin\TourController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);
-        Route::resource('/admin/booking',  \App\Http\Controllers\admin\ManagerBookingController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);
-        Route::resource('/admin/comment',  \App\Http\Controllers\admin\ManagerCommentController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);
-        Route::resource('/admin/category',  \App\Http\Controllers\admin\ManagerCategoryController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);
-        Route::resource('/admin/news',  \App\Http\Controllers\admin\NewsController::class)->only(['index', 'create', 'show', 'store', 'destroy', 'update']);
+        Route::resource('/admin/user',\App\Http\Controllers\admin\UserController::class)->only(['index', 'create', 'show', 'store', 'update']);
+        Route::resource('/admin/tour',\App\Http\Controllers\admin\TourController::class)->only(['index', 'create', 'show', 'store', 'update']);
+        Route::resource('/admin/booking',  \App\Http\Controllers\admin\ManagerBookingController::class)->only(['index', 'create', 'show', 'store', 'update']);
+        Route::resource('/admin/comment',  \App\Http\Controllers\admin\ManagerCommentController::class)->only(['index', 'show', 'update']);
+        Route::resource('/admin/category',  \App\Http\Controllers\admin\ManagerCategoryController::class)->only(['index', 'create', 'show', 'store', 'update']);
+        Route::resource('/admin/news',  \App\Http\Controllers\admin\NewsController::class)->only(['index', 'create', 'show', 'store', 'update']);
         Route::get('/admin/export-excel', [\App\Http\Controllers\admin\HomeController::class, 'exportStatistic']);
     });
 });
