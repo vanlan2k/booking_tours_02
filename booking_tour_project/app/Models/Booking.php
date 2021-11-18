@@ -62,4 +62,12 @@ class Booking extends Model
             ->first();
         return $value->revenue ? $value->revenue : 0;
     }
+    public function scopeSumRevenueMonth($query){
+        $early_last_month = Carbon::now()->subMonth()->startOfMonth();
+        $end_of_last_month = Carbon::now()->subMonth()->endOfMonth();
+        $value =  $query->select(DB::raw('SUM(total) as revenue'))
+            ->whereBetween('booking_date', [$early_last_month, $end_of_last_month])
+            ->first();
+        return $value->revenue ? $value->revenue : 0;
+    }
 }

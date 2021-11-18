@@ -23,7 +23,7 @@ class ExportStatistic implements FromCollection, WithHeadings
     public function collection()
     {
         $service = new ChartService();
-        $values = $service->exportExcel();
+        $values = $service->exportExcelStatistic();
         for($i = 0; $i < count($values['data']); $i++){
             $x = 0;
             $data[$i][$x++] = $i;

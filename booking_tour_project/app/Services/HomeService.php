@@ -24,4 +24,16 @@ class HomeService{
         $output .= '</ul>';
         return $output;
     }
+    public function getDataStatistic(){
+        $service = new ChartService();
+        $values = $service->exportExcelStatistic();
+        for($i = 0; $i < count($values['data']); $i++){
+            $x = 0;
+            $results[$i][$x++] = $values['date'][$i];
+            $results[$i][$x++] = $values['data'][$i];
+        }
+        $data['results'] = $results;
+        $data['revenue'] = Booking::sumRevenueMonth();
+        return $data;
+    }
 }

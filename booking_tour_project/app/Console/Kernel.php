@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Log;
 
 class Kernel extends ConsoleKernel
 {
@@ -26,6 +27,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('calculateTotal:cron')->withoutOverlapping()->dailyAt('23:59');
         $schedule->command('calculateRating:cron')->withoutOverlapping()->everySixHours();
+        $schedule->command('download:cron')->withoutOverlapping()->monthly();
     }
 
     /**
