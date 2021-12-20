@@ -17,7 +17,7 @@ use \App\Http\Controllers\web\auth\LoginController;
 /*web*/
 Route::get('/', [\App\Http\Controllers\web\HomeController::class, 'index', 'https'])->name('home');
 Route::get('/single/{id}', [\App\Http\Controllers\web\SingleController::class, 'index'])->name('single');
-Route::get('/tour', [\App\Http\Controllers\web\TourController::class, 'index']);
+Route::get('/tour', [\App\Http\Controllers\web\TourController::class, 'index'])->name('tours');
 Route::post('/booking/{id}', [BookingController::class, 'addCart']);
 Route::get('/booking', [BookingController::class, 'createBooking']);
 Route::get('/checkout', [\App\Http\Controllers\web\CheckoutController::class, 'index'])->name('checkout');
@@ -26,8 +26,8 @@ Route::get('/payment', [\App\Http\Controllers\web\CheckoutController::class, 'pa
 Route::post('/comment/{id}', [\App\Http\Controllers\web\RatingCommentController::class, 'comment']);
 Route::post('/loadmore', [\App\Http\Controllers\web\LoadMoreController::class, 'review']);
 Route::resource('/profile', \App\Http\Controllers\web\ProfileController::class)->only(['index', 'update']);
-Route::get('/review', [\App\Http\Controllers\web\YouReviewController::class, 'index']);
-Route::get('/news', [\App\Http\Controllers\web\NewsController::class, 'index']);
+Route::get('/review', [\App\Http\Controllers\web\YouReviewController::class, 'index'])->name('reviews');
+Route::get('/news', [\App\Http\Controllers\web\NewsController::class, 'index'])->name('news');
 Route::get('/detail/{id}', [\App\Http\Controllers\web\NewsController::class, 'show']);
 
 Route::post('/auto-complete', [\App\Http\Controllers\web\SearchController::class, 'autoComplete']);
@@ -37,7 +37,7 @@ Route::get('/redirect/{provider}', [LoginController::class, 'redirect']);
 Route::get('/callback/{provider}', [LoginController::class, 'callback']);
 Route::get('/login', [LoginController::class, 'index'])->name('loginUser');
 Route::post('/login', [LoginController::class, 'login']);
-Route::get('/logout', [LoginController::class, 'logout']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logoutUser');
 Route::resource('/register', \App\Http\Controllers\web\RegisterController::class)->only(['index', 'create']);
 
 Route::get('/language/{lang}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage']);

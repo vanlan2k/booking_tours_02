@@ -57,6 +57,7 @@
                                placeholder="{{__('home.search_note')}}"/>
                         <div id="auto-conplete" class="row"></div>
                     </div>
+                    @csrf
                     <button type="submit" class="btn btn-primary ml-1" style="height: 38px">
                         <strong>{{__('home.search')}}</strong>&nbsp;<i class="fas fa-search"></i>
                     </button>

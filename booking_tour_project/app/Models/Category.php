@@ -11,7 +11,8 @@ class Category extends Model
 
     protected $table = 'categories';
     protected $fillable = [
-        'name'
+        'name',
+        'parent_id'
     ];
 
     public function tour()
@@ -25,5 +26,8 @@ class Category extends Model
             ->orderBy('id', 'DESC')
             ->limit(5)
             ->get();
+    }
+    public function cateParent(){
+        return $this->hasMany(Category::class, 'parent_id');
     }
 }

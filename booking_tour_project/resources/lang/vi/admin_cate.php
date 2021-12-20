@@ -9,5 +9,7 @@ return [
     'name' => 'Tên loại',
     'name_note' => 'Nhập tên loại',
     'create' => 'Thêm Mới Loại Tour',
-    'detail' => 'Chi Tiết Loại Tour'
+    'detail' => 'Chi Tiết Loại Tour',
+    'category' => 'Loại Tour Cha:',
+    'null' => 'Không'
 ];

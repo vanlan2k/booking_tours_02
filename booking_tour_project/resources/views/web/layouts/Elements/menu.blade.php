@@ -19,18 +19,25 @@
                             <li class="submenu">
                                 <a href="/" class="show-submenu">{{__('menu.home')}}</a>
                             </li>
-                            <li class="submenu">
-                                <a href="/tour" class="show-submenu">{{__('menu.tours')}}</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{__('menu.tours')}}</a>
+                                <ul class="dropdown-menu">
+                                    @foreach($categories as $category)
+                                        <li><a class="dropdown-item" href="/search?category={{$category->id}}"> {{$category->name}} </a>
+                                            @include('web.layouts.Elements.menu-child', ['category' => $category])
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </li>
                             <li class="submenu">
-                                <a href="/news" class="show-submenu">{{__('menu.news')}}</a>
+                                <a href="{{route('news')}}" class="show-submenu">{{__('menu.news')}}</a>
                             </li>
                             <li>
                                 <a href="about.html">{{__('menu.about')}}</a>
                             </li>
                             @if(\Illuminate\Support\Facades\Auth::user() == null)
                                 <li>
-                                    <a href="/login">{{__('menu.singin')}}</a>
+                                    <a href="{{route('loginUser')}}">{{__('menu.singin')}}</a>
                                 </li>
                                 <li>
                                     <a href="{{route('register.index')}}">{{__('menu.register')}}</a>
@@ -52,10 +59,11 @@
                                         <img src="{{getAvata()}}" alt="thumb"
                                              class="img-rounded avata">&nbsp;{{Auth::user()->name}}</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{route('profile.index')}}">{{__('menu.profile')}}</a>
+                                        <a class="dropdown-item"
+                                           href="{{route('profile.index')}}">{{__('menu.profile')}}</a>
                                         <a class="dropdown-item" href="/review">{{__('menu.your_review')}}</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="/logout">{{__('menu.logout')}}</a>
+                                        <a class="dropdown-item" href="{{route('logoutUser')}}">{{__('menu.logout')}}</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
