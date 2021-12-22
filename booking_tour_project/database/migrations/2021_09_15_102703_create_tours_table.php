@@ -25,6 +25,7 @@ class CreateToursTable extends Migration
             $table->decimal('rate')->default(0);
             $table->decimal('priceChild', 20, 2);
             $table->decimal('priceAdult', 20, 2);
+            $table->text('tags')->nullable();
             $table->timestamps();
         });
     }

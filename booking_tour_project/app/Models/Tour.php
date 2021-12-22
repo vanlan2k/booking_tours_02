@@ -21,7 +21,8 @@ class Tour extends Model
         'priceChild',
         'priceAdult',
         'date_start',
-        'date_end'
+        'date_end',
+        'tags'
     ];
 
     public function image()

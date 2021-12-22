@@ -22,6 +22,7 @@ return [
     'program' => 'Chương Trình',
     'day' => 'ngày',
     'based_on' => 'Dựa trên',
-    'date_start' => 'Chọn ngày đi'
+    'date_start' => 'Chọn ngày đi',
+    'tags' => 'Thẻ'
 ];
 ?>
