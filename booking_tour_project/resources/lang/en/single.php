@@ -25,6 +25,7 @@ return [
     'day' => 'days',
     'based_on' => 'Based on',
     'date_start' => 'Choose Date Start',
-    'tags' => 'Tags'
+    'tags' => 'Tags',
+    'no_news_value' => 'No results found!'
 ];
 ?>

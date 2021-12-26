@@ -2,27 +2,30 @@
 
 namespace App\Mail;
 
+use App\Models\Booking;
+use App\Models\BookingDetail;
 use App\Models\Tour;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 
 class BookingMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private $cart;
+    public $id_booking;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($cart)
+    public function __construct($id_booking)
     {
-        $this->cart = $cart;
-        $this->subject('REVENUE BY DAY');
+        $this->id_booking = $id_booking;
+        $this->subject('New Booking');
     }
 
     /**
@@ -32,9 +35,10 @@ class BookingMail extends Mailable
      */
     public function build()
     {
-        $tour = Tour::find($this->cart->cart['id_tour']);
-        $data['tour'] = $tour;
-        $data['cart'] = $this->cart;
+        $booking = Booking::find($this->id_booking);
+        $booking_detail = BookingDetail::where('booking_id', $this->id_booking)->first();
+        $data['bk'] = $booking;
+        $data['bk_dt'] = $booking_detail;
         return $this->view('emails.booking-mail')->with($data);
     }
 }

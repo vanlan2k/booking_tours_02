@@ -1,4 +1,3 @@
-
 <link rel="shortcut icon" href="{{asset('dist/img/favicon.ico')}}" type="{{asset('dist/image/x-icon')}}">
 <link rel="apple-touch-icon" type="{{asset('dist/image/x-icon')}}"
       href="{{asset('dist/img/apple-touch-icon-57x57-precomposed.png')}}">

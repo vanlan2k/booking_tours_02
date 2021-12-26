@@ -5,14 +5,25 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\Tour;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Mockery\Exception;
 
 class ManagerBookingController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $bookings = Booking::orderBy('booking_date')->paginate(10);
+        if ($request->search) {
+            $bookings = Booking::where('booking_no', '=', $request->search)->orderBy('booking_date', 'DESC')->paginate(10);
+        } else {
+            $bookings = Booking::join('booking_details', 'booking_details.booking_id', '=', 'bookings.id')
+                ->join('tours', 'tours.id', '=', 'booking_details.tour_id')
+                ->where('date_start', '>=', (Carbon::now())->format('Y-m-d'))
+                ->orderBy('booking_date', 'DESC')
+                ->orderBY('bookings.id', 'DESC')
+                ->select('bookings.*')
+                ->paginate(10);
+        }
         $data['bookings'] = $bookings;
         return view('admin.pages.bookings.list')->with($data);
     }

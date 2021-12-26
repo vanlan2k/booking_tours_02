@@ -16,7 +16,6 @@ return [
     'cash_note' => 'Please pay at any BesTours office nationwide and overseas branches. Details Please note, you should contact before arrival to know more about working hours and documents to prepare at checkout.',
     'ATM_note' => 'BesTous accepts payment by ATM card via payment gateway 123 pay. Please make sure you are using an ATM card issued by a local bank and have activated the online payment function.',
     'bookings' => 'Booking Tour',
-    'price' => 'Price',
     'thanks' => 'Thank you for using our service',
     'booking_sheet' => 'Booking Confirmation sheet',
     'communication' => 'Communications',
@@ -43,6 +42,12 @@ return [
     'end_sale' => 'Sale Closing Date',
     'confirmation' => 'Tour Booking Confirmation',
     'create_cc' => 'You have successfully booked for the tour',
-    'create_faild' => 'You have failed to book for the tour'
+    'create_faild' => 'You have failed to book for the tour',
+    'price_child' => 'Child price',
+    'price_adult' => 'Adult price',
+    'id' => 'Id tour',
+    'time' => 'Time',
+    'day' => 'day',
+    'nigth' => 'nigth',
 ];
 ?>

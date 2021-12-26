@@ -55,7 +55,6 @@
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/booking_tour_project/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/symfony/http-kernel" />
       <path value="$PROJECT_DIR$/booking_tour_project/vendor/symfony/mime" />

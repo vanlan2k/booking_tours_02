@@ -4,6 +4,19 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
+                    <div class="col-12">
+                        <div class="col-8 mt-2 d-flex">
+                            <label class="ml-2 mt-2">{{__('admin_tour.search')}}:</label>
+                            <form action="{{route('booking.index')}}" method="GET" class="form-group d-flex col-10">
+                                <div class="form-outline col-9">
+                                    <input type="search" name="search" class="form-control" placeholder="{{__('admin_booking.search_note')}}"/>
+                                </div>
+                                <button type="submit" class="btn btn-primary ml-2">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                     <div class="card-body">
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
@@ -32,7 +45,7 @@
                                     <td>{!!  getStatus($booking->status) !!}</td>
                                     <td>{!!  getPayment($booking->payment) !!}</td>
                                     <td>
-                                        <a class="btn btn-success" href="{{ route('booking.show', $booking) }}" title="Edit"><i class="fa fa-edit"></i></a>
+                                        <a class="btn btn-success" href="{{ route('booking.show', $booking) }}" title="Detail"><i class="fas fa-eye"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

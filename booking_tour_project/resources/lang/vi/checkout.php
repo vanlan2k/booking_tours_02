@@ -1,7 +1,7 @@
 <?php
 return [
     'tour_info' => 'Thông Tin Tour',
-    'tour_price' => 'Giá Tour Cơ Bản',
+    'tour_price' => 'Thông Tin Đặt Tour',
     'date_st' => 'Ngày Bắt Đầu',
     'date_end' => 'Ngày Kết Thúc',
     'child' => 'Trẻ Em',
@@ -16,7 +16,6 @@ return [
     'cash_note' => 'Quý khách vui lòng thanh toán tại bất kỳ văn phòng BesTours trên toàn quốc và các chi nhánh ngoài nước. Chi tiết Xin lưu ý, Quý khách nên liên lạc trước khi đến để biết rõ hơn về giờ làm việc và các hồ sơ cần chuẩn bị khi thanh toán.',
     'ATM_note' => 'BesTous chấp nhận thanh toán bằng thẻ ATM qua cổng thanh toán 123 pay. Hãy đảm bảo bạn đang sử dụng thẻ ATM do ngân hàng trong nước phát hành và đã được kích hoạt chức năng thanh toán trực tuyến.',
     'bookings' => 'Đặt Tour',
-    'price' => 'Giá',
     'thanks' => 'Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi',
     'booking_sheet' => 'Phiếu Xác Nhận Booking',
     'communication' => 'Thông tin Liên Lạc',
@@ -41,6 +40,12 @@ return [
     'error' => 'Đã xảy ra lỗi!',
     'confirmation' => 'Xác nhận đặt tour',
     'create_cc' => 'Bạn đã đặt tour thành công',
-    'create_faild' => 'Bạn đặt tour không thành công'
+    'create_faild' => 'Bạn đặt tour không thành công',
+    'price_child' => 'Giá trẻ em',
+    'price_adult' => 'Giá người lớn',
+    'id' => 'Mã tour',
+    'time' => 'Thời gian',
+    'day' => 'ngày',
+    'nigth' => 'đêm',
 ];
 ?>

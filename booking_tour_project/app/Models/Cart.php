@@ -16,7 +16,7 @@ class Cart extends Model
         $this->cart = session()->get('cart') ?? [];
     }
 
-    public function addToCart(Tour $tour, $qty_adult, $qty_child, $date_start)
+    public function addToCart(Tour $tour, $qty_adult, $qty_child)
     {
         $this->cart = [
             'qty_adult' => $qty_adult,
@@ -24,7 +24,6 @@ class Cart extends Model
             'price_adult' => $tour->priceAdult,
             'price_child' => $tour->priceChild,
             'id_tour' => $tour->id,
-            'date_start' => $date_start
         ];
         session()->put('cart', $this->cart);
     }

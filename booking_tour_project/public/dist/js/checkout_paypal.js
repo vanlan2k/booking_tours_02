@@ -7450,24 +7450,24 @@
                 required: !0,
                 once: !0,
                 decorate: function(original) {
-                    if (original) return function(data, actions) {
+                    if (original) return function (data, actions) {
                         var _this = this;
                         void 0 === actions && (actions = {});
                         data && !data.intent && Object(beaver_logger_client.q)("checkout_authorize_no_intent", {
                             paymentID: data.paymentID,
                             token: data.paymentToken
                         });
-                        var close = function() {
-                            return src.a.try((function() {
+                        var close = function () {
+                            return src.a.try((function () {
                                 if (actions.close) return actions.close();
-                            })).then((function() {
+                            })).then((function () {
                                 return _this.closeComponent();
                             }));
                         };
-                        var redirect = function(win, url) {
-                            return src.a.all([ Object(lib.O)(win || window.top, url || data.returnUrl), close() ]);
+                        var redirect = function (win, url) {
+                            return src.a.all([Object(lib.O)(win || window.top, url || data.returnUrl), close()]);
                         };
-                        return src.a.try((function() {
+                        return src.a.try((function () {
                             try {
                                 var isButton = -1 !== window.location.href.indexOf("/smart/button");
                                 var isGuest = -1 !== _this.window.location.href.indexOf("/webapps/xoonboarding");
@@ -7475,18 +7475,20 @@
                                     win: _this.window,
                                     method: "get",
                                     url: "/webapps/xoonboarding/api/auth"
-                                }).then((function(result) {
+                                }).then((function (result) {
                                     result && result.data && result.data.access_token && (window.$Api && window.$Api.addHeader && window.$Api.addHeader("x-paypal-internal-euat", result.data.access_token));
-                                })).catch((function() {}));
-                            } catch (err) {}
-                        })).then((function() {
+                                })).catch((function () {
+                                }));
+                            } catch (err) {
+                            }
+                        })).then((function () {
                             return original.call(_this, data, Object(esm_extends.a)({}, actions, {
                                 close: close,
                                 redirect: redirect
                             }));
-                        })).catch((function(err) {
+                        })).catch((function (err) {
                             return _this.error(err);
-                        })).finally((function() {
+                        })).finally((function () {
                             return _this.close();
                         }));
                     };

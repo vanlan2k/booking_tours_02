@@ -27,6 +27,10 @@ Route::post('/comment/{id}', [\App\Http\Controllers\web\RatingCommentController:
 Route::post('/loadmore', [\App\Http\Controllers\web\LoadMoreController::class, 'review']);
 Route::resource('/profile', \App\Http\Controllers\web\ProfileController::class)->only(['index', 'update']);
 Route::get('/review', [\App\Http\Controllers\web\YouReviewController::class, 'index'])->name('reviews');
+
+Route::get('/your-booking', [\App\Http\Controllers\web\YouReviewController::class, 'yourBooking']);
+Route::get('/your-booking/cancel/{id}', [\App\Http\Controllers\web\YouReviewController::class, 'yourBookingCancel']);
+
 Route::get('/news', [\App\Http\Controllers\web\NewsController::class, 'index'])->name('news');
 Route::get('/detail/{id}', [\App\Http\Controllers\web\NewsController::class, 'show']);
 
@@ -46,6 +50,7 @@ Route::get('/language/{lang}', [\App\Http\Controllers\LanguageController::class,
 /*admin*/
 Route::get('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::class, 'index'])->name('loginAdmin');
 Route::post('/admin/login', [\App\Http\Controllers\admin\auth\LoginController::class, 'login'])->name('auth.login');
+Route::post('/admin/logout', [\App\Http\Controllers\admin\auth\LoginController::class, 'logout'])->name('auth.logout');
 Route::middleware(['auth'])->group(function () {
     Route::group(['middleware' => 'checkAdmin:1'], function () {
         Route::get('/admin/', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.home');
@@ -59,7 +64,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('/admin/comment',  \App\Http\Controllers\admin\ManagerCommentController::class)->only(['index', 'show', 'update']);
         Route::resource('/admin/category',  \App\Http\Controllers\admin\ManagerCategoryController::class);
         Route::resource('/admin/news',  \App\Http\Controllers\admin\NewsController::class);
-        Route::get('/admin/export-excel', [\App\Http\Controllers\admin\HomeController::class, 'exportStatistic']);
+        Route::get('/admin/export-excel/{filter}', [\App\Http\Controllers\admin\HomeController::class, 'exportStatistic']);
     });
 });
 

@@ -13,5 +13,6 @@ return [
     'logout' => 'Đăng xuất',
     'your_review' => 'Đánh giá của bạn',
     'news' => 'Tin tức',
+    'your_booking' => 'Đơn đặt của bạn'
 ];
 ?>

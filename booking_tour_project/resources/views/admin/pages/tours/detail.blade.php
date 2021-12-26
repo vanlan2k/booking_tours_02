@@ -66,23 +66,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">{{__('admin_tour.start')}}</label>
-                                <input type="date"
-                                       class="form-control {{$errors->has('date_start') ? 'is-invalid' : ''}}"
-                                       name="date_start"
-                                       placeholder="{{__('admin_tour.date_start')}}" value="{{ $tour->date_start }}"/>
+                                <input type="text" name="date_start" class="form-control dateformat" value="{{\Carbon\Carbon::parse($tour->date_start)->format('d-m-Y')}}" autocomplete="off" placeholder="dd/mm/yyyy">
                                 <div style="color: red">
                                     @error('date_start')
-                                    {{$message}}
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">{{__('admin_tour.end')}}</label>
-                                <input type="date" class="form-control {{$errors->has('date_end') ? 'is-invalid' : ''}}"
-                                       name="date_end"
-                                       placeholder="{{__('admin_tour.end_note')}}" value="{{ $tour->date_end }}"/>
-                                <div style="color: red">
-                                    @error('date_end')
                                     {{$message}}
                                     @enderror
                                 </div>

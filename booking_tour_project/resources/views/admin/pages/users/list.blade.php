@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">User List</h3>
+                        <h3 class="card-title">Danh sách người dùng</h3>
                     </div>
                     <div class="card-body">
                         <table id="example2" class="table table-bordered table-hover">
@@ -28,7 +28,7 @@
                                     <td>{{$user->phone}}</td>
                                     <td>{{$user->roles->name}}</td>
                                     <td>
-                                        <a class="btn btn-success" href="{{ route('user.show', $user) }}" title="Edit"><i class="fa fa-edit"></i></a>
+                                        <a class="btn btn-success" href="{{ route('user.show', $user) }}" title="Detail"><i class="fa fa-eye"></i></a>
                                         <a class="btn btn-danger {{$loop->iteration}}" href="#" onclick="deleteUser({{$user->id}}, '{{csrf_token()}}', {{$loop->iteration}})" title="Delete"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>

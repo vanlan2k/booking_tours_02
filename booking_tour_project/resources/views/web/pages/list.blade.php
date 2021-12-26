@@ -1,11 +1,11 @@
-@extends('web.layouts.main', ['title'=>'List Tour'])
+@extends('web.layouts.main', ['title'=>'Danh Sách Tour Du Lịch'])
 @section('content')
-    <section class="parallax_window_in" data-parallax="scroll" data-image-src="img/sub_header_list_museum.jpg"
+    <section class="parallax_window_in" data-parallax="scroll" data-image-src="{{asset('dist/img/slides/slide_1.jpg')}}"
              data-natural-width="1400" data-natural-height="470">
         <div id="sub_content_in">
             <div id="animate_intro">
-                <h1>Travel Tours</h1>
-                <p>"Usu habeo equidem sanctus no ex melius labitur conceptam eos"</p>
+                <h1>{{__('home.discover')}}</h1>
+                <p>"{{__('home.ft_discover')}}"</p>
             </div>
         </div>
     </section>

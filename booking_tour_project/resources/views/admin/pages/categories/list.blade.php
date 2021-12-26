@@ -23,7 +23,7 @@
                                     <td>{{ $category->name }}</td>
                                     <td>
                                         <a class="btn btn-success" href="{{ route('category.show', $category) }}"
-                                           title="Edit"><i class="fa fa-edit"></i></a>
+                                           title="Detail"><i class="fas fa-eye"></i></a>
                                         <a class="btn btn-danger" href="#"
                                            onclick="deleteCategory({{$category->id}}, '{{@csrf_token()}}', {{$loop->iteration}})"
                                            title="Delete"><i class="fas fa-trash-alt"></i></a>

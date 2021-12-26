@@ -4,9 +4,12 @@ namespace App\Console\Commands;
 
 use App\Exports\ExportSendStatistic;
 use App\Jobs\SendStatisticJob;
+use App\Mail\SendStatisticAdmin;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Excel;
+use Illuminate\Support\Env;
+use Illuminate\Support\Facades\Mail;
 
 class DownloadExcel extends Command
 {
@@ -42,6 +45,6 @@ class DownloadExcel extends Command
     public function handle()
     {
         Excel::store(new ExportSendStatistic(), Carbon::now()->subMonth()->format('m-Y').'.xlsx', 'custom_disk');
-        dispatch(new SendStatisticJob());
+        Mail::to(Env::get('MAIL_FROM_ADDRESS'))->send(new SendStatisticAdmin());
     }
 }

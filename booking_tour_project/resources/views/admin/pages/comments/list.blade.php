@@ -35,7 +35,7 @@
                                     </td>
                                     <td>
                                         <a class="btn btn-success" href="{{ route('comment.show', $comment) }}"
-                                           title="Edit"><i class="fa fa-edit"></i></a>
+                                           title="Detail"><i class="fa fa-eye"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -9,7 +9,7 @@ return [
     'list_tour' => 'Danh Sách Tour',
     'bookings' => 'Tour Đặt Trước',
     'list_booking' => 'Danh Sách',
-    'comment' => 'Bình Luận',
+    'comment' => 'Đánh giá',
     'list_cmt' => 'Danh Sách Bình Luận',
     'category' => 'Loại Tour',
     'list_cate' => 'Danh Sách',

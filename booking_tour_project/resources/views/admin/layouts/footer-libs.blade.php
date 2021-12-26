@@ -1,7 +1,6 @@
-<!-- jQuery -->
-<script src="{{asset('dist/js/jquery-2.2.4.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{asset('dist/js/jquery-ui.js')}}"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- Bootstrap 4 -->
@@ -29,7 +28,6 @@
 <script src="{{asset('dist/js/toastr.min.js')}}"></script>
 <script src="{{ asset('dist/js/libs/xeditable/bootstrap-editable.min.js') }}"></script>
 <script src="{{asset('dist/js/select2.min.js')}}"></script>
-<script src="{{asset('dist/js/jquery-ui.js')}}"></script>
 <script src="{{asset('dist/js/pusher.min.js')}}"></script>
 <script src="{{asset('dist/js/bootstrap-tagsinput.min.js')}}"></script>
 <script type="text/javascript">

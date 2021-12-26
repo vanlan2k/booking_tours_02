@@ -25,7 +25,7 @@
                                     <td>{{getDateBooking($new->created_at)}}</td>
                                     <td><div class="text_review">{!! $new->content !!}</div></td>
                                     <td>
-                                        <a class="btn btn-success" href="{{ route('news.show', $new) }}" title="Edit"><i class="fa fa-edit"></i></a>
+                                        <a class="btn btn-success" href="{{ route('news.show', $new) }}" title="Detail"><i class="fa fa-eye"></i></a>
                                         <a class="btn btn-danger " href="#" onclick="deleteTour({{$new->id}}, '{{@csrf_token()}}', {{$loop->iteration}})" title="Delete"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>

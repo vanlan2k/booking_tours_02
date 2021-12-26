@@ -7,7 +7,6 @@ $('#key_works').keyup(function () {
             method: "POST",
             data: {query: query, _token: _token},
             success: function (result) {
-                console.log(result.output);
                 $('#auto-conplete').fadeIn();
                 $('#auto-conplete').html(result.output);
             }

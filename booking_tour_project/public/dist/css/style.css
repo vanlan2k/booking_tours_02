@@ -60,6 +60,7 @@ Author URI: http://themeforest.net/user/Ansonika/
     color: #ed1c24;
 }
 
+
 /*-------- 1.1 Typography --------*/
 
 /* This is for popins font for firefox */
@@ -98,7 +99,7 @@ body {
     background: #f9f9f9;
     font-size: 14px;
     line-height: 1.5;
-    font-family: "Poppins", Arial, sans-serif;
+    font-family: DejaVu Sans, sans-serif;
     color: #333;
     -webkit-font-smoothing: antialiased;
     font-weight: 300;
@@ -2729,6 +2730,7 @@ a.post-link:hover {
     position: relative;
     min-height: 1px;
     float: left;
+    width: 100% !important;
     -webkit-backface-visibility: hidden;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -3550,14 +3552,17 @@ ul.list_ok li:before {
 .design-process-section {
     margin: 160px auto 50px;
 }
+
 .design-process-section .text-align-center {
     line-height: 25px;
     margin-bottom: 12px;
 }
+
 .design-process-content {
     border: 1px solid #e9e9e9;
     padding: 20px 0;
 }
+
 .design-process-content img {
     position: absolute;
     top: 0;
@@ -3575,6 +3580,7 @@ ul.list_ok li:before {
     line-height: 26px;
     margin-bottom: 12px;
 }
+
 .process-model {
     list-style: none;
     padding: 0;
@@ -3583,6 +3589,7 @@ ul.list_ok li:before {
     border: none;
     z-index: 0;
 }
+
 .process-model li::after {
     background: #e5e5e5 none repeat scroll 0 0;
     bottom: 0;
@@ -3596,6 +3603,7 @@ ul.list_ok li:before {
     width: 61%;
     z-index: -1;
 }
+
 .process-model li.visited::after {
     background: #57b87b;
 }
@@ -3603,32 +3611,39 @@ ul.list_ok li:before {
 .process-model li:last-child::after {
     width: 0;
 }
+
 .process-model li.visited::after {
     background: #57b87b;
 }
+
 .process-model li:last-child::after {
     width: 0;
 }
+
 .process-model li {
     display: inline-block;
     width: 33%;
     text-align: center;
     float: none;
 }
+
 .nav-tabs.process-model > li.active > a, .nav-tabs.process-model > li.active > a:hover, .nav-tabs.process-model > li.active > a:focus, .process-model li a:hover, .process-model li a:focus {
     border: none;
     background: transparent;
 
 }
+
 .process-model li a {
     padding: 0;
     border: none;
     color: #606060;
 }
+
 .process-model li.active,
 .process-model li.visited {
     color: #57b87b;
 }
+
 .process-model li.active a,
 .process-model li.active a:hover,
 .process-model li.active a:focus,
@@ -3637,10 +3652,12 @@ ul.list_ok li:before {
 .process-model li.visited a:focus {
     color: #57b87b;
 }
+
 .process-model li.active p,
 .process-model li.visited p {
     font-weight: 600;
 }
+
 .process-model li i {
     display: block;
     text-align: center;
@@ -3683,14 +3700,17 @@ ul.list_ok li:before {
         line-height: 46px;
         width: 50px;
     }
+
     .more-icon-preocess.process-model li::after {
         top: 24px;
     }
 }
+
 @media screen and (max-width: 380px) {
     .process-model.more-icon-preocess li {
         width: 16%;
     }
+
     .more-icon-preocess.process-model li span {
         font-size: 16px;
         height: 35px;
@@ -3751,6 +3771,7 @@ ul.list_ok li:before {
     font-weight: 500;
     font-size: 20px;
 }
+
 .avata {
     width: 25px;
     height: 25px;
@@ -3773,7 +3794,8 @@ ul.list_ok li:before {
     padding: 20px;
     border-radius: 5px;
 }
-.text_review{
+
+.text_review {
     white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3782,7 +3804,8 @@ ul.list_ok li:before {
     display: -webkit-box;
     width: 100px;
 }
-.text_description{
+
+.text_description {
     white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3791,17 +3814,18 @@ ul.list_ok li:before {
     display: -webkit-box;
     width: 250px;
 }
+
 .rating {
     display: flex;
     flex-direction: row-reverse;
     justify-content: left;
 }
 
-.rating>input {
+.rating > input {
     display: none
 }
 
-.rating>label {
+.rating > label {
     position: relative;
     width: 1em;
     font-size: 4vw;
@@ -3809,24 +3833,36 @@ ul.list_ok li:before {
     cursor: pointer
 }
 
-.rating>label::before {
+.rating > label::before {
     content: "\2605";
     position: absolute;
     opacity: 0
 }
 
-.rating>label:hover:before,
-.rating>label:hover~label:before {
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
     opacity: 1 !important
 }
 
-.rating>input:checked~label:before {
+.rating > input:checked ~ label:before {
     opacity: 1
 }
 
-.rating:hover>input:checked~label:before {
+.rating:hover > input:checked ~ label:before {
     opacity: 0.4
 }
-.review_score_2{
+
+.review_score_2 {
     padding-bottom: 30px;
+}
+
+.owl-stage {
+    width: 100% !important;
+}
+
+.date_gid {
+    left: 0;
+    background: transparent !important;
+    font-size: 15px;
+    top: 2px;
 }

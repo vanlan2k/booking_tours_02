@@ -16,26 +16,20 @@ class BookingController extends Controller
         if ($request->payment) {
             $cart = new Cart();
             $cart->cart['status'] = 1;
+            $cart->cart['payment'] = 1;
+            session()->put('cart', $cart->cart);
+        }
+        else{
+            $cart = new Cart();
+            $cart->cart['status'] = 0;
             session()->put('cart', $cart->cart);
         }
         $booking = new BookingService();
         $check = $booking->addBookingTour();
-        if ($request->payment) {
-            if ($check) {
-                return response()->json([
-                    'error' => false
-                ]);
-            } else {
-                return response()->json([
-                    'error' => true
-                ]);
-            }
+        if ($check) {
+            return redirect()->route('home')->with(['success' => __('checkout.create_cc')]);
         } else {
-            if ($check) {
-                return redirect('/')->with(['success' => __('checkout.create_cc')]);
-            } else {
-                return redirect()->back()->with(['success' => __('checkout.create_faild')]);
-            }
+            return redirect('/')->with(['error' => __('checkout.create_faild')]);
         }
     }
 
@@ -46,7 +40,7 @@ class BookingController extends Controller
             abort(404);
         }
         $cart = new Cart();
-        $cart->addToCart($tour, $request['adult'], $request['child'], $request['date_start']);
+        $cart->addToCart($tour, $request['adult'], $request['child']);
         return redirect()->route('checkout');
     }
 }

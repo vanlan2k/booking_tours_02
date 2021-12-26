@@ -2960,3 +2960,5 @@
 
 })));
 //# sourceMappingURL=adminlte.js.map
+
+$("form").attr('autocomplete', 'off');

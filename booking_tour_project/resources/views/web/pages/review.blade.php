@@ -1,6 +1,6 @@
-@extends('web.layouts.main', ['title'=>'Your Review'])
+@extends('web.layouts.main', ['title'=>'Đánh Giá CỦa Bạn'])
 @section('content')
-    <section class="parallax_window_in" data-parallax="scroll" data-image-src="img/sub_header_list_museum.jpg"
+    <section class="parallax_window_in" data-parallax="scroll" data-image-src="{{asset('dist/img/tour_list_2.jpg')}}"
              data-natural-width="1400" data-natural-height="470">
     </section>
     <!-- End section -->

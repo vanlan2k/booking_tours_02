@@ -1,7 +1,7 @@
 function deleteTour(id, token, i) {
     swal({
-        title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this imaginary file!",
+        title: "Xác nhận",
+        text: "Sau khi xóa, bạn sẽ không thể khôi phục nội dung này!",
         icon: "warning",
         buttons: true,
         dangerMode: true,
@@ -16,7 +16,7 @@ function deleteTour(id, token, i) {
                 success: function (result) {
                     if (!result.error) {
                         $('.row-item'+ i).remove();
-                        swal("Good job!", "Item deleted successfully!", "success")
+                        swal("Thành công!", "Xóa nội dung thành công!","success")
                             .then((value) => {
                                 for (var j = 0; j <= $('.stt').length; j++){
                                     var z = j + 1;
@@ -25,11 +25,11 @@ function deleteTour(id, token, i) {
                             });
                         return;
                     }
-                    swal("Failed!", "Some error occur, please contact administrator!", "error");
+                    swal("Lỗi!", "Đã xảy ra lỗi, vui lòng liên hệ quản trị viên!","error");
                 }
             })
         } else {
-            swal("Cancel!");
+            swal("Đã Hủy!", "", "success");
         }
     })
 }

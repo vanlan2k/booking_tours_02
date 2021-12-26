@@ -15,8 +15,7 @@ return [
     'avata' => 'Ảnh đại diện',
     'description' => 'Miêu tả',
     'number' => 'Số ngày',
-    'start' => 'Ngày bắt đầu mở bán',
-    'end' => 'Ngày kết thúc mở bán',
+    'start' => 'Ngày khởi hành',
     'price' => 'Giá',
     'adult' => 'Người lớn',
     'child' => 'Trẻ em',
@@ -33,5 +32,7 @@ return [
     'search' => 'Tìm Kiếm',
     'search_note' => 'Nhập tên tour',
     'select_category' => 'Chọn Loại Tour',
-    'tags' => 'Thẻ'
+    'tags' => 'Thẻ',
+    'status' => 'Trạng thái',
+    'title' => 'Danh Sách Tour'
 ];

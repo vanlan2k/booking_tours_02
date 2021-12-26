@@ -25,9 +25,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('calculateTotal:cron')->withoutOverlapping()->dailyAt('23:59');
-        $schedule->command('calculateRating:cron')->withoutOverlapping()->everySixHours();
+        $schedule->command('calculateTotal:cron')->withoutOverlapping()->everySixHours();
+        $schedule->command('calculateRating:cron')->withoutOverlapping()->everyMinute();
         $schedule->command('download:cron')->withoutOverlapping()->monthly();
+        $schedule->command('changeStatusBooking:cron')->withoutOverlapping()->dailyAt('23:59');
     }
 
     /**

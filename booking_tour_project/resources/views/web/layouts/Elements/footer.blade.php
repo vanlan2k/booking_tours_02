@@ -2,47 +2,38 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3">
-                <h3>Need help?</h3>
+                <h3>Bạn cần giúp đỡ?</h3>
                 <a href="tel://004542344599" id="phone">+45 423 445 99</a>
                 <a href="mailto:help@citytours.com" id="email_footer">help@bestours.com</a>
             </div>
             <div class="col-md-2 col-sm-3">
-                <h3>About</h3>
+                <h3>Thông Tin</h3>
                 <ul>
-                    <li><a href="#">About us</a>
+                    <li><a href="#">Về chúng tôi</a>
                     </li>
                     <li><a href="#">FAQ</a>
-                    </li>
-                    <li><a href="#">Login</a>
-                    </li>
-                    <li><a href="#">Register</a>
-                    </li>
-                    <li><a href="#">Terms and condition</a>
                     </li>
                 </ul>
             </div>
             <div class="col-md-4 col-sm-6">
-                <h3>Twitter feed</h3>
-                <div class="latest-tweets" data-number="10" data-username="ansonika" data-mode="fade" data-pager="false"
-                     data-nextselector=".tweets-next" data-prevselector=".tweets-prev" data-adaptiveheight="true">
-                    <!-- data-username="your twitter username" -->
-                </div>
-                <div class="tweet-control">
-                    <div class="tweets-prev"></div>
-                    <div class="tweets-next"></div>
-                </div>
+                <h3>Địa điểm</h3>
+                <ul>
+                    <li>- 190-192 Trần Quý, Phường 6, Quận 11, Tp. Hồ Chí Minh</li>
+                    <li>- 54 Phạm Hồng Thái, Bến Thành, Quận 1, Tp. Hồ Chí Minh</li>
+                    <li>- 164 Lê Thánh Tôn, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh</li>
+                </ul>
                 <!-- End .tweet-control -->
             </div>
             <div class="col-md-3 col-sm-12">
-                <h3>Newsletter</h3>
+                <h3>Phản hồi với chúng tôi</h3>
                 <div id="message-newsletter_2">
                 </div>
                 <form method="post" action="assets/newsletter.php" name="newsletter_2" id="newsletter_2">
                     <div class="form-group">
                         <input name="email_newsletter_2" id="email_newsletter_2" type="email" value=""
-                               placeholder="Your email" class="form-control">
+                               placeholder="Email của bạn" class="form-control">
                     </div>
-                    <input type="submit" value="Subscribe" class="btn_1" id="submit-newsletter_2">
+                    <input type="submit" value="Gửi" class="btn_1" id="submit-newsletter_2">
                 </form>
             </div>
         </div>

@@ -10,7 +10,7 @@ class TourService
     {
         if ($input == 'popularity') {
             $tours = Tour::popularityTour();
-        } elseif ($input == ' price') {
+        } elseif ($input == 'price') {
             $tours = Tour::price();
         } elseif ($input == 'priceDesc') {
             $tours = Tour::priceDESC();

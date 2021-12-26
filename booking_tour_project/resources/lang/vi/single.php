@@ -23,6 +23,7 @@ return [
     'day' => 'ngày',
     'based_on' => 'Dựa trên',
     'date_start' => 'Chọn ngày đi',
-    'tags' => 'Thẻ'
+    'tags' => 'Thẻ',
+    'no_news_value' => 'Không có kết quả nào được tìm thấy',
 ];
 ?>

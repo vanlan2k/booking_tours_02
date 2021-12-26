@@ -8,6 +8,12 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class ExportStatistic implements FromCollection, WithHeadings
 {
+    private $data;
+    public function __construct($data)
+    {
+        $this->data = $data;
+    }
+
     public function headings(): array
     {
         return [
@@ -22,14 +28,6 @@ class ExportStatistic implements FromCollection, WithHeadings
      */
     public function collection()
     {
-        $service = new ChartService();
-        $values = $service->exportExcelStatistic();
-        for($i = 0; $i < count($values['data']); $i++){
-            $x = 0;
-            $data[$i][$x++] = $i;
-            $data[$i][$x++] = $values['date'][$i];
-            $data[$i][$x++] = $values['data'][$i];
-        }
-        return collect($data);
+        return collect($this->data);
     }
 }

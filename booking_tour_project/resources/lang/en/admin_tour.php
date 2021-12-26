@@ -33,5 +33,7 @@ return [
     'search' => 'Search',
     'search_note' => 'Enter tour name',
     'select_category' => 'Select Category',
-    'tags' => 'Tags'
+    'tags' => 'Tags',
+    'status' => 'Status',
+    'title' => 'Tour List'
 ];

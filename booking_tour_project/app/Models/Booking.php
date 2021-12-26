@@ -13,12 +13,14 @@ class Booking extends Model
 
     protected $table = 'bookings';
     public static $status = [
-        "1" => "Paid",
-        "0" => "Unpaid",
+        "0" => "Chưa thanh toán",
+        "1" => "Đã thanh toán",
+        "2" => "Quá hạn",
     ];
     public static $payment = [
-        "0" => "Cash",
+        "0" => "Tiền mặt",
         "1" => "ATM/Internet Bacnking",
+        "2" => "Đã hủy"
     ];
     public function booking_detail()
     {
@@ -53,6 +55,8 @@ class Booking extends Model
     public function scopeSumRevenue($query, $dateStart, $now){
         return $query->select(DB::raw('SUM(total) as revenue'))
             ->whereBetween('booking_date', [$dateStart, $now])
+            ->where('status', 1)
+            ->where('payment', '!=', 2)
             ->groupBy(DB::raw('MONTH(booking_date)'))
             ->first();
     }

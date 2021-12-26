@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Jobs\NotificationTourJob;
+use App\Jobs\SendCancelTourJobs;
 use App\Jobs\SendMail;
 use App\Models\Category;
 use App\Models\Image;
@@ -10,6 +11,7 @@ use App\Models\Tour;
 use App\Models\TourDetail;
 use App\Models\TourRoute;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -20,6 +22,7 @@ class AdminService
     {
         DB::beginTransaction();
         try {
+            $input['date_start'] = Carbon::createFromFormat('d/m/Y',$input['date_start']);
             $tour = Tour::create($input);
             //  create list image
             $images = $this->createImage($input, $tour);
@@ -40,6 +43,7 @@ class AdminService
     {
         DB::beginTransaction();
         try {
+            $input['date_start'] = Carbon::createFromFormat('d-m-Y',$input['date_start']);
             $tour->fill($input);
             $tour->save();
             //  update list image
@@ -62,9 +66,9 @@ class AdminService
     {
         DB::beginTransaction();
         try {
-            $tour->tour_route()->delete();
             $tour->delete();
             DB::commit();
+            dispatch(new SendCancelTourJobs($tour->id));
             return true;
         } catch (Exception $e) {
             DB::rollBack();

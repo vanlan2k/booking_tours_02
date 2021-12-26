@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Mail\SendStatisticAdmin;
+use App\Mail\BookingMail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -10,21 +10,23 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Env;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
-class SendStatisticJob implements ShouldQueue
+class NewBookingJobs implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+    public $id_booking;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($id_booking)
     {
-        $this->delay = now()->addMinute();
+        $this->id_booking = $id_booking;
+        $this->delay = now()->addSeconds(5);
     }
 
     /**
@@ -34,6 +36,6 @@ class SendStatisticJob implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to(Env::get('MAIL_FROM_ADDRESS'))->send(new SendStatisticAdmin());
+        Mail::to(Env::get('MAIL_FROM_ADDRESS'))->send(new BookingMail($this->id_booking));
     }
 }

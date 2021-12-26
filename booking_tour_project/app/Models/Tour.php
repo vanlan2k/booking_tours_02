@@ -5,11 +5,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 
 class Tour extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'tours';
     protected $fillable = [
@@ -21,7 +22,6 @@ class Tour extends Model
         'priceChild',
         'priceAdult',
         'date_start',
-        'date_end',
         'tags'
     ];
 
@@ -44,6 +44,7 @@ class Tour extends Model
     {
         return $this->hasMany(Review::class, 'tour_id', 'id');
     }
+
     public function assessRate()
     {
         return $this->hasMany(AssessRate::class, 'tour_id', 'id');
@@ -58,9 +59,13 @@ class Tour extends Model
     {
         return $query->where('cate_id', $input)->paginate(12);
     }
+
     public function scopeSearchTour($query, $input)
     {
-        return $query->where('name', 'like', '%'.$input.'%')->paginate(12);
+        return $query->whereRaw("MATCH(name)AGAINST('" . $input . "')")
+            ->orWhere('name', 'like', '%' . $input . '%')
+            ->orderBy('id', 'DESC')
+            ->paginate(12);
     }
 
     public function scopeTopTour()
@@ -68,6 +73,8 @@ class Tour extends Model
         $values = BookingDetail::select(DB::raw('COUNT(tour_id)'), 'tour_id')
             ->orderBy(DB::raw('COUNT(tour_id)'), 'DESC')
             ->groupBy('tour_id')
+            ->join('bookings','bookings.id', '=', 'booking_details.booking_id')
+            ->where('bookings.payment', '!=', 2)
             ->limit(9)
             ->get();
         $tours = [];
@@ -89,7 +96,7 @@ class Tour extends Model
 
     public function scopePrice($query)
     {
-        return $query->orderBy('priceAdult')->paginate(12);
+        return $query->orderBy('priceAdult', 'ASC')->paginate(12);
     }
 
     public function scopePriceDESC($query)
@@ -100,8 +107,9 @@ class Tour extends Model
     public function scopeTopRate()
     {
         $values = AssessRate::select(DB::raw('AVG(number_rate)'), 'tour_id')
+            ->groupBy('tour_id')
             ->orderBy(DB::raw('AVG(number_rate)', 'DESC'))
-            ->limit(4)
+            ->limit(6)
             ->get();
         $tours = [];
         foreach ($values as $value) {
@@ -124,8 +132,10 @@ class Tour extends Model
     {
         return $query->where('name', 'like', '%' . $input . '%')->paginate(12);
     }
-    public function scopeFullTextSearch($query, $input){
-        return $query->whereRaw("MATCH(name)AGAINST('".$input."')")
+
+    public function scopeFullTextSearch($query, $input)
+    {
+        return $query->whereRaw("MATCH(name)AGAINST('" . $input . "')")
             ->orWhere('name', 'like', '%' . $input . '%')
             ->orderBy('id', 'DESC')
             ->limit(5)

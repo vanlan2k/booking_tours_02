@@ -22,10 +22,12 @@ class ChartController extends Controller
     public function filterDate(Request $request)
     {
         $service = new ChartService();
+        session()->put('dateTo', $request->dateTo);
+        session()->put('dateFrom', $request->dateFrom);
         $result = $service->filterDate($request);
         return response()->json([
             'data' => $result['data'],
-            'date' => $result['date']
+            'date' => $result['date'],
         ]);
     }
 
@@ -36,7 +38,8 @@ class ChartController extends Controller
         $result = $service->filterBy($input);
         return response()->json([
             'data' => $result['data'],
-            'date' => $result['date']
+            'date' => $result['date'],
+            'export_by' => $request['filter']
         ]);
     }
 }

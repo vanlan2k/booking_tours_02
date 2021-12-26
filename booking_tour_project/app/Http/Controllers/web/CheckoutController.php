@@ -32,7 +32,15 @@ class CheckoutController extends Controller
         $cart->cart['total'] = $cart->getTotal();
         $cart->cart['status'] = 0;
         $cart->cart['booking_date'] = date('Y-m-d H:m:s');
-        $cart->cart['booking_no'] = rand(100000, 999999);
+        $check = true;
+        while ($check){
+            $booking_number = rand(100000, 999999);
+            $select = Booking::where('booking_no', $booking_number)->first();
+            if (!$select){
+                $check = false;
+            }
+        }
+        $cart->cart['booking_no'] = $booking_number;
         session()->put('cart', $cart->cart);
         return redirect()->route('payment');
     }

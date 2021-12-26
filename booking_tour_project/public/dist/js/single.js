@@ -32,7 +32,7 @@ $(document).ready(function () {
         $.ajax({
             url: "/loadmore",
             method: "POST",
-            data: {id: id, _token: _token, tour_id: id_tour},
+            data: {id: id, _token: _token, id_tour: id_tour},
             success: function (data) {
                 $('#load_more_button').remove();
                 $('#review_data').append(data.output);

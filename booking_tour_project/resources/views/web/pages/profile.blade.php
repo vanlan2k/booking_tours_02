@@ -1,4 +1,4 @@
-@extends('web.layouts.main', ['title' => 'Profile Page'])
+@extends('web.layouts.main', ['title' => 'Trang Cá Nhân'])
 @section('content')
     <section class="design-process-section wrapper" id="process-tab">
         <div class="container bootstrap snippet">

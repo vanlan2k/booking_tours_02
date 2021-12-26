@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-3">
                     <div id="logo_home">
-                        <h1><a href="index.html" title="City tours travel template">BesTours Travel&amp;Excursion
+                        <h1><a href="/" title="City tours travel template">BesTours Travel&amp;Excursion
                                 Multipurpose Template</a></h1>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                                 <a href="/" class="show-submenu">{{__('menu.home')}}</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{__('menu.tours')}}</a>
+                                <a class="nav-link dropdown-toggle" href="/tour" data-toggle="dropdown">{{__('menu.tours')}}</a>
                                 <ul class="dropdown-menu">
                                     @foreach($categories as $category)
                                         <li><a class="dropdown-item" href="/search?category={{$category->id}}"> {{$category->name}} </a>
@@ -30,7 +30,7 @@
                                 </ul>
                             </li>
                             <li class="submenu">
-                                <a href="{{route('news')}}" class="show-submenu">{{__('menu.news')}}</a>
+                                <a href="#" class="show-submenu">{{__('menu.news')}}</a>
                             </li>
                             <li>
                                 <a href="about.html">{{__('menu.about')}}</a>
@@ -61,6 +61,7 @@
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item"
                                            href="{{route('profile.index')}}">{{__('menu.profile')}}</a>
+                                        <a class="dropdown-item" href="/your-booking">{{__('menu.your_booking')}}</a>
                                         <a class="dropdown-item" href="/review">{{__('menu.your_review')}}</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="{{route('logoutUser')}}">{{__('menu.logout')}}</a>

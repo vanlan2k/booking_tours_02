@@ -1,4 +1,4 @@
-@extends('web.layouts.main', ['title'=>'Your Tour'])
+@extends('web.layouts.main', ['title'=>'Tour Du Lịch Của Bạn'])
 @section('content')
     <section class="design-process-section wrapper" id="process-tab">
         <div class="container">
@@ -19,34 +19,35 @@
                                         <div class="row">
                                             <div class="col-6 d-flex">
                                                 <i class="fa fa-qrcode mt-1"></i>
-                                                <div class="pl-1"><h6>{{$tour->id}}</h6></div>
-                                            </div>
-                                            <div class="col-6 d-flex">
-                                                <i class="fas fa-map-marked"></i>
-                                                <div class="pl-1"><h6>{{$tour->address}}</h6></div>
+                                                <div class="pl-1"><h6>{{__('checkout.id')}}{{$tour->id}}</h6></div>
                                             </div>
                                             <div class="col-6 d-flex">
                                                 <i class="fas fa-user-friends"></i>
                                                 <div class="pl-1"><h6>
-                                                        {{__('checkout.price')}}: {{getPrice($tour->priceAdult)}}
+                                                        {{__('checkout.price_adult')}}: {{getPrice($tour->priceAdult)}}
                                                         /{{__('single.per_adult')}}
                                                 </h6></div>
                                             </div>
+
                                             <div class="col-6 d-flex">
+                                                <i class="far fa-calendar-alt"></i>
+                                                <div class="pl-1"><h6>{{__('checkout.date_st')}}: &nbsp;{{getDateBooking($tour->date_start)}}</h6>
+                                                </div>
+                                            </div><div class="col-6 d-flex">
                                                 <i class="fas fa-child"></i>
                                                 <div class="pl-1"><h6>
-                                                        {{__('checkout.price')}}: {{getPrice($tour->priceChild)}}
+                                                        {{__('checkout.price_child')}}: {{getPrice($tour->priceChild)}}
                                                         /{{__('single.per_child')}}
-                                                </h6></div>
+                                                    </h6></div>
                                             </div>
                                             <div class="col-6 d-flex">
                                                 <i class="far fa-calendar-alt"></i>
-                                                <div class="pl-1"><h6>{{__('checkout.date_st')}}: &nbsp;{{getDateBooking($cart->cart['date_start'])}}</h6>
+                                                <div class="pl-1"><h6>{{__('checkout.date_end')}}: &nbsp;{{(new \Carbon\Carbon($tour->date_start))->addDays($tour->number_date)->format('d-m-Y')}}</h6>
                                                 </div>
                                             </div>
                                             <div class="col-6 d-flex">
                                                 <i class="far fa-calendar-alt"></i>
-                                                <div class="pl-1"><h6>{{__('checkout.date_end')}}: &nbsp;{{(new \Carbon\Carbon($cart->cart['date_start']))->addDays($tour->number_date)->format('d-m-Y')}}</h6>
+                                                <div class="pl-1"><h6>{{__('checkout.time')}}: {{$tour->number_date}} {{__('checkout.day')}} - {{$tour->number_date -1}} {{__('checkout.nigth')}}</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -58,8 +59,8 @@
                             <div class="row m-auto d-flex">
                                 <div class="col-6">
                                     <div class="cus-num col-12">{{__('checkout.child')}} ({{__('checkout.0_2')}})</div>
-                                    <div class="farm-cus">
-                                        <label class="form-control">{{$cart->cart['qty_child']}}</label>
+                                    <div class="farm-cus text-right">
+                                        <label style="font-size: 20px">{{$cart->cart['qty_child']}}</label>
                                     </div>
                                     <div class="farm-cus text-right">
                                         <label
@@ -73,8 +74,8 @@
                                 <div class="col-6">
                                     <div class="cus-num col-12">{{__('checkout.adult')}} ({{__('checkout.12_years')}})
                                     </div>
-                                    <div class="farm-cus">
-                                        <label class="form-control">{{$cart->cart['qty_adult']}}</label>
+                                    <div class="farm-cus text-right">
+                                        <label style="font-size: 20px">{{$cart->cart['qty_adult']}}</label>
                                     </div>
                                     <div class="farm-cus text-right">
                                         <label

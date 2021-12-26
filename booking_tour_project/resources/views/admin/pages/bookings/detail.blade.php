@@ -27,12 +27,18 @@
                                 <tr>
                                     <th class="col-3">{{__('admin_booking.stt')}}:</th>
                                     <td>
-                                        <select class="form-control col-2" name="status">
-                                            @foreach(\App\Models\Booking::$status as $key => $stt)
-                                                <option value="{{$key}}" {{$booking->status == $key ? 'selected':''}}>{{$stt}}</option>
-                                            @endforeach
-                                        </select>
-                                        <a href="#" id="status" data-type="select" data-pk="{{$booking->id}}" data-title="Select status"></a>
+                                        @if($booking->payment == 2)
+                                            <span class="badge badge-danger" style="font-size: 14px; padding: 6px;">Đã hủy</span>
+                                        @else
+                                            <select class="form-control col-2" name="status">
+                                                @foreach(\App\Models\Booking::$status as $key => $stt)
+                                                    <option
+                                                        value="{{$key}}" {{$booking->status == $key ? 'selected':''}}>{{$stt}}</option>
+                                                @endforeach
+                                            </select>
+                                        @endif
+                                        <a href="#" id="status" data-type="select" data-pk="{{$booking->id}}"
+                                           data-title="Select status"></a>
                                     </td>
                                 </tr>
                             </table>
@@ -71,9 +77,12 @@
                             </table>
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <a class="btn btn-default" href="{{ route('booking.index') }}">{{__('admin_booking.back')}}</a>
+                                    <a class="btn btn-default"
+                                       href="{{ route('booking.index') }}">{{__('admin_booking.back')}}</a>
                                 </div>
-                                <button type="submit" class="btn btn-primary">{{__('admin_booking.save')}}</button>
+                                @if($booking->payment != 2)
+                                    <button type="submit" class="btn btn-primary">{{__('admin_booking.save')}}</button>
+                                @endif
                             </div>
                         </form>
                     </div>

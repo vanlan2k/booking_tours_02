@@ -78,22 +78,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">{{__('admin_tour.start')}}</label>
-                                <input type="date"
-                                       class="form-control {{$errors->has('date_start') ? 'is-invalid' : ''}}"
-                                       name="date_start" value="{{ old('date_start') }}"/>
+                                <input type="text" name="date_start" class="form-control dateformat" autocomplete="off" placeholder="dd/mm/yyyy">
                                 <div style="color: red">
                                     @error('date_start')
-                                    {{$message}}
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">{{__('admin_tour.end')}}</label>
-                                <input type="date"
-                                       class="form-control {{$errors->has('date_end') ? 'is-invalid' : ''}}"
-                                       name="date_end" value="{{ old('date_end') }}"/>
-                                <div style="color: red">
-                                    @error('date_end')
                                     {{$message}}
                                     @enderror
                                 </div>

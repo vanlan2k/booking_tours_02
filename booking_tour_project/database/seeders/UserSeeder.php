@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'phone' => '0123456789',
             'password' => bcrypt('admin'),
-            'role_id' => 1
+            'role_id' => 1,
         ], [
             'name' => 'customer',
             'email' => 'customer@gmail.com',

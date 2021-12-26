@@ -34,20 +34,26 @@ paypal.Button.render({
                 url: '/booking?payment=true',
                 method: 'GET',
                 success: function (result) {
-                    if(!result.error) {
-                        window.location.href = '/'
+                    if (!result.error) {
                         return actions.payment.execute().then(function () {
                             // Show a confirmation message to the buyer
-                            alert('You have successfully booked and paid for the tour');
+                            toastr.success('Bạn đã thanh toán và đặt tour du lịch thành công!', '', {timeOut: 5000});
+                            window.location.href = '/'
                         });
-                    }
-                    else {
-                        alert('You have failed to book and pay for the tour');
+                    } else {
+                        swal("Lỗi!", "Đã xảy ra lỗi, vui lòng liên hệ quản trị viên!", "error");
+                        $.ajax({
+                            url: '/booking?payment=false',
+                            method: 'GET',
+                            success: function (result) {
+                                toastr.success('Thanh toán không thành công!', '', {timeOut: 5000});
+                                window.location.href = '/';
+                            }
+                        });
                     }
                 }
             });
         }
     },
     '#paypal-button'
-)
-;
+);

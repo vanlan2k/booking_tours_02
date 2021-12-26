@@ -1,7 +1,7 @@
 <?php
 return [
     'ud_fail' => 'Cập nhật đơn không thành công!',
-    'ud_cc' => 'Cập nhật đơn thành công!',
+    'ud_cc' => 'Cập nhật đơn đặt tour thành công!',
     'list_bk' => 'Danh Sách Booking',
     'name' => 'Tên khách hàng',
     'code' => 'Mã đặt',
@@ -22,5 +22,6 @@ return [
     'id' => 'ID người dùng',
     'list_cmt' => 'Danh Sách Bình Luận',
     'back' => 'Quay lại',
-    'status' => 'Trạng Thái'
+    'status' => 'Trạng Thái',
+    'search_note' => 'Nhập mã số đặt tour'
 ];

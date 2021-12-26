@@ -57,18 +57,22 @@
                             <div class="col-4">
                                 @csrf
                                 <label class="col-12">{{__('admin_home.date_from')}}</label>
-                                <input type="date" id="dateFrom" class="p-2 form-row form-control col-8">
-                                <button type="submit" id="btn_sort" class="btn btn-success mt-2">{{__('admin_home.filter_result')}}</button>
+                                <input type="text" id="dateFrom" class="p-2 dateformat form-row form-control col-8" placeholder="dd/mm/yyyy">
+                                <button type="submit" id="btn_sort"
+                                        class="btn btn-success mt-2">{{__('admin_home.filter_result')}}</button>
                             </div>
                             <div class="col-4">
                                 <label class="col-12">{{__('admin_home.date_to')}}</label>
-                                <input type="date" id="dateTo" class="p-2 form-row form-control col-8">
-                                <a href="/admin/export-excel" class="btn btn-success mt-2">{{__('admin_home.export')}}</a>
+                                <input type="text" id="dateTo" class="p-2 dateformat form-row form-control col-8" placeholder="dd/mm/yyyy">
+                                <div id="add_btn_export">
+                                    <a href="/admin/export-excel/null" id="btn_export"
+                                       class="btn btn-success mt-2">{{__('admin_home.export')}}</a>
+                                </div>
                             </div>
                             <div class="col-4">
                                 <label class="col-12">{{__('admin_home.filter_the')}}</label>
                                 <select class="p-2 form-row form-control col-8" id="selectSort">
-                                    <option value="">----------Select----------</option>
+                                    <option value="">----------Lựa chọn----------</option>
                                     <option value="day">{{__('admin_home.sub7day')}}</option>
                                     <option value="lastmonth">{{__('admin_home.last_month')}}</option>
                                     <option value="thismonth">{{__('admin_home.this_month')}}</option>

@@ -1,7 +1,7 @@
-@extends('web.layouts.main', ['title' => 'Detail Tour'])
+@extends('web.layouts.main', ['title' => 'Chi Tiết Tour Du Lịch'])
 @section('content')
     <section class="parallax_window_in" data-parallax="scroll"
-             data-image-src="{{asset('dist/img/sub_header_list_museum_in.jpg')}}"
+             data-image-src="{{$tour->avata}}"
              data-natural-width="1400" data-natural-height="470">
         <div id="sub_content_in">
             <div id="animate_intro">
@@ -14,16 +14,24 @@
         <div class="container">
             <div class="row" id="tab">
                 <div class="col-md-7">
-                    <div class="owl-carousel add_bottom_15">
-                        @foreach($tour->image as $img)
-                            <div class="item"><img src="{{$img->url}}" alt=""></div>
-                        @endforeach
+                    <div class="add_bottom_15">
+                        <div id="full-slider-wrapper">
+                            <div id="layerslider" style="width:100%; height: 400px">
+                                @foreach($tour->image as $img)
+                                    <div class="ls-slide" data-ls="slidedelay: 1000">
+                                        <img src="{{$img->url}}" class="ls-bg">
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
-
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab_1" data-toggle="tab">{{__('single.overview')}}</a>
+                        <li class="active"
+                            style="border: 1px solid #ccc;background-color: #faf662; padding: 5px;border-radius: 45% 10% 0 0;">
+                            <a href="#tab_1" data-toggle="tab">{{__('single.overview')}}</a>
                         </li>
-                        <li><a href="#tab_2" data-toggle="tab">{{__('single.reviews')}}</a>
+                        <li style="border: 1px solid #ccc; background-color: #faf662; padding: 5px;border-radius: 45% 10% 0 0;">
+                            <a href="#tab_2" data-toggle="tab">{{__('single.reviews')}}</a>
                         </li>
                     </ul>
 
@@ -70,7 +78,7 @@
                                 <form method="post" action="/comment/{{$tour->id}}" class="row">
                                     @csrf
                                     <div class="form-group col-md-12">
-                                        <label>Rating </label>
+                                        <label>Đánh giá</label>
                                         <div class="rating"><input type="radio" name="rating" value="5" id="5"><label
                                                 for="5">☆</label> <input type="radio" name="rating" value="4"
                                                                          id="4"><label for="4">☆</label> <input
@@ -85,7 +93,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label>Your Review</label>
+                                        <label>Bình luận</label>
                                         <textarea name="comment" class="form-control"
                                                   style="height:130px;"></textarea>
                                     </div>
@@ -117,10 +125,8 @@
                             <strong>{{getPrice($tour->priceChild)}}</strong><small>{{__('single.per_child')}}</small>
                         </div>
                         <ul class="list_ok">
-                            <li>Sea te propriae lobortis</li>
-                            <li>Aperiri electram</li>
-                            <li>12 Quando omnium</li>
-                            <li>4 Vide urbanitas</li>
+                            <li>Ngày khởi hành: {{\Carbon\Carbon::parse($tour->date_start)->format('d/m/Y')}}</li>
+                            <li>Thời gian: {{$tour->number_date}} ngày - {{$tour->number_date -1}} đêm</li>
                         </ul>
                     </div>
                     <div class="box_style_2">
@@ -195,27 +201,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tbody>
-                                <tr>
-                                    <td class="col-5">
-                                        <strong>
-                                            {{__('single.date_start')}}
-                                        </strong>
-                                    </td>
-                                    <td colspan="2" class="m-2">
-                                        <input type="date" name="date_start" class="form-control">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3" style="border-top: none; padding: 0 10px">
-                                        <div style="color: red">
-                                            @error('date_start')
-                                            {{$message}}
-                                            @enderror
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
                             </table>
                             <div class="form-group">
                                 @if(\Illuminate\Support\Facades\Auth::user() != null)
@@ -249,30 +234,58 @@
     <!-- End section -->
 
     <div class="container margin_30">
-        <h3 class="second_title">{{__('single.related_tours')}}</h3>
-        <div class="carousel add_bottom_30">
-            @foreach($tours as $tourItem)
-                <div class=" wow fadeIn animated" data-wow-delay="0.2s">
-                    <div class="img_wrapper">
-                        <div class="price_grid">
-                            {{getPrice($tour->priceAdult)}}
-                        </div>
-                        <div class="img_container">
-                            <a href="/single/{{$tour->id}}">
-                                <img src="{{$tour->avata}}" width="350" height="200" class="img-responsive" alt="">
-                                <div class="short_info">
-                                    <h3 class="text_description">{{$tour->name}}</h3>
-                                    <div class="score_wp">
-                                        <div class="score">{{\App\Models\AssessRate::getRate($tour->id)}}</div>
-                                    </div>
+        <h3>{{__('single.related_tours')}}</h3>
+        <div class="container my-4">
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+                <div class="carousel-inner" role="listbox" style="z-index: 1">
+                    @php $x =true; $y = 1; @endphp
+                    @foreach($tours as $tour_new)
+                        @if($x)
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    @endif
+                                    @if($y == 1 && !$x)
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                @endif
+                                                <div class="col-md-4">
+                                                    <div class="card mb-2">
+                                                        <div class="wow fadeIn animated animated"
+                                                             data-wow-delay="0.2s"
+                                                             style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                                                            <div class="price_grid date_gid">
+                                                                <p>{{\Carbon\Carbon::parse($tour->date_start)->format('d/m/Y')}} - {{$tour->number_date}}N{{$tour->number_date -1}}Đ</p>
+                                                            </div>
+                                                            <div class="price_grid">
+                                                                {{getPrice($tour_new->priceAdult)}}
+                                                            </div>
+                                                            <div class="img_container">
+                                                                <a href="/single/{{$tour_new->id}}">
+                                                                    <img
+                                                                        src="{{$tour_new->avata}}"
+                                                                        width="350" height="200"
+                                                                        class="img-responsive" alt="">
+                                                                    <div class="short_info">
+                                                                        <h3 class="text_description">{{$tour_new->name}}</h3>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @php
+                                                    $x = false;
+                                                    $y += 1;
+                                                    if($y > 3)
+                                                    {
+                                                        echo '</div></div>';
+                                                        $y = 1;
+                                                    }
+                                                @endphp
+                                                @endforeach
+                                            </div>
+                                        </div>
                                 </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End img_wrapper -->
-                </div>
-            @endforeach
-        </div>
         <!-- End carousel -->
     </div>
     <!-- End container -->

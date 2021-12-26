@@ -22,5 +22,6 @@ return [
     'id' => 'ID user',
     'list_cmt' => 'Comment List',
     'back' => 'Back',
-    'status' => 'Status'
+    'status' => 'Status',
+    'search_note' => 'Enter booking number'
 ];

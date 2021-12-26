@@ -1,4 +1,4 @@
-@extends('web.layouts.main', ['title' => 'Register Page'])
+@extends('web.layouts.main', ['title' => 'Đăng Kí Tài Khoản'])
 @section('content')
     <section class="design-process-section wrapper" id="process-tab">
         <div class="container">

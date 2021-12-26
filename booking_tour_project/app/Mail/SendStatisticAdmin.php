@@ -36,6 +36,6 @@ class SendStatisticAdmin extends Mailable
         $data = $service->getDataStatistic();
         return $this->view('emails.statistic-month')
             ->with($data)
-            ->attach('/excels/'.Carbon::now()->subMonth()->format('m-Y').'.xlsx');
+            ->attach('excels/'.Carbon::now()->subMonth()->format('m-Y').'.xlsx');
     }
 }

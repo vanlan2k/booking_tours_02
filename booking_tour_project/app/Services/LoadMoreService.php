@@ -10,22 +10,32 @@ class LoadMoreService
 {
     public function getLoadMore(Request $request)
     {
-        if ($request->id > 0) {
-            $comments = Review::where('id', '<', $request->id)
+        if ($request->id) {
+            $comments = Review::where('tour_id', $request->id_tour)
+                ->where('id', '<', $request->id)
+                ->where('status', true)
                 ->orderBy('id', 'DESC')
                 ->limit(5)
                 ->get();
-            $rates = AssessRate::where('id', '<', $request->id)
-                ->orderBy('id', 'DESC')
-                ->limit(5)
-                ->get();
+            if ($comments) {
+                $rates = AssessRate::where('tour_id', $request->id_tour)
+                    ->where('id', '<', $request->id)
+                    ->orderBy('id', 'DESC')
+                    ->limit(5)
+                    ->get();
+            }
         } else {
-            $comments = Review::orderBy('id', 'DESC')
+            $comments = Review::where('tour_id', $request->id_tour)
+                ->orderBy('id', 'DESC')
+                ->where('status', true)
                 ->limit(5)
                 ->get();
-            $rates = AssessRate::orderBy('id', 'DESC')
-                ->limit(5)
-                ->get();
+            if ($comments) {
+                $rates = AssessRate::where('tour_id', $request->id_tour)
+                    ->orderBy('id', 'DESC')
+                    ->limit(5)
+                    ->get();
+            }
         }
         $output = '';
         $last_id = '';

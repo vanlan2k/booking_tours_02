@@ -22,6 +22,7 @@ $('#btn_sort').on('click', function () {
         success: function (result) {
             removeCanvas();
             chartData(result.date, result.data);
+            $('#add_btn_export').append('<a href="/admin/export-excel/date" id="btn_export" class="btn btn-success mt-2">Export Excel</a>');
         }
     });
 })
@@ -53,12 +54,11 @@ function chartData(dates, datas) {
         lable.push(dates[i]);
         data.push(datas[i]);
     }
-    console.log(lable)
     var salesChartData = {
         labels: lable,
         datasets: [
             {
-                label: 'Revenue',
+                label: 'Doanh thu',
                 backgroundColor: 'rgba(60,141,188,0.9)',
                 borderColor: 'rgba(60,141,188,0.8)',
                 pointRadius: false,
@@ -78,9 +78,11 @@ function chartData(dates, datas) {
 }
 
 function removeCanvas() {
+    $('#btn_export').remove();
     $('#revenue-chart-canvas').remove();
     $('#revenue-chart').append('<canvas id="revenue-chart-canvas" height="300" style="height: 500px;"></canvas>');
 }
+
 $('#selectSort').on('change', function () {
     var filter = $(this).val();
     var token = $('input[name="_token"]').val()
@@ -94,6 +96,13 @@ $('#selectSort').on('change', function () {
         success: function (result) {
             removeCanvas();
             chartData(result.date, result.data);
+            $('#add_btn_export').append('<a href="/admin/export-excel/' + result.export_by + '" id="btn_export" class="btn btn-success mt-2">Export Excel</a>')
         }
     });
 })
+$('.dateformat').datepicker({
+    uiLibrary: 'bootstrap4',
+    "dateFormat": "dd/mm/yy"
+});
+$('input').attr('autocomplete', 'off')
+

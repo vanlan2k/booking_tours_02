@@ -77,8 +77,8 @@ class ChartService
 
     public function filterDate(Request $request)
     {
-        $dateTo = Carbon::parse($request->dateTo);
-        $dateFrom = Carbon::parse($request->dateFrom);
+        $dateTo = Carbon::createFromFormat('d/m/Y',$request->dateTo);
+        $dateFrom = Carbon::createFromFormat('d/m/Y',$request->dateFrom);
         $result = $this->filterFunction($dateFrom, $dateTo);
         return $result;
     }
@@ -87,7 +87,7 @@ class ChartService
     {
         $sub30Days = Carbon::now()->subDays(30);
         $now = Carbon::now();
-        $result = $this->filterFunction($sub30Days, $now->addDay());
+        $result = $this->filterFunction($sub30Days, $now);
         return $result;
     }
 
@@ -115,21 +115,27 @@ class ChartService
         $result['date'] = $date;
         return $result;
     }
-    public function exportExcel()
+    public function exportExcel($filter)
     {
-        $this_month = Carbon::now()->startOfMonth();
-        $now = Carbon::now()->addDay();
-        $data = [];
-        $date = [];
-        do {
-            array_push($date, $this->formatDate($this_month));
-            $value = Booking::filterDay($this->formatDate($this_month));
-            $this_month->addDay();
-            array_push($data, $value ? $value : '0');
-        } while ($this_month->lte($now));
-        $result['data'] = $data;
-        $result['date'] = $date;
-        return $result;
+        if ($filter == 'null') {
+            $values = $this->chartBar();
+        }
+        elseif ($filter == 'date'){
+            $dateTo = Carbon::createFromFormat('d/m/Y', session()->get('dateTo'));
+            $dateFrom = Carbon::createFromFormat('d/m/Y', session()->get('dateFrom'));
+            $values = $this->filterFunction($dateFrom, $dateTo);
+        }
+        else{
+            $filters['filter'] = $filter;
+            $values = $this->filterBy($filters);
+        }
+        for($i = 0; $i < count($values['data']); $i++){
+            $x = 0;
+            $data[$i][$x++] = $i;
+            $data[$i][$x++] = $values['date'][$i];
+            $data[$i][$x++] = $values['data'][$i];
+        }
+        return $data;
     }
     public function exportExcelStatistic()
     {
@@ -138,4 +144,5 @@ class ChartService
         $result = $this->filterFunction($early_last_month, $end_of_last_month);
         return $result;
     }
+//    public function
 }

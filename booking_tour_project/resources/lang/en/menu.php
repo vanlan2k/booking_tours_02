@@ -12,6 +12,7 @@ return [
     'profile' => 'Profile',
     'logout' => 'Logout',
     'your_review' => 'Your Review',
-    'news' => 'News'
+    'news' => 'News',
+    'your_booking' => 'Your bookings'
 ];
 ?>

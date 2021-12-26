@@ -17,6 +17,7 @@
     $('#date_pick').datepicker();
 </script>
 <script src="{{asset('dist/js/sidebar_carousel_detail_page_func.js')}}"></script>
+<script type="text/javascript" src="{{asset('dist/js/sweetalert.min.js')}}"></script>
 {{--<script src="{{asset('dist/js/map.js')}}"></script>--}}
 <script type="text/javascript">
     'use strict';

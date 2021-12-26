@@ -25,7 +25,7 @@ class NotificationTourJob implements ShouldQueue
     public function __construct($tours)
     {
         $this->tours = $tours;
-        $this->delay = now()->addMinutes(5);
+        $this->delay = now()->addSeconds(5);
     }
 
     /**
